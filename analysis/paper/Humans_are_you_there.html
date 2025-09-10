@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-09-10">
+<meta name="keywords" content="<p>machine learning; site detection; review; theory; modelling</p>">
+
+<title>Humans, are you there? Comparative approach of two distinguishable methods for human installation detection: Automatic structure detection and archaeological predictive models</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="paper_html_files/libs/clipboard/clipboard.min.js"></script>
+<script src="paper_html_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="paper_html_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="paper_html_files/libs/quarto-html/popper.min.js"></script>
+<script src="paper_html_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="paper_html_files/libs/quarto-html/anchor.min.js"></script>
+<link href="paper_html_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="paper_html_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="paper_html_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="paper_html_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="paper_html_files/libs/bootstrap/bootstrap-15bb798e582b0aeffee6131bdfe50c06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="paper_html_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="paper_html_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><span class="header-section-number">2</span> Methodology</a>
+  <ul class="collapse">
+  <li><a href="#article-selection" id="toc-article-selection" class="nav-link" data-scroll-target="#article-selection"><span class="header-section-number">2.1</span> Article selection</a></li>
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection"><span class="header-section-number">2.2</span> Data collection</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">3</span> Results</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">4</span> Discussion</a>
+  <ul class="collapse">
+  <li><a href="#common-elements" id="toc-common-elements" class="nav-link" data-scroll-target="#common-elements"><span class="header-section-number">4.1</span> Common elements</a></li>
+  <li><a href="#differences-in-the-approaches" id="toc-differences-in-the-approaches" class="nav-link" data-scroll-target="#differences-in-the-approaches"><span class="header-section-number">4.2</span> Differences in the approaches</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5</span> Conclusion</a></li>
+  <li><a href="#annexes" id="toc-annexes" class="nav-link" data-scroll-target="#annexes"><span class="header-section-number">6</span> Annexes</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7</span> References</a>
+  <ul class="collapse">
+  <li><a href="#colophon" id="toc-colophon" class="nav-link" data-scroll-target="#colophon"><span class="header-section-number">7.1</span> Colophon</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Humans_are_you_there.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Humans, are you there? Comparative approach of two distinguishable methods for human installation detection: Automatic structure detection and archaeological predictive models</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 10, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    <p>Prediction and detection of archaeological features have long been central topics in archaeological sciences. In recent years, artificial intelligence and machine learning have increasingly complemented - and in some cases replaced - traditional statistical approaches. This paper examines two distinct yet related subfields: automatic archaeological structure detection and archaeological predictive modelling. We systematically reviewed 84 articles, treating these two topics, published between 2005 and 2024, highlighting a sharp rise in publications after 2021, particularly for structure detection studies. Our results reveal the growing predominance of deep learning methods in this area. At the same time, we explore the commonalities between the two approaches, notably their reliance on similar theoretical backgrounds and remote sensing imagery as input data. However, we also identify key differences: predictive models often involve more complex theoretical frameworks and diverse sensor applications, while structure detection is dominated by deep learning models. Finally, we outline potential future directions for both fields based on the trends observed in the reviewed literature.</p>
+  </div>
+</div>
+
+<div>
+  <div class="keywords">
+    <div class="block-title">Keywords</div>
+    <p></p><p>machine learning; site detection; review; theory; modelling</p><p></p>
+  </div>
+</div>
+
+</header>
+
+
+<!-- This is the format for text comments that will be ignored during renderings. Do not put R code in these comments because it will not be ignored. -->
+<!-- With the following code you can access and display values from the yml header above. -->
+<p>Keywords: machine learning; site detection; review; theory; modelling</p>
+<p>Highlights: - 84 papers reviewed. - Massive development of machine learning approaches since 2021. - Disymmetry between automatic structure detection, which dominates, and archaeological predictive models papers. - Automatic structure detection approaches are more suited for modern analysis, given their “easier” interpretation.</p>
+<!-- The actual document text starts here: -->
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>One of the central questions in archaeology lies in understanding the organisation of past societies <span class="citation" data-cites="renfrew_archaeology_2020 trigger_settlement_1967">(<a href="#ref-renfrew_archaeology_2020" role="doc-biblioref">Renfrew and Bahn, 2020</a>; <a href="#ref-trigger_settlement_1967" role="doc-biblioref">Trigger, 1967</a>)</span>, whether from an intra-site or inter-site perspective. Spatial organisation is a key driver of both present <span class="citation" data-cites="levi-strauss_contribution_1936">(<a href="#ref-levi-strauss_contribution_1936" role="doc-biblioref">Lévi-Strauss, 1936</a>)</span> and past human interactions <span class="citation" data-cites="bonnichsen_millies_1973">(<a href="#ref-bonnichsen_millies_1973" role="doc-biblioref">Bonnichsen, 1973</a>)</span>. Consequently, the relationship between humans and space/place has been explored in depth by archaeologists since the mid-twentieth century <span class="citation" data-cites="chang_settlement_1968 hodder_spatial_1976 judge_predicting_1988 kroll_interpretation_1991 parsons_archaeological_1972 phillips_method_1953 willey_prehistoric_1953">(<a href="#ref-chang_settlement_1968" role="doc-biblioref">Chang, 1968</a>; <a href="#ref-hodder_spatial_1976" role="doc-biblioref">Hodder and Orton, 1976</a>; <a href="#ref-judge_predicting_1988" role="doc-biblioref">Judge and Lynne, 1988a</a>; <a href="#ref-kroll_interpretation_1991" role="doc-biblioref">Kroll et al., 1991</a>; <a href="#ref-parsons_archaeological_1972" role="doc-biblioref">Parsons, 1972</a>; <a href="#ref-phillips_method_1953" role="doc-biblioref">Phillips and Willey, 1953</a>; <a href="#ref-willey_prehistoric_1953" role="doc-biblioref">Willey, 1953</a>)</span>. These studies have not only addressed relationships between humans but also human–environment interactions and interdependencies, emphasising the concept of resilience <span class="citation" data-cites="keck_what_2013">(<a href="#ref-keck_what_2013" role="doc-biblioref">Keck and Sakdapolrak, 2013</a>)</span>. The distribution of settlements and other perennial human structures has been a key indicator of these spatial dynamics within societies <span class="citation" data-cites="ellis_settlement_1999 willey_prehistoric_1953">(<a href="#ref-ellis_settlement_1999" role="doc-biblioref">Chapman, 1999</a>; <a href="#ref-willey_prehistoric_1953" role="doc-biblioref">Willey, 1953</a>)</span>. To investigate such patterns, statistical approaches have been developed to assess spatial dependencies between settlements and environmental factors <span class="citation" data-cites="kvamme_one-sample_1990 trigger_settlement_1967">(<a href="#ref-kvamme_one-sample_1990" role="doc-biblioref">Kvamme, 1990</a>; <a href="#ref-trigger_settlement_1967" role="doc-biblioref">Trigger, 1967</a>)</span> or to detect distinctive site distributions that may reveal specific social behaviours <span class="citation" data-cites="hodder_spatial_1976 judge_quantifying_1988 kohler_predictive_1988 kroll_interpretation_1991">(<a href="#ref-hodder_spatial_1976" role="doc-biblioref">Hodder and Orton, 1976</a>; <a href="#ref-judge_quantifying_1988" role="doc-biblioref">Judge and Lynne, 1988b</a>; <a href="#ref-kohler_predictive_1988" role="doc-biblioref">Kohler, 1988</a>; <a href="#ref-kroll_interpretation_1991" role="doc-biblioref">Kroll et al., 1991</a>)</span>.</p>
+<p>In parallel, the past decade has witnessed a “data deluge” in archaeology <span class="citation" data-cites="bevan_data_2015">(<a href="#ref-bevan_data_2015" role="doc-biblioref">Bevan, 2015</a>)</span>, evident across subfields such as GIS and remote sensing <span class="citation" data-cites="argyrou_review_2022 davis_aerial_2020">(<a href="#ref-argyrou_review_2022" role="doc-biblioref">Argyrou and Agapiou, 2022</a>; <a href="#ref-davis_aerial_2020" role="doc-biblioref">Davis and Douglass, 2020</a>)</span>, text-based records <span class="citation" data-cites="brandsen_information_2023">(<a href="#ref-brandsen_information_2023" role="doc-biblioref">Brandsen, 2023</a>)</span>, and machine learning applications <span class="citation" data-cites="bellat_machine_2025">(<a href="#ref-bellat_machine_2025" role="doc-biblioref">Bellat et al., 2025</a>)</span>. This expansion has been particularly transformative in remote sensing, where airborne laser scanning (ALS or LiDAR) has produced high-resolution imagery capable of penetrating dense vegetation <span class="citation" data-cites="bennett_guidelines_2025">(<a href="#ref-bennett_guidelines_2025" role="doc-biblioref">Bennett et al., 2025</a>)</span>, and the availability of diverse satellite datasets has greatly increased <span class="citation" data-cites="cracknell_development_2018">(<a href="#ref-cracknell_development_2018" role="doc-biblioref">Cracknell, 2018</a>)</span>. Advances in automated detection and segmentation algorithms <span class="citation" data-cites="bonhage_modified_2021 bundzel_semantic_2020 guyot_combined_2021">(<a href="#ref-bonhage_modified_2021" role="doc-biblioref">Bonhage et al., 2021</a>; <a href="#ref-bundzel_semantic_2020" role="doc-biblioref">Bundzel et al., 2020</a>; <a href="#ref-guyot_combined_2021" role="doc-biblioref">Guyot et al., 2021</a>)</span>, improved GIS training for younger generations of archaeologists <span class="citation" data-cites="argyrou_review_2022">(<a href="#ref-argyrou_review_2022" role="doc-biblioref">Argyrou and Agapiou, 2022</a>)</span>, and the rise of open-science collaborations and networks <span class="citation" data-cites="batist_open_2024">(<a href="#ref-batist_open_2024" role="doc-biblioref">Batist and Roe, 2024</a>)</span> have further accelerated this trend.</p>
+<p>Although the idea of reducing survey results to binary classifications - “site” or “non-site” - dates back to <span class="citation" data-cites="willey_prehistoric_1953">Willey (<a href="#ref-willey_prehistoric_1953" role="doc-biblioref">1953</a>)</span>, the real beginnings of predictive modelling in archaeology emerged in the 1970s and 1980s <span class="citation" data-cites="judge_predicting_1988 thomas_empirical_1973">(<a href="#ref-judge_predicting_1988" role="doc-biblioref">Judge and Lynne, 1988a</a>; <a href="#ref-thomas_empirical_1973" role="doc-biblioref">Thomas, 1973</a>)</span>, marking the rise of what has been termed “predictive archaeology” <span class="citation" data-cites="verhagen_integrating_2012">(<a href="#ref-verhagen_integrating_2012" role="doc-biblioref">Verhagen and Whitley, 2012, p. 51</a>)</span>. This approach has been defined as an attempt to predict “the location of archaeological sites or materials in a region, based either on a sample of that region or on fundamental notions concerning human behaviour” <span class="citation" data-cites="kohler_predictive_1986">(<a href="#ref-kohler_predictive_1986" role="doc-biblioref">Kohler and Parker, 1986</a>)</span>, under the “assumption that the location of archaeological remains in the landscape is not random, but is related to certain characteristics of the natural environment” <span class="citation" data-cites="verhagen_case_2007">(<a href="#ref-verhagen_case_2007" role="doc-biblioref">Verhagen, 2007, p. 13</a>)</span>. With the development of GIS and enhanced computing capacity in the late 1980s <span class="citation" data-cites="allen_interpreting_1990 djindjian_short_2015 verhagen_case_2007">(<a href="#ref-allen_interpreting_1990" role="doc-biblioref">Allen et al., 1990</a>; <a href="#ref-djindjian_short_2015" role="doc-biblioref">Djindjian, 2015</a>; <a href="#ref-verhagen_case_2007" role="doc-biblioref">Verhagen, 2007, pp. 15–16</a>)</span>, a new generation of archaeological predictive models (APMs) emerged, designed to map site probabilities <span class="citation" data-cites="altschul_models_1984 kohler_predictive_1988 kvamme_one-sample_1990 moon_archaeological_1993 allen_predictive_1990">(<a href="#ref-altschul_models_1984" role="doc-biblioref">Altschul, 1984</a>; <a href="#ref-kohler_predictive_1988" role="doc-biblioref">Kohler, 1988</a>; <a href="#ref-kvamme_one-sample_1990" role="doc-biblioref">Kvamme, 1990</a>; <a href="#ref-moon_archaeological_1993" role="doc-biblioref">Moon, 1993</a>; <a href="#ref-allen_predictive_1990" role="doc-biblioref">Warren, 1990</a>)</span>. These gave rise to two distinct approaches: inductive (data-driven) models and deductive (theory-driven) ones <span class="citation" data-cites="kamermans_predictive_1999 wheatley_spatial_2013">(<a href="#ref-kamermans_predictive_1999" role="doc-biblioref">Kamermans and Wansleeben, 1999</a>; <a href="#ref-wheatley_spatial_2013" role="doc-biblioref">Wheatley and Gillings, 2013</a>)</span>. The former are constructed from observed variables, such as environmental or anthropogenic factors <span class="citation" data-cites="carrer_ethnoarchaeological_2013 croce_ethnoarchaeological_2025 ebert_state_2000 yaworsky_advancing_2020">(<a href="#ref-carrer_ethnoarchaeological_2013" role="doc-biblioref">Carrer, 2013</a>; <a href="#ref-croce_ethnoarchaeological_2025" role="doc-biblioref">Croce et al., 2025</a>; <a href="#ref-ebert_state_2000" role="doc-biblioref">Ebert, 2000</a>; <a href="#ref-yaworsky_advancing_2020" role="doc-biblioref">Yaworsky et al., 2020</a>)</span>, while the latter rely on expert-defined parameters <span class="citation" data-cites="canning_belief_2005">(<a href="#ref-canning_belief_2005" role="doc-biblioref">Canning, 2005</a>)</span>. Yet theory-driven models have remained underdeveloped, often criticised as overly simplistic or “unsophisticated” <span class="citation" data-cites="verhagen_integrating_2012">(<a href="#ref-verhagen_integrating_2012" role="doc-biblioref">Verhagen and Whitley, 2012</a>)</span>. They also bear strong affinities with agent-based modelling <span class="citation" data-cites="lake_explaining_2015">(<a href="#ref-lake_explaining_2015" role="doc-biblioref">Lake, 2015</a>)</span>, another computational approach in archaeology. The opposition between inductive and deductive methods, rooted in debates of the 1970s, is now increasingly regarded as outdated, both insiders <span class="citation" data-cites="kvamme_there_2006 verhagen_integrating_2012">(<a href="#ref-kvamme_there_2006" role="doc-biblioref">Kvamme, 2006</a>; <a href="#ref-verhagen_integrating_2012" role="doc-biblioref">Verhagen and Whitley, 2012</a>)</span>. and external commentators <span class="citation" data-cites="salmon_deductive_1976">(<a href="#ref-salmon_deductive_1976" role="doc-biblioref">Salmon, 1976</a>)</span> view it as more of a historical and epistemological distinction than a current methodological divide.</p>
+<p>For the second time, following the development of APMs, new approaches with automated structure detection emerged <span class="citation" data-cites="menze_detection_2006">(<a href="#ref-menze_detection_2006" role="doc-biblioref">Menze et al., 2006</a>)</span>, supported by the spread of high-resolution satellite imagery, particularly digital elevation model (DEM) from the shuttle radar topographic mission (SRTM) in 2000 <span class="citation" data-cites="farr_shuttle_2007">(<a href="#ref-farr_shuttle_2007" role="doc-biblioref">Farr et al., 2007</a>)</span>. This innovative use of ML for the semi-automated detection of archaeological structures was aimed at Tell’s, which are large mounded sites, using SRTM data at a resolution of 90 m <span class="citation" data-cites="menze_detection_2006">(<a href="#ref-menze_detection_2006" role="doc-biblioref">Menze et al., 2006</a>)</span>. Despite this early use of ML for site detection, the uptake of this method has only taken place since 2018 <span class="citation" data-cites="bellat_machine_2025">(<a href="#ref-bellat_machine_2025" role="doc-biblioref">Bellat et al., 2025</a>)</span>, thanks to technological innovation and improvements of satellite sensors, combined with the increase in open-access satellite datasets such as Sentinel and Landsat <span class="citation" data-cites="zhu_benefits_2019">(<a href="#ref-zhu_benefits_2019" role="doc-biblioref">Zhu et al., 2019</a>)</span>. Most archaeological structures are smaller than tells and require very-high-resolution satellite data (&lt; 1 m), in order to be detected. The decreasing cost of drones has allowed them to be adopted by archaeologists for site documentation, which can generate <em>cm</em> and even <em>mm</em> resolution imagery. Along with all of the improvements in data availability and quality, ML methods saw significant advances in the late 2000’s and 2010’s, with the development of fast Graphics Processing Units (GPU’s) which allowed for renewed interest and development in Deep Learning <span class="citation" data-cites="lecun_deep_2015">(<a href="#ref-lecun_deep_2015" role="doc-biblioref">LeCun et al., 2015</a>)</span> and Neural Networks aimed at analysing sparse data <span class="citation" data-cites="ronneberger_u-net_2015">(<a href="#ref-ronneberger_u-net_2015" role="doc-biblioref">Ronneberger et al., 2015</a>)</span>, which archaeological data usually is.</p>
+<p>There have been criticisms of ASD, similarly to how APMs were dismissed as lacking in theory. These criticisms are however, enhanced for ML in archaeology due to the black box nature of Machine Learning models, and concern over accuracy and contextualisation of the results <span class="citation" data-cites="casana_regional-scale_2014 opitz_recent_2018">(<a href="#ref-casana_regional-scale_2014" role="doc-biblioref">Casana, 2014</a>; <a href="#ref-opitz_recent_2018" role="doc-biblioref">Opitz and Herrmann, 2018</a>)</span>. While these debates are important and will lead to improvements in how ML for ASD is approached, binary questions such as whether a site is present or not in a location do lend themselves to automated approaches, especially when results are properly contextualised and interpreted by experts on the archaeological sites that are detected. The original aim of <span class="citation" data-cites="menze_detection_2006">Menze et al. (<a href="#ref-menze_detection_2006" role="doc-biblioref">2006</a>)</span>, to create: “<em>A comprehensive and accurate listing of these sites</em>”, is still one of the goals of many applications of automatic structure detection. It is a non-destructive tool that allows for archaeological sites to be identified on a far larger scale than would be possible by fieldwork or manual survey of satellite imagery, while also increasing consistency and allowing for documentation of the entire process. It also allows for the detection of sites that have already been destroyed, through the use of historical imagery <span class="citation" data-cites="bulawka_deep_2024">(<a href="#ref-bulawka_deep_2024" role="doc-biblioref">Bulawka et al., 2024</a>)</span>, the detection of sites in areas that are remote or difficult to access due to political instability <span class="citation" data-cites="rayne_detecting_2020">(<a href="#ref-rayne_detecting_2020" role="doc-biblioref">Rayne et al., 2020</a>)</span>, and country-wide detection of sites <span class="citation" data-cites="berganzo-besga_hybrid_2021">(<a href="#ref-berganzo-besga_hybrid_2021" role="doc-biblioref">Berganzo-Besga et al., 2021</a>)</span>.</p>
+<p>From the above mentioned elements, we can ask ourselves two questions: What are the new trends that archaeological predictive models and archaeological structure detection are following? What do they make at the same time, different and similar approaches?</p>
+</section>
+<section id="methodology" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Methodology</h1>
+<section id="article-selection" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="article-selection"><span class="header-section-number">2.1</span> Article selection</h2>
+<p>We conducted a rapid systematic review <span class="citation" data-cites="jesson_doing_2012">(<a href="#ref-jesson_doing_2012" role="doc-biblioref">Jesson et al., 2012</a>)</span> in accordance with the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines <span class="citation" data-cites="page_prisma_2021">(<a href="#ref-page_prisma_2021" role="doc-biblioref">Page et al., 2021</a>)</span>. This approach was chosen because it combines a relatively short scoping process with methodological transparency <span class="citation" data-cites="haby_what_2016">(<a href="#ref-haby_what_2016" role="doc-biblioref">Haby et al., 2016</a>)</span>. Our previous work <span class="citation" data-cites="bellat_machine_2025">(<a href="#ref-bellat_machine_2025" role="doc-biblioref">Bellat et al., 2025</a>)</span> served as the starting point for this review, to which we added records published in 2023 and 2024. The protocol comprised twelve queries derived from a set of archaeological and machine learning “buzzwords” <a href="#box-query">Box 1</a>, which were tested across six online databases: Web of Science, PubMed, Tübingen University Library, German Archaeological Institute, German National Library, and Google Scholar. Records published up to 2022 (<em>n</em> = 730) were taken from <span class="citation" data-cites="bellat_supplementary_2024">Bellat et al. (<a href="#ref-bellat_supplementary_2024" role="doc-biblioref">2024</a>)</span>, while an additional 278 records were collected for 2023 - 2024, resulting in a total dataset of 1,006 records <a href="#fig-flow" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<p>The screening process followed two inclusion criteria <span class="citation" data-cites="dekkers_setting_2022">(<a href="#ref-dekkers_setting_2022" role="doc-biblioref">Dekkers et al., 2022, pp. 202–208</a>)</span>. First, only peer-reviewed records were retained to ensure methodological consistency. Second, only English-language publications were included, also for consistency. From <span class="citation" data-cites="bellat_supplementary_2024">Bellat et al. (<a href="#ref-bellat_supplementary_2024" role="doc-biblioref">2024</a>)</span> dataset, we selected only studies focusing on archaeological predictive modelling or automatic structure detection. For 2023 - 2024, we manually screened titles and abstracts to identify publications that mentioned either of these two approaches.</p>
+<p>We then applied two exclusion criteria <span class="citation" data-cites="dekkers_setting_2022">(<a href="#ref-dekkers_setting_2022" role="doc-biblioref">Dekkers et al., 2022, pp. 208–209</a>)</span> to refine the dataset. First, we restricted the sample to papers applying machine learning methods, excluding studies based solely on statistical approaches (<em>e.g.</em> regression-based methods, hard voting classifiers, and data transformation techniques), in line with related literature <span class="citation" data-cites="bzdok_statistics_2018 bellat_machine_2025 eleftheriadou_machine_2025">(<a href="#ref-bellat_machine_2025" role="doc-biblioref">Bellat et al., 2025</a>; <a href="#ref-bzdok_statistics_2018" role="doc-biblioref">Bzdok et al., 2018</a>; <a href="#ref-eleftheriadou_machine_2025" role="doc-biblioref">Eleftheriadou et al., 2025</a>)</span>. While statistical methods focus on identifying relationships within datasets, machine learning aims to improve predictions for new data based on prior training <span class="citation" data-cites="alpaydin_introduction_2014">(<a href="#ref-alpaydin_introduction_2014" role="doc-biblioref">Alpaydin, 2014</a>)</span>. Second, we excluded theory-based and review papers, as these do not provide quantitative results.</p>
+<p>In total, our review protocol yielded 85 included articles: 48 from <span class="citation" data-cites="bellat_machine_2025">Bellat et al. (<a href="#ref-bellat_machine_2025" role="doc-biblioref">2025</a>)</span> and 37 newly collected from 2023 - 2024.</p>
+<div id="box-query" class="callout callout-style-simple callout-tip no-icon callout-titled" title="Box 1: Search query used for the protocol search">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Box 1: Search query used for the protocol search
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Topic = <em>machine learning | deep learning | artificial intelligence | archaeological | archeological | archaeology | archeology | archaeo | archeo</em></p>
+</div>
+</div>
+</div>
+<div id="fig-flow" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-env="figure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Fig.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-env="figure">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Review process from source selection to analysis. Inspired by the PRISMA 2020 flow diagram <span class="citation" data-cites="haddaway_prisma2020_2022">Haddaway et al. (<a href="#ref-haddaway_prisma2020_2022" role="doc-biblioref">2022</a>)</span>. Reason 1 = Theory or review paper; Reason 2 = Does not involve machine learning techniques/algorithm. Figure created using PRIMA2020 R package and Inkscape.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="data-collection" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="data-collection"><span class="header-section-number">2.2</span> Data collection</h2>
+<p>From the reviewed records, we extracted eleven variables, both numerical and categorical <a href="#tab-class">Table 1</a>. The classification of model families followed <span class="citation" data-cites="alpaydin_introduction_2014">Alpaydin (<a href="#ref-alpaydin_introduction_2014" role="doc-biblioref">2014</a>)</span>, and <span class="citation" data-cites="bellat_machine_2025">Bellat et al. (<a href="#ref-bellat_machine_2025" role="doc-biblioref">2025</a>)</span>, and <span class="citation" data-cites="eleftheriadou_machine_2025">Eleftheriadou et al. (<a href="#ref-eleftheriadou_machine_2025" role="doc-biblioref">2025</a>)</span>, while the archaeological subfield of each study was assigned according to the framework established in previous work <span class="citation" data-cites="bellat_machine_2025 kelly_archaeology_2017">(<a href="#ref-bellat_machine_2025" role="doc-biblioref">Bellat et al., 2025</a>; <a href="#ref-kelly_archaeology_2017" role="doc-biblioref">Kelly and Thomas, 2017</a>)</span>. Evaluation methods were grouped into three categories: classification, regression, and clustering <span class="citation" data-cites="alpaydin_introduction_2014">(<a href="#ref-alpaydin_introduction_2014" role="doc-biblioref">Alpaydin, 2014, pp. 5–13</a>)</span>. Study outcomes were classified as successful, unsuccessful, mixed, affected by methodological issues, or undefined. Additional detail was recorded for pre-training procedures and input data classes.</p>
+<div id="tab-class">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Feature</strong></th>
+<th style="text-align: center;"><strong>Number of categories</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Year</td>
+<td style="text-align: center;">16</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Model</td>
+<td style="text-align: center;">36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Best model</td>
+<td style="text-align: center;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Family</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Subfield</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Input data</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Evaluation</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Result</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pre-training</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Data availability</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Code availability</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1: The eleven features collected systematically from the review.</p>
+</div>
+<p>Then, independently for the APMs records, we also extracted the number of covariates used in the study and the type of feature selection executed, if any. We also extracted the type of performance metrics reported in each study, as well as their associated values (<a href="#fig-familybar" class="quarto-xref">Figure&nbsp;4</a>). Since many publications did not provide complete metric sets, we computed additional values where possible (<em>e.g.</em> from correlation matrices) to enable greater comparability across studies. Specifically, we calculated recall, precision, accuracy, and the F1-score (<a href="#eq01">Equations 1 - 4</a>), based on the true or false positives and negatives (TP, TN, FP and FN). In cases where multiple models or study areas were presented, only the highest reported score was retained. Full definitions of all metric acronyms are provided in the glossary.</p>
+<div id="eq-01" class="grid">
+<div class="g-col-6">
+<p><span class="math display">\[Recall = \frac{TP}{TP + FP}\]</span></p>
+</div>
+<div class="g-col-6">
+<p><span class="math display">\[Precision = \frac{TP}{TP + FN}\]</span></p>
+</div>
+<div class="g-col-6">
+<p><span class="math display">\[Accuracy = \frac{TP + TN}{TP + TN + FP + FN}\]</span></p>
+</div>
+<div class="g-col-6">
+<p><span class="math display">\[F1-score = 2\cdot\frac{recall \cdot precision}{recall + precision}\]</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="results" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Results</h1>
+<p>From the 85 records analysed, 15 addressed APM approaches and 69 focused on ASD techniques (<a href="#fig-yearpub" class="quarto-xref">Figure&nbsp;2</a>). One study applied two distinct ASD methods, and another used two different APM approaches; these were therefore counted as separate study cases <span class="citation" data-cites="agapiou_detection_2021 li_gis_2024">(<a href="#ref-agapiou_detection_2021" role="doc-biblioref">Agapiou et al., 2021</a>; <a href="#ref-li_gis_2024" role="doc-biblioref">Li et al., 2024</a>)</span>. A clear trend is visible from 2018 onwards, with at least one publication per year in each application area. This pattern intensified after 2020, with around 75 % of all papers (<em>n</em> = 62) published in 2021 or later. The rapid growth of machine learning applications in archaeology since 2018, and particularly from 2020/2021, has also been noted by <span class="citation" data-cites="bickler_machine_2021">Bickler (<a href="#ref-bickler_machine_2021" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="eleftheriadou_machine_2025">Eleftheriadou et al. (<a href="#ref-eleftheriadou_machine_2025" role="doc-biblioref">2025, fig. 1</a>)</span>, and in our previous work <span class="citation" data-cites="bellat_machine_2025">(<a href="#ref-bellat_machine_2025" role="doc-biblioref">Bellat et al., 2025, fig. 2</a>)</span>.</p>
+<div id="fig-yearpub" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-env="figure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-yearpub-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Fig.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-env="figure">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-yearpub-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Number of publications per year between 2006 and 2024, split between ASDs and APMs (<em>n</em> = 84). In light blue, the articles published after 2021 accounted for more than 75% of the publications. Figure generated with R 4.5.0.
+</figcaption>
+</figure>
+</div>
+<p>Regarding the type of algorithms used, deep learning methods and artificial neural networks (ANNs) are the most represented ones with 59 uses <a href="#fig-treemap" class="quarto-xref">Figure&nbsp;3</a>, followed by the ensemble learning models (<em>n</em> = 33), in particular, random forest (RF), which is the most prominent model with 28 applications. All other families of machine learning models, Bayesian classifier, linear classifier, unsupervised learning and clustering, decision trees and rule induction, nearest neighbour classifier and polynomial classifier, are more or less, equally represented <a href="#fig-treemap" class="quarto-xref">Figure&nbsp;3</a>. The raise of the ANNs can be seen from 2020-2021 onwards (<em>see</em> supplementary file) and follow the general trend of publications (<a href="#fig-yearpub" class="quarto-xref">Figure&nbsp;2</a>). There is a high diversity of models used with 36 different algorithms but only half of it have been used more than once. Furthermore, we counted two applications of statistical methods, one linear regression <span class="citation" data-cites="fuentes-carbajal_machine_2023">(<a href="#ref-fuentes-carbajal_machine_2023" role="doc-biblioref">Fuentes-Carbajal et al., 2023</a>)</span> and one k-means clustering <span class="citation" data-cites="ben-romdhane_detecting_2023">(<a href="#ref-ben-romdhane_detecting_2023" role="doc-biblioref">Ben-Romdhane et al., 2023</a>)</span>.</p>
+<div id="fig-treemap" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-env="figure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-treemap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Fig.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-env="figure">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-treemap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Tree map of the different models used and their related family/group. Figure generated with R 4.5.0.
+</figcaption>
+</figure>
+</div>
+<p>From the collected performance metrics, we identified 19 unique measures (<a href="#fig-metrics" class="quarto-xref">Figure&nbsp;5</a>), though only 9 appeared in more than one study. Among ASD applications, recall, precision, and F1-score were reported in 65% of cases (<em>n</em> = 45), with accuracy additionally included in 25 of these. Intersection over Union (IoU) was used in 9 studies, mainly in segmentation tasks. For APMs, 68% (<em>n</em> = 11) reported Area Under the Curve (AUC), while only three relied on alternative metrics.</p>
+<div id="fig-familybar" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-env="figure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-familybar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Fig.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-env="figure">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-familybar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Bar plot of the number of each use of a model family/group per year. Figure generated with R 4.5.0.
+</figcaption>
+</figure>
+</div>
+<p>We also examined model performance scores by plotting precision against recall for ASD models, including F1-score and accuracy when available (<a href="#fig-scatter" class="quarto-xref">Figure&nbsp;6</a>). This analysis shows that most studies achieved relatively high performance. The median F1-score was 0.76, while the median accuracy reached 0.86. Precision tended to be slightly higher (median = 0.86) than recall (median = 0.74). However, a subset of studies reported very low precision, which reduced the mean values of both precision and recall to 0.74.</p>
+<div id="fig-metrics" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-env="figure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Fig.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-env="figure">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Number of metrics and metrics score presented in the reviewed papers (<em>n</em> = 66). Some papers did not present any metrics. The different metrics are represented on the left, and the case study name is at the bottom. Blue gradient indicates the number of metrics used for one case study, with a minimum of 1 and a maximum of 6. APM papers are highlighted by an orange rectangle. Figure generated with R 4.5.0 and modified with Inkscape, inspired by <span class="citation" data-cites="eleftheriadou_machine_2025">Eleftheriadou et al. (<a href="#ref-eleftheriadou_machine_2025" role="doc-biblioref">2025</a>)</span>.
+</figcaption>
+</figure>
+</div>
+<div id="fig-scatter" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-env="figure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Fig.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-env="figure">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Scatter plot of the recall - precision score for the archaeological structure detection records, numbered according to the ID-number of the study. F1-score is represented by the size of the point, and accuracy is shown with a gradient colour when available (<em>n</em> = 45). Figure generated with R 4.5.0 and modified with Inkscape.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="discussion" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Discussion</h1>
+<section id="common-elements" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="common-elements"><span class="header-section-number">4.1</span> Common elements</h2>
+<p>From a theoretical perspective, both archaeological predictive models and archaeological structure detection share a common conceptual background. At their core lies the notion of site probability <span class="citation" data-cites="gillies_human-centred_2016 hodder_spatial_1976 willey_prehistoric_1953">(<a href="#ref-gillies_human-centred_2016" role="doc-biblioref">Gillies et al., 2016</a>; <a href="#ref-hodder_spatial_1976" role="doc-biblioref">Hodder and Orton, 1976</a>; <a href="#ref-willey_prehistoric_1953" role="doc-biblioref">Willey, 1953</a>)</span>, rooted in the fundamental archaeological question of why “populations located sites where they did” <span class="citation" data-cites="kvamme_analysing_2020">(<a href="#ref-kvamme_analysing_2020" role="doc-biblioref">Kvamme, 2020, p. 213</a>)</span>. Both approaches address this question by attempting to predict site locations. Judge and Lynne defined prediction as “<em>the ability to foretell on the basis of observation, experience, or scientific reason</em>” <span class="citation" data-cites="judge_quantifying_1988">(<a href="#ref-judge_quantifying_1988" role="doc-biblioref">Judge and Lynne, 1988b, p. 2</a>)</span>. This predictive dimension was explicitly present in the early stages of APMs <span class="citation" data-cites="verhagen_integrating_2012">(<a href="#ref-verhagen_integrating_2012" role="doc-biblioref">Verhagen and Whitley, 2012</a>)</span>, and is even reflected in their name, but it is less immediately visible in the terminology of ASD. Nevertheless, one of the earliest works to apply predictive modelling for archaeological structure detection in remote sensing imagery - <span class="citation" data-cites="menze_detection_2006">Menze et al. (<a href="#ref-menze_detection_2006" role="doc-biblioref">2006</a>)</span> on Syrian tells - explicitly framed the task as the need for “<em>a comprehensive and accurate listing of these sites</em>” effectively operationalising presence/absence prediction in a way analogous to APMs.</p>
+<p>Another key similarity between APMs and ASDs lies in their reliance on remote sensing data, whether derived from UAVs <span class="citation" data-cites="monna_machine_2020 orengo_brave_2019 sakai_ai-accelerated_2024">(<em>e.g.</em> <a href="#ref-monna_machine_2020" role="doc-biblioref">Monna et al., 2020</a>; <a href="#ref-orengo_brave_2019" role="doc-biblioref">Orengo and Garcia-Molsosa, 2019</a>; <a href="#ref-sakai_ai-accelerated_2024" role="doc-biblioref">Sakai et al., 2024</a>)</span> , aircraft <span class="citation" data-cites="bonhage_modified_2021 guyot_combined_2021 lidberg_detection_2024">(<em>e.g.</em> <a href="#ref-bonhage_modified_2021" role="doc-biblioref">Bonhage et al., 2021</a>; <a href="#ref-guyot_combined_2021" role="doc-biblioref">Guyot et al., 2021</a>; <a href="#ref-lidberg_detection_2024" role="doc-biblioref">Lidberg et al., 2024</a>)</span>, or satellites <span class="citation" data-cites="caspari_convolutional_2019 castiello_explorative_2021 karamitrou_identification_2023">(<em>e.g.</em> <a href="#ref-caspari_convolutional_2019" role="doc-biblioref">Caspari and Crespo, 2019</a>; <a href="#ref-castiello_explorative_2021" role="doc-biblioref">Castiello and Tonini, 2021</a>; <a href="#ref-karamitrou_identification_2023" role="doc-biblioref">Karamitrou et al., 2023</a>)</span>. The rise of both applications is closely tied to the broader expansion of remote sensing in archaeology <span class="citation" data-cites="argyrou_review_2022">(<a href="#ref-argyrou_review_2022" role="doc-biblioref">Argyrou and Agapiou, 2022</a>)</span>, itself driven by the rapid increase in Earth observation satellites since 2015 (<a href="#fig-remote" class="quarto-xref">Figure&nbsp;7</a>). This growth has also been fuelled by greater accessibility to satellite and LiDAR datasets, as well as by major improvements in image resolution, particularly from modern airborne laser scanning (ALS) platforms (0.5 - 1 m resolution) and UAVs. Future developments in remote sensing are likely to further enhance archaeological applications, not only through sensor advances but also through computational methods such as super-resolution techniques <span class="citation" data-cites="liu_remote_2025 wang_comprehensive_2022">(<a href="#ref-liu_remote_2025" role="doc-biblioref">Liu et al., 2025</a>; <a href="#ref-wang_comprehensive_2022" role="doc-biblioref">Wang et al., 2022</a>)</span>.</p>
+<div id="fig-remote" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-env="figure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-remote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Fig.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-env="figure">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-remote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: <strong>A</strong>: Number of records in the archaeological field mentioning remote sensing on the Dimension database. <strong>B</strong>: Number of records in the archaeological field mentioning remote sensing on the Web of Science database. <strong>C</strong>: Number of satellites dedicated to earth observation launched per year, according to the USC database, we did not take military satellites into account. Figure generated with R 4.5.0.
+</figcaption>
+</figure>
+</div>
+<p>Despite differences in the types of models employed in APMs and ASDs, both fields show a strong reliance on the RF algorithm. In ASD tasks, RF accounts for nearly 20 % of applications (<em>n</em> = 18), while in APMs it represents 41 % (<em>n</em> = 10). The prominence of RF in archaeological machine learning is unsurprising: the method is relatively straightforward to implement and can be applied flexibly to both classification and prediction problems <span class="citation" data-cites="breiman_random_2001">(<a href="#ref-breiman_random_2001" role="doc-biblioref">Breiman, 2001</a>)</span>.</p>
+</section>
+<section id="differences-in-the-approaches" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="differences-in-the-approaches"><span class="header-section-number">4.2</span> Differences in the approaches</h2>
+<p>While APMs and ASDs share a number of similarities, important differences explain why they have followed distinct research trajectories. From a theoretical standpoint, APMs benefit from a more established background built over more than 40 years of practice <span class="citation" data-cites="judge_predicting_1988 kvamme_analysing_2020">(<a href="#ref-judge_predicting_1988" role="doc-biblioref">Judge and Lynne, 1988a</a>; <a href="#ref-kvamme_analysing_2020" role="doc-biblioref">Kvamme, 2020</a>)</span>. They have also faced criticism, particularly for their perceived “deterministic” nature <span class="citation" data-cites="kamermans_deconstructing_2004 kvamme_there_2006">(<a href="#ref-kamermans_deconstructing_2004" role="doc-biblioref">Kamermans et al., 2004</a>; <a href="#ref-kvamme_there_2006" role="doc-biblioref">Kvamme, 2006</a>)</span>, reflecting their strong roots in ecological science <span class="citation" data-cites="yaworsky_neanderthal_2024">(<a href="#ref-yaworsky_neanderthal_2024" role="doc-biblioref">Yaworsky et al., 2024</a>)</span>. By contrast, ASDs have been less subject to such criticism, as they are more data-driven and object-focused. Their main limitations concern their ability to connect with broader archaeological questions and engage a wider audience <span class="citation" data-cites="davis_object-based_2019 davis_defining_2020 davis_theoretical_2021">(<a href="#ref-davis_theoretical_2021" role="doc-biblioref">Davis, 2021</a>, <a href="#ref-davis_defining_2020" role="doc-biblioref">2020</a>, <a href="#ref-davis_object-based_2019" role="doc-biblioref">2019</a>)</span>. However, the past five years have seen growing interest in ASDs <span class="citation" data-cites="bennett_guidelines_2025">(<a href="#ref-bennett_guidelines_2025" role="doc-biblioref">Bennett et al., 2025</a>)</span>. The OpenAI to Z Challenge is one example of bridging a “niche” method with public engagement, aiming to locate archaeological sites in the Amazon using large language models and computer vision tools with OpenAI o3/o4 mini and GPT-4.1 <a href="https://openai.com/openai-to-z-challenge/" class="uri">https://openai.com/openai-to-z-challenge/</a>.</p>
+<p>Differences are also evident in the use of machine learning methods. ASD studies frequently employ artificial neural networks (ANNs; <em>n</em> = 57), particularly U-Net <span class="citation" data-cites="anttiroiko_detecting_2023 bundzel_semantic_2020 garcia-molsosa_potential_2021">(<em>e.g.</em> <a href="#ref-anttiroiko_detecting_2023" role="doc-biblioref">Anttiroiko et al., 2023</a>; <a href="#ref-bundzel_semantic_2020" role="doc-biblioref">Bundzel et al., 2020</a>; <a href="#ref-garcia-molsosa_potential_2021" role="doc-biblioref">Garcia-Molsosa et al., 2021</a>)</span>, convolutional neural networks <span class="citation" data-cites="gallwey_bringing_2019 ikaheimo_detecting_2023 soroush_deep_2020">(CNNs <a href="#ref-gallwey_bringing_2019" role="doc-biblioref">Gallwey et al., 2019</a>; <a href="#ref-ikaheimo_detecting_2023" role="doc-biblioref">Ikäheimo, 2023</a>; <a href="#ref-soroush_deep_2020" role="doc-biblioref">Soroush et al., 2020</a>)</span>, and their region-based or mask-based variants <span class="citation" data-cites="bonhage_modified_2021 quintus_evaluating_2023 verschoof-van_der_vaart_learning_2019">(<em>e.g.</em> <a href="#ref-bonhage_modified_2021" role="doc-biblioref">Bonhage et al., 2021</a>; <a href="#ref-quintus_evaluating_2023" role="doc-biblioref">Quintus et al., 2023</a>; <a href="#ref-verschoof-van_der_vaart_learning_2019" role="doc-biblioref">Verschoof-van der Vaart and Lambers, 2019</a>)</span>. In contrast, our review found only two APM studies using ANNs <span class="citation" data-cites="oonk_supervised_2015 wang_archaeological_2023">(<a href="#ref-oonk_supervised_2015" role="doc-biblioref">Oonk and Spijker, 2015</a>; <a href="#ref-wang_archaeological_2023" role="doc-biblioref">Wang et al., 2023</a>)</span>. Bayesian classifiers also show divergent use: MaxEnt appears exclusively in APMs <span class="citation" data-cites="benner_combining_2019 imen_utilizing_2024 wang_archaeological_2023">(<em>e.g.</em> <a href="#ref-benner_combining_2019" role="doc-biblioref">Benner et al., 2019</a>; <a href="#ref-imen_utilizing_2024" role="doc-biblioref">Imen et al., 2024</a>; <a href="#ref-wang_archaeological_2023" role="doc-biblioref">Wang et al., 2023</a>)</span>, given its suitability for handling pseudo-absence data <span class="citation" data-cites="yaworsky_advancing_2020">(<a href="#ref-yaworsky_advancing_2020" role="doc-biblioref">Yaworsky et al., 2020</a>)</span>.</p>
+<p>Another major difference lies in the input data. ASD typically relies on single-image datasets <span class="citation" data-cites="altaweel_automated_2022 guyot_combined_2021">(LiDAR, UAV, or satellite imagery, <a href="#ref-altaweel_automated_2022" role="doc-biblioref">Altaweel et al., 2022</a>; <a href="#ref-guyot_combined_2021" role="doc-biblioref">Guyot et al., 2021</a>)</span>. This choice is partly due to the finer resolution of such imagery (&lt; 10 m), suited to detecting small structures, and partly to the suitability of deep learning models for image recognition. By contrast, APMs often integrate multiband datasets - including DEMs, spectral information, and soil chemistry - with more than ten covariates commonly included <span class="citation" data-cites="oonk_supervised_2015 castiello_explorative_2021">(<a href="#ref-castiello_explorative_2021" role="doc-biblioref">Castiello and Tonini, 2021</a>; <a href="#ref-oonk_supervised_2015" role="doc-biblioref">Oonk and Spijker, 2015</a>)</span>. The number of covariates is less limited as the process do not need recognition but prediction based on pixel values. Feature selection, reduction of the number of input data (<a href="#fig-apm" class="quarto-xref">Figure&nbsp;8</a>), is often applied for simplifying the model and increasing transposability, either through expert-driven choices <span class="citation" data-cites="friggens_predicting_2021 hansen_prioritizing_2020">(<a href="#ref-friggens_predicting_2021" role="doc-biblioref">Friggens et al., 2021</a>; <a href="#ref-hansen_prioritizing_2020" role="doc-biblioref">Hansen and Nebel, 2020</a>)</span> or statistical methods <span class="citation" data-cites="oonk_supervised_2015 wang_archaeological_2023 yaworsky_advancing_2020">(<a href="#ref-oonk_supervised_2015" role="doc-biblioref">Oonk and Spijker, 2015</a>; <a href="#ref-wang_archaeological_2023" role="doc-biblioref">Wang et al., 2023</a>; <a href="#ref-yaworsky_advancing_2020" role="doc-biblioref">Yaworsky et al., 2020</a>)</span>.</p>
+<div id="fig-apm" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-env="figure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-apm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Fig.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-fig-env="figure">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-apm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Number of covariates used in the APMs papers reviewed and the type of feature selection selected (<em>n</em> = 13). Figure generated with R 4.5.0.
+</figcaption>
+</figure>
+</div>
+<p>Interpretability also differs markedly. ASD, especially when based on deep learning, is often considered a “black box” because the contribution of individual features is unclear <span class="citation" data-cites="bickler_machine_2021">(<a href="#ref-bickler_machine_2021" role="doc-biblioref">Bickler, 2021</a>)</span>. Recent progress in explainable AI (XAI) has improved transparency, for example, through saliency maps that highlight which areas of an image drive predictions <span class="citation" data-cites="barredo_arrieta_explainable_2020 xu_explainable_2019">(<a href="#ref-barredo_arrieta_explainable_2020" role="doc-biblioref">Barredo Arrieta et al., 2020</a>; <a href="#ref-xu_explainable_2019" role="doc-biblioref">Xu et al., 2019</a>)</span>. However, XAI remains relatively uncommon in ASD. In contrast, APMs naturally lend themselves to interpretation, as the influence of each covariate can be quantified and visualised <span class="citation" data-cites="li_gis_2024">(<a href="#ref-li_gis_2024" role="doc-biblioref">Li et al., 2024</a>)</span>.</p>
+<p>Finally, APMs generally follow a well-established and relatively lightweight workflow requiring limited computational resources, reflecting their long-standing use in archaeology. By contrast, ASD research is less standardised, employing a wide range of models and metrics (<a href="#fig-treemap" class="quarto-xref">Figure&nbsp;3</a>; <a href="#fig-metrics" class="quarto-xref">Figure&nbsp;5</a>; <a href="#fig-scatter" class="quarto-xref">Figure&nbsp;6</a>). This diversity is unsurprising given its recent and rapidly evolving development. Over time, ASD workflows may become more structured as the field matures. However, they remain computationally demanding, requiring substantial time and resources despite the accessibility of cloud platforms such as Google Colab.</p>
+</section>
+</section>
+<section id="conclusion" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Conclusion</h1>
+<p>This review has examined recent developments and trends in two distinct AI-based approaches in archaeology: archaeological structure detection and archaeological predictive modelling. Our survey, based on a reproducible methodology, covers studies published from the mid-2000s to 2024. As in other subfields of AI in archaeology, ASD has attracted growing interest since 2020, while APM has not yet fully embraced the AI transition, with relatively few studies adopting such methods.</p>
+<p>The dominance of artificial neural networks in ASD reflects the suitability of deep learning for image recognition. Convolutional neural networks, and particularly MR-CNNs, have proven highly effective for detecting archaeological features and are now widely used. By contrast, APMs continue to rely on more established approaches, such as Bayesian classifiers (<em>e.g.</em>, MaxEnt) and ensemble learning with random forests. Progress in explainable AI is expected to improve the interpretability of deep learning, which will particularly benefit ASD applications.</p>
+<p>Our comparison has highlighted both theoretical and methodological differences <a href="#tab-conclusion">Table 2</a>. APMs build on a long-standing research tradition and tend to employ more standardised workflows, while ASD remains less structured and more experimental. The diversity of input data also distinguishes the two approaches: APMs integrate multiple covariates (<em>e.g.</em>, DEMs, spectral data, climate variables), providing a broader picture of past landscapes, whereas ASD focuses mainly on single-band imagery (LiDAR, aerial or satellite data). ASD tasks also demand greater computational resources in terms of time and processing power.</p>
+<div id="tab-conclusion">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 36%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Element</strong></th>
+<th style="text-align: center;"><strong>Archaeological predictive model</strong></th>
+<th style="text-align: center;"><strong>Automatic structure detection</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Strong theoretical background and foundations</td>
+<td style="text-align: center;">True, with developed literature</td>
+<td style="text-align: center;">Very few Access to the input data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of input data</td>
+<td style="text-align: center;">Exhaustive, all possible landscape features</td>
+<td style="text-align: center;">Often limited to a single band due to model design</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pre-treatment</td>
+<td style="text-align: center;">Mixed, feature selection and sampling selection can occur</td>
+<td style="text-align: center;">Limited data augmentation in a few cases</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Model complexity</td>
+<td style="text-align: center;">Low, ensemble learning and Bayesian classifier models</td>
+<td style="text-align: center;">High, neural network models with millions of parameters</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Time needed</td>
+<td style="text-align: center;">Low, limited time needed for local and regional-based model</td>
+<td style="text-align: center;">High, large amount of time needed for deep learning computation model.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cost</td>
+<td style="text-align: center;">Low cost</td>
+<td style="text-align: center;">Low to high cost in case of complex image recognition needing GPU capacities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Model interpretability</td>
+<td style="text-align: center;">High, with each feature’s influence on the model</td>
+<td style="text-align: center;">Low, neural network models acting as “black boxes”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Metrics</td>
+<td style="text-align: center;">Few of the metrics available</td>
+<td style="text-align: center;">Numerous metrics available depending on the segmentation task</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Result interpretability</td>
+<td style="text-align: center;">Limited, prediction maps and binary maps can be computed when needed</td>
+<td style="text-align: center;">Easy to read results</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adaptability</td>
+<td style="text-align: center;">Limited to a type of landscape</td>
+<td style="text-align: center;">Limited to the type of structure studied</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2: Summary of various aspects of ASD and APM approaches.</p>
+</div>
+<p>From this review, several future directions can be identified :</p>
+<ol type="1">
+<li><p>The availability of larger datasets will encourage further applications in APMs. For ASD, given that imaging resolution has already reached near-critical levels, the most promising developments lie in open-access data, FAIR principles, and shared databases <span class="citation" data-cites="casillo_artificial_2025">(<a href="#ref-casillo_artificial_2025" role="doc-biblioref">Casillo et al., 2025</a>)</span>.</p></li>
+<li><p>More standardised and collaborative workflows, supported by platforms such as GitHub or Google Colab <span class="citation" data-cites="batist_open_2024">(<a href="#ref-batist_open_2024" role="doc-biblioref">Batist and Roe, 2024</a>)</span>, will enhance reproducibility and strengthen the scientific foundations of both approaches <span class="citation" data-cites="marwick_is_2025">(<a href="#ref-marwick_is_2025" role="doc-biblioref">Marwick, 2025</a>)</span>.</p></li>
+<li><p>Site detection offers a clear binary outcome, “site or not”, APMs provide probabilistic predictions, yet remain limited by the challenge of defining true absence data <span class="citation" data-cites="kamermans_deconstructing_2004 mcdonald_site-based_2015">(<a href="#ref-kamermans_deconstructing_2004" role="doc-biblioref">Kamermans et al., 2004</a>; <a href="#ref-mcdonald_site-based_2015" role="doc-biblioref">McDonald, 2015</a>)</span>.</p></li>
+<li><p>Commercial applications are also likely to diverge. ASD is increasingly applied in practice, with dedicated workflows such as the ADAF model <span class="citation" data-cites="coz_earthobservationadaf_2024 coz_advancing_2025">(<a href="#ref-coz_advancing_2025" role="doc-biblioref">Čož et al., 2025</a>, <a href="#ref-coz_earthobservationadaf_2024" role="doc-biblioref">2024</a>)</span>. By contrast, APMs have long sought but rarely secured a consistent role in cultural heritage management <span class="citation" data-cites="deeben_beyond_1997 espa_gis_2006">(<a href="#ref-deeben_beyond_1997" role="doc-biblioref">Deeben et al., 1997</a>; <a href="#ref-espa_gis_2006" role="doc-biblioref">Espa et al., 2006</a>)</span>, due to both methodological challenges and administrative constraints <span class="citation" data-cites="kamermans_predictive_1999 kamermans_smashing_2008 verhagen_case_2007">(<a href="#ref-kamermans_smashing_2008" role="doc-biblioref">Kamermans, 2008</a>; <a href="#ref-kamermans_predictive_1999" role="doc-biblioref">Kamermans and Wansleeben, 1999</a>; <a href="#ref-verhagen_case_2007" role="doc-biblioref">Verhagen, 2007</a>)</span>.</p></li>
+</ol>
+<p>Finally, both ASD and APM will inevitably need to address broader concerns surrounding the ethical use and development of artificial intelligence. As these methods mature, balancing technological innovation with responsible practice will remain a central challenge for the future of AI in archaeology.</p>
+<p><u><strong>Author contributions:</strong></u> M.B. and A.H., conceived the idea for the manuscript and initiated and designed the research. M.B., A.H. and J.D.O.F., collected data and selected the articles. M.B. and A.H., performed the statistical analysis and interpreted the results. M.B., A.H. and J.D.O.F., wrote the manuscript, with critical input from all co-authors. M.B., A.H. and J.D.O.F., reviewed the manuscript.</p>
+<p><u><strong>Acknowledgements:</strong></u> This work has received funding from the Deutsche Forshungemeischaft (DFG) Collaborative Research Center (CRC) 1070 “ResourceCultures”, grant agreement n°215859406. Conflict of interest statement: The authors declare no conflict of interest.</p>
+<p><u><strong>Data availability statement:</strong></u> The data used in this study are openly available on the Zenodo repository at <a href="https://doi.org/10.5281/zenodo.17095617">https://doi.org/10.5281/zenodo.17095617</a>.</p>
+<p><u><strong>Declaration of Generative AI and AI-assisted technologies in the writing process:</strong></u> During the preparation of this work, the authors used ChatGPT 4.5 <span class="citation" data-cites="brown_language_2020">(<a href="#ref-brown_language_2020" role="doc-biblioref">Brown et al., 2020</a>)</span> in order to generate part of the R code and improve English writing. After using this tool, the authors reviewed and edited the content as needed and took full responsibility for the content of the publication.</p>
+</section>
+<section id="annexes" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Annexes</h1>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>List of algorithms used in the papers under review organized by the approach and family of analysis, along with their abbreviations and number of use. In the case the model was compared to others, we highlighted the number of time he performed as the best model.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Approach</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Family</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Description</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Model abreviation</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Number of uses</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Number of time the model performed the best</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="37" style="text-align: left; vertical-align: top !important;">Machine learning</td>
+<td rowspan="18" style="text-align: left; vertical-align: top !important;">Artificial Neural Network</td>
+<td style="text-align: left;">U-Net</td>
+<td style="text-align: left;">U-Net</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mask Region-based Convolutional Neural Network</td>
+<td style="text-align: left;">MR-CNN</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Faster Region based Convolutional Neural Network</td>
+<td style="text-align: left;">FR-CNN</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Convolutional Neural Network</td>
+<td style="text-align: left;">CNN</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ResNet</td>
+<td style="text-align: left;">ResNet</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">You Only Look Once</td>
+<td style="text-align: left;">YOLO</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Feedforward Neural Network</td>
+<td style="text-align: left;">FNN</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RetinaNet</td>
+<td style="text-align: left;">RN</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Semantic Segmentation Model</td>
+<td style="text-align: left;">SegNet</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SimpleNet</td>
+<td style="text-align: left;">SimpleNet</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Single Shot MultiBox Detector</td>
+<td style="text-align: left;">SSD</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Visual Geometry Group</td>
+<td style="text-align: left;">VGG</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Xception U-Net</td>
+<td style="text-align: left;">Xception</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">You Only Learn One Representation</td>
+<td style="text-align: left;">YOLOR</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DeepLabv3+</td>
+<td style="text-align: left;">DL3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Region-Based CNN</td>
+<td style="text-align: left;">R-CNN</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Attention Mechanism and Frequency Ratio</td>
+<td style="text-align: left;">AMFR</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Neural Network</td>
+<td style="text-align: left;">NN</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td rowspan="2" style="text-align: left; vertical-align: top !important;">Bayesian Classifier</td>
+<td style="text-align: left;">Maximum Entropy</td>
+<td style="text-align: left;">MaxEnt</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Naïve Bayes</td>
+<td style="text-align: left;">NB</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td rowspan="3" style="text-align: left; vertical-align: top !important;">Decision Trees and Rule Induction</td>
+<td style="text-align: left;">Decision Tree/Classification Tree</td>
+<td style="text-align: left;">DT</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Classification And Regression Tree (CART)</td>
+<td style="text-align: left;">CART</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fast and Frugal Tree</td>
+<td style="text-align: left;">FFT</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td rowspan="6" style="text-align: left; vertical-align: top !important;">Ensemble Learning</td>
+<td style="text-align: left;">Random Forest</td>
+<td style="text-align: left;">RF</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adaptative Boost</td>
+<td style="text-align: left;">AdaBoost</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bootstrap Agreggating</td>
+<td style="text-align: left;">BAgg</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SMOTE Boost</td>
+<td style="text-align: left;">SMOTEBoost</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Synthetic Minority Oversampling Technique + Edited Nearest Neighbour Rule</td>
+<td style="text-align: left;">SMOTEENN</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Viola-Jones Cascade Classifier</td>
+<td style="text-align: left;">VL-CC</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Linear Classifier</td>
+<td style="text-align: left;">Support Vector Machine</td>
+<td style="text-align: left;">SVM</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td rowspan="2" style="text-align: left; vertical-align: top !important;">Nearest Neighbour Classifier</td>
+<td style="text-align: left;">k-nearest neighbors</td>
+<td style="text-align: left;">kNN</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Weighted k-nearest neighbors</td>
+<td style="text-align: left;">kkNN</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Polynomial Classifier</td>
+<td style="text-align: left;">Support Vector Machine with Radial Basis Function Kernel</td>
+<td style="text-align: left;">SVMr</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td rowspan="3" style="text-align: left; vertical-align: top !important;">Unsupervised Learning and Clustering</td>
+<td style="text-align: left;">Iterative Self-Organizing Data Analysis</td>
+<td style="text-align: left;">ISODATA</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nearest Centroid</td>
+<td style="text-align: left;">NC</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Self-Organizing Map</td>
+<td style="text-align: left;">SOM</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">TOTAL</td>
+<td style="text-align: left;">36</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="even">
+<td rowspan="2" style="text-align: left; vertical-align: top !important;">Statistics</td>
+<td style="text-align: left;">Dimensionality reduction</td>
+<td style="text-align: left;">k-Mean Clustering</td>
+<td style="text-align: left;">k-MC</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Linear regression</td>
+<td style="text-align: left;">Linear Regression</td>
+<td style="text-align: left;">LR</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="references" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> References</h1>
+<!-- The following line ensures the references appear here for the MS Word or HTML output files, rather than right at the end of the document (this will not work for PDF files):  -->
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-agapiou_detection_2021" class="csl-entry" role="listitem">
+Agapiou, A., Vionis, A., Papantoniou, G., 2021. Detection of <span>Archaeological</span> <span>Surface</span> <span>Ceramics</span> <span>Using</span> <span>Deep</span> <span>Learning</span> <span>Image</span>-<span>Based</span> <span>Methods</span> and <span>Very</span> <span>High</span>-<span>Resolution</span> <span>UAV</span> <span>Imageries</span>. LAND 10. <a href="https://doi.org/10.3390/land10121365">https://doi.org/10.3390/land10121365</a>
+</div>
+<div id="ref-allen_interpreting_1990" class="csl-entry" role="listitem">
+Allen, K.M.S., Green, S.W., Zubrow, E.B.W. (Eds.), 1990. Interpreting space: <span>GIS</span> and archaeology, Applications of geographic information systems. Taylor &amp; Francis, London ; New York.
+</div>
+<div id="ref-alpaydin_introduction_2014" class="csl-entry" role="listitem">
+Alpaydin, E., 2014. Introduction to machine learning, Third edition. ed, Adaptive computation and machine learning. The MIT Press, Cambridge, Massachusetts.
+</div>
+<div id="ref-altaweel_automated_2022" class="csl-entry" role="listitem">
+Altaweel, M., Khelifi, A., Li, Z., Squitieri, A., Basmaji, T., Ghazal, M., 2022. Automated <span>Archaeological</span> <span>Feature</span> <span>Detection</span> <span>Using</span> <span>Deep</span> <span>Learning</span> on <span>Optical</span> <span>UAV</span> <span>Imagery</span>: <span>Preliminary</span> <span>Results</span>. Remote Sensing 14. <a href="https://doi.org/10.3390/rs14030553">https://doi.org/10.3390/rs14030553</a>
+</div>
+<div id="ref-altschul_models_1984" class="csl-entry" role="listitem">
+Altschul, J.H., 1984. Models of <span>Prehistoric</span> <span>Site</span> <span>Location</span> near <span>Pinyon</span> <span>Canyon</span>, <span>Colorado</span>, in: Condie, C.J. (Ed.), Papers of the <span>Philmont</span> <span>Conference</span> <span>On</span> the <span>Archeology</span> of <span>Northeastern</span> <span>New</span> <span>Mexico</span>. Albuquerque.
+</div>
+<div id="ref-anttiroiko_detecting_2023" class="csl-entry" role="listitem">
+Anttiroiko, N., Groesz, F., Ikäheimo, J., Kelloniemi, A., Nurmi, R., Rostad, S., Seitsonen, O., 2023. Detecting the <span>Archaeological</span> <span>Traces</span> of <span>Tar</span> <span>Production</span> <span>Kilns</span> in the <span>Northern</span> <span>Boreal</span> <span>Forests</span> <span>Based</span> on <span>Airborne</span> <span>Laser</span> <span>Scanning</span> and <span>Deep</span> <span>Learning</span>. REMOTE SENSING 15. <a href="https://doi.org/10.3390/rs15071799">https://doi.org/10.3390/rs15071799</a>
+</div>
+<div id="ref-argyrou_review_2022" class="csl-entry" role="listitem">
+Argyrou, A., Agapiou, A., 2022. A <span>Review</span> of <span>Artificial</span> <span>Intelligence</span> and <span>Remote</span> <span>Sensing</span> for <span>Archaeological</span> <span>Research</span>. Remote Sensing 14. <a href="https://doi.org/10.3390/rs14236000">https://doi.org/10.3390/rs14236000</a>
+</div>
+<div id="ref-barredo_arrieta_explainable_2020" class="csl-entry" role="listitem">
+Barredo Arrieta, A., Díaz-Rodríguez, N., Del Ser, J., Bennetot, A., Tabik, S., Barbado, A., Garcia, S., Gil-Lopez, S., Molina, D., Benjamins, R., Chatila, R., Herrera, F., 2020. Explainable <span>Artificial</span> <span>Intelligence</span> (<span>XAI</span>): <span>Concepts</span>, taxonomies, opportunities and challenges toward responsible <span>AI</span>. Information Fusion 58, 82–115. <a href="https://doi.org/10.1016/j.inffus.2019.12.012">https://doi.org/10.1016/j.inffus.2019.12.012</a>
+</div>
+<div id="ref-batist_open_2024" class="csl-entry" role="listitem">
+Batist, Z., Roe, J., 2024. Open <span>Archaeology</span>, <span>Open</span> <span>Source</span>? <span>Collaborative</span> practices in an emerging community of archaeological software engineers. Internet Archaeology 67. <a href="https://doi.org/10.11141/ia.67.13">https://doi.org/10.11141/ia.67.13</a>
+</div>
+<div id="ref-bellat_machine_2025" class="csl-entry" role="listitem">
+Bellat, M., Figueroa, J.D.O., Reeves, J.S., Taghizadeh-Mehrjardi, R., Tennie, C., Scholten, T., 2025. Machine learning applications in archaeological practices: A review. <a href="https://doi.org/10.48550/ARXIV.2501.03840">https://doi.org/10.48550/ARXIV.2501.03840</a>
+</div>
+<div id="ref-bellat_supplementary_2024" class="csl-entry" role="listitem">
+Bellat, M., Tennie, C., Reeves, Jonathan.S., Figueroa, J.D.O., Scholten, T., Taghizadeh-Mehrjardi, R., 2024. Supplementary <span>Information</span> for <span>Machine</span> <span>Learning</span> <span>Applications</span> in <span>Archaeological</span> <span>Practices</span>: <span>A</span> <span>Review</span>. <a href="https://doi.org/10.17605/OSF.IO/RUPGY">https://doi.org/10.17605/OSF.IO/RUPGY</a>
+</div>
+<div id="ref-benner_combining_2019" class="csl-entry" role="listitem">
+Benner, J., Knudby, A., Nielsen, J., Krawchuk, M., Lertzman, K., 2019. Combining data from field surveys and archaeological records to predict the distribution of culturally important trees. Diversity and Distributions 25, 1375–1387. <a href="https://doi.org/10.1111/ddi.12947">https://doi.org/10.1111/ddi.12947</a>
+</div>
+<div id="ref-bennett_guidelines_2025" class="csl-entry" role="listitem">
+Bennett, R., Cowley, D., Gaffney, C., Opitz, R., Rášová, A.B., Zerboni, A., Corns, A., Russell, A., Villarejo, A.J.O., Mann, B., Collaro, C., Novák, D., Mlekuž Vrhovnik, D., Rensink, E., fovet, elise, Fontana, G., Kramer, I., Herzog, I., Streatfeild-James, J., Eogan, J., Zachar, J., Kort, J.W. de, Waagen, J., Lambers, K., Challis, K., Teale, K., Killoran, L., Banaszek, Ł., Meyer-Heß, M.F., Rybska, M., Kostamovaara, M., Oakey, M., Doneus, M., Kecheva, N., Crabb, N., Anttiroiko, N., Trier, Ø.D., Risbøl, O., Crow, P., O’Keeffe, P., Evans, S., Popović, S., Crutchley, S., Davis, S., Zoldoske, T., Driver, T., Fildes, T., Verschoof-van der Vaart, W.B., Kokalj, Ž., 2025. Guidelines for the use of <span>Airborne</span> <span>Laser</span> <span>Scanning</span> (<span>Lidar</span>) in <span>Archaeology</span> (<span>EAC</span> <span>Guidelines</span> 10). European Archaeological Council. <a href="https://doi.org/10.5281/ZENODO.14609210">https://doi.org/10.5281/ZENODO.14609210</a>
+</div>
+<div id="ref-ben-romdhane_detecting_2023" class="csl-entry" role="listitem">
+Ben-Romdhane, H., Francis, D., Cherif, C., Pavlopoulos, K., Ghedira, H., Griffiths, S., 2023. Detecting and <span>Predicting</span> <span>Archaeological</span> <span>Sites</span> <span>Using</span> <span>Remote</span> <span>Sensing</span> and <span>Machine</span> <span>Learning</span>-<span>Application</span> to the <span>Saruq</span> <span>Al</span>-<span>Hadid</span> <span>Site</span>, <span>Dubai</span>, <span>UAE</span>. GEOSCIENCES 13. <a href="https://doi.org/10.3390/geosciences13060179">https://doi.org/10.3390/geosciences13060179</a>
+</div>
+<div id="ref-berganzo-besga_hybrid_2021" class="csl-entry" role="listitem">
+Berganzo-Besga, I., Orengo, H.A., Lumbreras, F., Carrero-Pazos, M., Fonte, J., Vilas-Estevez, B., 2021. Hybrid <span>MSRM</span>-<span>Based</span> <span>Deep</span> <span>Learning</span> and <span>Multitemporal</span> <span>Sentinel</span> 2-<span>Based</span> <span>Machine</span> <span>Learning</span> <span>Algorithm</span> <span>Detects</span> <span>Near</span> 10k <span>Archaeological</span> <span>Tumuli</span> in <span>North</span>-<span>Western</span> <span>Iberia</span>. Remote Sensing 13, 4181. <a href="https://doi.org/10.3390/rs13204181">https://doi.org/10.3390/rs13204181</a>
+</div>
+<div id="ref-bevan_data_2015" class="csl-entry" role="listitem">
+Bevan, A., 2015. The data deluge. Antiquity 89, 1473–1484. <a href="https://doi.org/10.15184/aqy.2015.102">https://doi.org/10.15184/aqy.2015.102</a>
+</div>
+<div id="ref-bickler_machine_2021" class="csl-entry" role="listitem">
+Bickler, S.H., 2021. Machine <span>Learning</span> <span>Arrives</span> in <span>Archaeology</span>. Advances in Archaeological Practice 9, 186–191. <a href="https://doi.org/10.1017/aap.2021.6">https://doi.org/10.1017/aap.2021.6</a>
+</div>
+<div id="ref-bonhage_modified_2021" class="csl-entry" role="listitem">
+Bonhage, A., Eltaher, M., Raab, T., Breuss, M., Raab, A., Schneider, A., 2021. A modified <span>Mask</span> region-based convolutional neural network approach for the automated detection of archaeological sites on high-resolution light detection and ranging-derived digital elevation models in the <span>North</span> <span>German</span> <span>Lowland</span>. ARCHAEOLOGICAL PROSPECTION 28, 177–186. <a href="https://doi.org/10.1002/arp.1806">https://doi.org/10.1002/arp.1806</a>
+</div>
+<div id="ref-bonnichsen_millies_1973" class="csl-entry" role="listitem">
+Bonnichsen, R., 1973. <a href="https://www.tandfonline.com/doi/abs/10.1080/00438243.1973.9979539">Millie’s <span>Camp</span>: <span>An</span> experiment in archaeology</a>. World Archaeology.
+</div>
+<div id="ref-brandsen_information_2023" class="csl-entry" role="listitem">
+Brandsen, A., 2023. Information <span>Extraction</span> and <span>Machine</span> <span>Learning</span> for <span>Archaeological</span> <span>Texts</span>, in: Gonzalez-Perez, C., Martin-Rodilla, P., Pereira-Fariña, M. (Eds.), Discourse and <span>Argumentation</span> in <span>Archaeology</span>: <span>Conceptual</span> and <span>Computational</span> <span>Approaches</span>, Quantitative <span>Archaeology</span> and <span>Archaeological</span> <span>Modelling</span>. Springer International Publishing, Cham, pp. 229–261. <a href="https://doi.org/10.1007/978-3-031-37156-1_11">https://doi.org/10.1007/978-3-031-37156-1_11</a>
+</div>
+<div id="ref-breiman_random_2001" class="csl-entry" role="listitem">
+Breiman, L., 2001. Random forests. Machine Learning 45, 5–32. <a href="https://doi.org/10.1023/A:1010933404324">https://doi.org/10.1023/A:1010933404324</a>
+</div>
+<div id="ref-brown_language_2020" class="csl-entry" role="listitem">
+Brown, T.B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D.M., Wu, J., Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M., Gray, S., Chess, B., Clark, J., Berner, C., McCandlish, S., Radford, A., Sutskever, I., Amodei, D., 2020. Language <span>Models</span> are <span>Few</span>-<span>Shot</span> <span>Learners</span>. <a href="https://doi.org/10.48550/arXiv.2005.14165">https://doi.org/10.48550/arXiv.2005.14165</a>
+</div>
+<div id="ref-bulawka_deep_2024" class="csl-entry" role="listitem">
+Bulawka, N., Orengo, H., Berganzo-Besga, I., 2024. Deep learning-based detection of qanat underground water distribution systems using <span>HEXAGON</span> spy satellite imagery. JOURNAL OF ARCHAEOLOGICAL SCIENCE 171. <a href="https://doi.org/10.1016/j.jas.2024.106053">https://doi.org/10.1016/j.jas.2024.106053</a>
+</div>
+<div id="ref-bundzel_semantic_2020" class="csl-entry" role="listitem">
+Bundzel, M., Jascur, M., Kovac, M., Lieskovsky, T., Sincak, P., Tkacik, T., 2020. Semantic <span>Segmentation</span> of <span>Airborne</span> <span>LiDAR</span> <span>Data</span> in <span>Maya</span> <span>Archaeology</span>. Remote Sensing 12, 3685. <a href="https://doi.org/10.3390/rs12223685">https://doi.org/10.3390/rs12223685</a>
+</div>
+<div id="ref-bzdok_statistics_2018" class="csl-entry" role="listitem">
+Bzdok, D., Altman, N., Krzywinski, M., 2018. Statistics versus machine learning. Nature Methods 15, 233–234. <a href="https://doi.org/10.1038/nmeth.4642">https://doi.org/10.1038/nmeth.4642</a>
+</div>
+<div id="ref-canning_belief_2005" class="csl-entry" role="listitem">
+Canning, S., 2005. <span>“<span>Belief</span>”</span> in the past: <span>Dempster</span>-<span>Shafer</span> theory, <span>GIS</span> and archaeological predictive modelling. Australian Archaeology 60, 6–15. <a href="https://doi.org/10.1080/03122417.2005.11681799">https://doi.org/10.1080/03122417.2005.11681799</a>
+</div>
+<div id="ref-carrer_ethnoarchaeological_2013" class="csl-entry" role="listitem">
+Carrer, F., 2013. An ethnoarchaeological inductive model for predicting archaeological site location: <span>A</span> case-study of pastoral settlement patterns in the <span>Val</span> di <span>Fiemme</span> and <span>Val</span> di <span>Sole</span> (<span>Trentino</span>, <span>Italian</span> <span>Alps</span>). Journal of Anthropological Archaeology 32, 54–62. <a href="https://doi.org/10.1016/j.jaa.2012.10.001">https://doi.org/10.1016/j.jaa.2012.10.001</a>
+</div>
+<div id="ref-casana_regional-scale_2014" class="csl-entry" role="listitem">
+Casana, J., 2014. Regional-<span>Scale</span> <span>Archaeological</span> <span>Remote</span> <span>Sensing</span> in the <span>Age</span> of <span>Big</span> <span>Data</span>: <span>Automated</span> <span>Site</span> <span>Discovery</span> vs. <span>Brute</span> <span>Force</span> <span>Methods</span>. Advances in Archaeological Practice 2, 222–233. <a href="https://doi.org/10.7183/2326-3768.2.3.222">https://doi.org/10.7183/2326-3768.2.3.222</a>
+</div>
+<div id="ref-casillo_artificial_2025" class="csl-entry" role="listitem">
+Casillo, M., Colace, F., Gaeta, R., Lorusso, A., Pellegrino, M., 2025. Artificial <span>Intelligence</span> in <span>Archaeological</span> <span>Site</span> <span>Conservation</span>: <span>Trends</span>, <span>Challenges</span>, and <span>Future</span> <span>Directions</span>. Journal of Computer Applications in Archaeology 8. <a href="https://doi.org/10.5334/jcaa.207">https://doi.org/10.5334/jcaa.207</a>
+</div>
+<div id="ref-caspari_convolutional_2019" class="csl-entry" role="listitem">
+Caspari, G., Crespo, P., 2019. Convolutional neural networks for archaeological site detection – <span>Finding</span> <span>“princely”</span> tombs. Journal of Archaeological Science 110, 104998. <a href="https://doi.org/10.1016/j.jas.2019.104998">https://doi.org/10.1016/j.jas.2019.104998</a>
+</div>
+<div id="ref-castiello_explorative_2021" class="csl-entry" role="listitem">
+Castiello, M.E., Tonini, M., 2021. An <span>Explorative</span> <span>Application</span> of <span>Random</span> <span>Forest</span> <span>Algorithm</span> for <span>Archaeological</span> <span>Predictive</span> <span>Modeling</span>. <span>A</span> <span>Swiss</span> <span>Case</span> <span>Study</span>. Journal of Computer Applications in Archaeology 4, 110–125. <a href="https://doi.org/10.5334/jcaa.71">https://doi.org/10.5334/jcaa.71</a>
+</div>
+<div id="ref-chang_settlement_1968" class="csl-entry" role="listitem">
+Chang, K., 1968. Settlement archaeology. National Press Books, Palo Alto, Calif.
+</div>
+<div id="ref-ellis_settlement_1999" class="csl-entry" role="listitem">
+Chapman, J., 1999. Settlement archaeology, theory. Archaeological Method and Theory An Encyclopedia. <a href="https://doi.org/10.4324/9780203801567">https://doi.org/10.4324/9780203801567</a>
+</div>
+<div id="ref-coz_advancing_2025" class="csl-entry" role="listitem">
+Čož, N., Kokalj, Ž., Curran, S., Corns, A., Kocev, D., Kostovska, A., Davis, S., O’Keeffe, J., 2025. Advancing <span>Landscape</span> <span>Archaeology</span> with <span>AI</span>-driven insights from <span>Airborne</span> <span>Laser</span> <span>Scanning</span> data. <a href="https://doi.org/10.5194/egusphere-egu25-9968">https://doi.org/10.5194/egusphere-egu25-9968</a>
+</div>
+<div id="ref-coz_earthobservationadaf_2024" class="csl-entry" role="listitem">
+Čož, N., Kokalj, Ž., Kostovska, A., 2024. <a href="https://github.com/EarthObservation/adaf"><span>EarthObservation</span>/adaf</a>.
+</div>
+<div id="ref-cracknell_development_2018" class="csl-entry" role="listitem">
+Cracknell, A.P., 2018. The development of remote sensing in the last 40 years. International Journal of Remote Sensing 39, 8387–8427. <a href="https://doi.org/10.1080/01431161.2018.1550919">https://doi.org/10.1080/01431161.2018.1550919</a>
+</div>
+<div id="ref-croce_ethnoarchaeological_2025" class="csl-entry" role="listitem">
+Croce, E., Carrer, F., Angelucci, D.E., 2025. Ethnoarchaeological <span>Inductive</span> <span>Predictive</span> <span>Model</span>: <span>A</span> <span>Field</span> <span>Test</span> in the <span>Italian</span> <span>Alps</span>. Journal of Archaeological Method and Theory 32, 43. <a href="https://doi.org/10.1007/s10816-025-09712-w">https://doi.org/10.1007/s10816-025-09712-w</a>
+</div>
+<div id="ref-davis_theoretical_2021" class="csl-entry" role="listitem">
+Davis, D., 2021. Theoretical <span>Repositioning</span> of <span>Automated</span> <span>Remote</span> <span>Sensing</span> <span>Archaeology</span>: <span>Shifting</span> from <span>Features</span> to <span>Ephemeral</span> <span>Landscapes</span>. Journal of Computer Applications in Archaeology 4, 94. <a href="https://doi.org/10.5334/jcaa.72">https://doi.org/10.5334/jcaa.72</a>
+</div>
+<div id="ref-davis_defining_2020" class="csl-entry" role="listitem">
+Davis, D., 2020. Defining what we study: <span>The</span> contribution of machine automation in archaeological research. Digital Applications in Archaeology and Cultural Heritage 18, e00152. <a href="https://doi.org/10.1016/j.daach.2020.e00152">https://doi.org/10.1016/j.daach.2020.e00152</a>
+</div>
+<div id="ref-davis_object-based_2019" class="csl-entry" role="listitem">
+Davis, D., 2019. Object-based image analysis: A review of developments and future directions of automated feature detection in landscape archaeology. Archaeological Prospection 26, 155–163. <a href="https://doi.org/10.1002/arp.1730">https://doi.org/10.1002/arp.1730</a>
+</div>
+<div id="ref-davis_aerial_2020" class="csl-entry" role="listitem">
+Davis, D., Douglass, K., 2020. Aerial and <span>Spaceborne</span> <span>Remote</span> <span>Sensing</span> in <span>African</span> <span>Archaeology</span>: <span>A</span> <span>Review</span> of <span>Current</span> <span>Research</span> and <span>Potential</span> <span>Future</span> <span>Avenues</span>. African Archaeological Review 37, 9–24. <a href="https://doi.org/10.1007/s10437-020-09373-y">https://doi.org/10.1007/s10437-020-09373-y</a>
+</div>
+<div id="ref-deeben_beyond_1997" class="csl-entry" role="listitem">
+Deeben, J., Hallewas, D., Kolen, J., Wiemer, R., 1997. Beyond the crystal ball : <span>Predictive</span> modelling as a tool in archaeological heritage management and occupation history., in: Willems, W.J.H., Kars, H., Hallewas, D. (Eds.), Archaeological Heritage Management in the <span>Netherlands</span> : <span>Fifty</span> Years <span>State</span> <span>Service</span> for <span>Archaeological</span> <span>Investigations</span>. Van Gorcum, Assen :, pp. 76–118.
+</div>
+<div id="ref-dekkers_setting_2022" class="csl-entry" role="listitem">
+Dekkers, R., Carey, L., Langhorne, P., 2022. Setting <span>Inclusion</span> and <span>Exclusion</span> <span>Criteria</span>, in: Dekkers, R., Carey, L., Langhorne, P. (Eds.), Making <span>Literature</span> <span>Reviews</span> <span>Work</span>: <span>A</span> <span>Multidisciplinary</span> <span>Guide</span> to <span>Systematic</span> <span>Approaches</span>. Springer International Publishing, Cham, pp. 201–233. <a href="https://doi.org/10.1007/978-3-030-90025-0_6">https://doi.org/10.1007/978-3-030-90025-0_6</a>
+</div>
+<div id="ref-djindjian_short_2015" class="csl-entry" role="listitem">
+Djindjian, F., 2015. A <span>Short</span> <span>History</span> of the <span>Beginnings</span> of <span>Mathematics</span> in <span>Archaeology</span>, in: Barceló, J.A., Bogdanovic, I. (Eds.), Mathematics and <span>Archaeology</span>. CRC Press, Boco Raton, FL, pp. 65–85.
+</div>
+<div id="ref-ebert_state_2000" class="csl-entry" role="listitem">
+Ebert, D., 2000. The <span>State</span> of the <span>Art</span> in "<span>Inductive</span>" <span>Predictive</span> <span>Modeling</span>: <span>Seven</span> <span>Big</span> <span>Mistakes</span> (and <span>Lots</span> of <span>Smaller</span> <span>Ones</span>), in: Practical <span>Applications</span> of <span>GIS</span> for <span>Archaeologists</span>. CRC Press, pp. 129–134.
+</div>
+<div id="ref-eleftheriadou_machine_2025" class="csl-entry" role="listitem">
+Eleftheriadou, A., McPherron, S.P., Marreiros, J., 2025. Machine <span>Learning</span> <span>Applications</span> in <span>Use</span>-<span>Wear</span> <span>Analysis</span>: <span>A</span> <span>Critical</span> <span>Review</span>. Journal of Computer Applications in Archaeology 8. <a href="https://doi.org/10.5334/jcaa.190">https://doi.org/10.5334/jcaa.190</a>
+</div>
+<div id="ref-espa_gis_2006" class="csl-entry" role="listitem">
+Espa, G., Benedetti, R., De Meo, A., Ricci, U., Espa, S., 2006. <span>GIS</span> based models and estimation methods for the probability of archaeological site location. Journal of Cultural Heritage 7, 147–155. <a href="https://doi.org/10.1016/j.culher.2006.06.001">https://doi.org/10.1016/j.culher.2006.06.001</a>
+</div>
+<div id="ref-farr_shuttle_2007" class="csl-entry" role="listitem">
+Farr, T.G., Rosen, P.A., Caro, E., Crippen, R., Duren, R., Hensley, S., Kobrick, M., Paller, M., Rodriguez, E., Roth, L., Seal, D., Shaffer, S., Shimada, J., Umland, J., Werner, M., Oskin, M., Burbank, D., Alsdorf, D., 2007. The <span>Shuttle</span> <span>Radar</span> <span>Topography</span> <span>Mission</span>. Reviews of Geophysics 45, 2005RG000183. <a href="https://doi.org/10.1029/2005RG000183">https://doi.org/10.1029/2005RG000183</a>
+</div>
+<div id="ref-friggens_predicting_2021" class="csl-entry" role="listitem">
+Friggens, M.M., Loehman, R.A., Constan, C.I., Kneifel, R.R., 2021. Predicting wildfire impacts on the prehistoric archaeological record of the <span>Jemez</span> <span>Mountains</span>, <span>New</span> <span>Mexico</span>, <span>USA</span>. Fire Ecology 17, 18. <a href="https://doi.org/10.1186/s42408-021-00103-6">https://doi.org/10.1186/s42408-021-00103-6</a>
+</div>
+<div id="ref-fuentes-carbajal_machine_2023" class="csl-entry" role="listitem">
+Fuentes-Carbajal, J., Carrasco-Ochoa, J., Martínez-Trinidad, J., Flores-López, J., 2023. Machine <span>Learning</span> and <span>Image</span>-<span>Processing</span>-<span>Based</span> <span>Method</span> for the <span>Detection</span> of <span>Archaeological</span> <span>Structures</span> in <span>Areas</span> with <span>Large</span> <span>Amounts</span> of <span>Vegetation</span> <span>Using</span> <span>Satellite</span> <span>Images</span>. APPLIED SCIENCES-BASEL 13. <a href="https://doi.org/10.3390/app13116663">https://doi.org/10.3390/app13116663</a>
+</div>
+<div id="ref-gallwey_bringing_2019" class="csl-entry" role="listitem">
+Gallwey, J., Eyre, M., Tonkins, M., Coggan, J., 2019. Bringing <span>Lunar</span> <span>LiDAR</span> <span>Back</span> <span>Down</span> to <span>Earth</span>: <span>Mapping</span> <span>Our</span> <span>Industrial</span> <span>Heritage</span> through <span>Deep</span> <span>Transfer</span> <span>Learning</span>. Remote Sensing 11. <a href="https://doi.org/10.3390/rs11171994">https://doi.org/10.3390/rs11171994</a>
+</div>
+<div id="ref-garcia-molsosa_potential_2021" class="csl-entry" role="listitem">
+Garcia-Molsosa, A., Orengo, H., Lawrence, D., Philip, G., Hopper, K., Petrie, C., 2021. Potential of deep learning segmentation for the extraction of archaeological features from historical map series. Archaeological Prospection 28, 187–199. <a href="https://doi.org/10.1002/arp.1807">https://doi.org/10.1002/arp.1807</a>
+</div>
+<div id="ref-gillies_human-centred_2016" class="csl-entry" role="listitem">
+Gillies, M., Fiebrink, R., Tanaka, A., Garcia, J., Bevilacqua, F., Heloir, A., Nunnari, F., Mackay, W., Amershi, S., Lee, B., d’Alessandro, N., Tilmanne, J., Kulesza, T., Caramiaux, B., 2016. Human-<span>Centred</span> <span>Machine</span> <span>Learning</span>, in: Proceedings of the 2016 <span>CHI</span> <span>Conference</span> <span>Extended</span> <span>Abstracts</span> on <span>Human</span> <span>Factors</span> in <span>Computing</span> <span>Systems</span>. ACM, San Jose California USA, pp. 3558–3565. <a href="https://doi.org/10.1145/2851581.2856492">https://doi.org/10.1145/2851581.2856492</a>
+</div>
+<div id="ref-guyot_combined_2021" class="csl-entry" role="listitem">
+Guyot, A., Lennon, M., Lorho, T., Hubert-Moy, L., 2021. Combined <span>Detection</span> and <span>Segmentation</span> of <span>Archeological</span> <span>Structures</span> from <span>LiDAR</span> <span>Data</span> <span>Using</span> a <span>Deep</span> <span>Learning</span> <span>Approach</span>. Journal of Computer Applications in Archaeology 4, 1. <a href="https://doi.org/10.5334/jcaa.64">https://doi.org/10.5334/jcaa.64</a>
+</div>
+<div id="ref-haby_what_2016" class="csl-entry" role="listitem">
+Haby, M.M., Chapman, E., Clark, R., Barreto, J., Reveiz, L., Lavis, J.N., 2016. What are the best methodologies for rapid reviews of the research evidence for evidence-informed decision making in health policy and practice: A rapid review. Health Research Policy and Systems 14, 83. <a href="https://doi.org/10.1186/s12961-016-0155-7">https://doi.org/10.1186/s12961-016-0155-7</a>
+</div>
+<div id="ref-haddaway_prisma2020_2022" class="csl-entry" role="listitem">
+Haddaway, N.R., Page, M.J., Pritchard, C.C., McGuinness, L.A., 2022. <em>PRISMA2020</em>: <span>An</span> <span>R</span> package and <span>Shiny</span> app for producing <span>PRISMA</span> 2020‐compliant flow diagrams, with interactivity for optimised digital transparency and <span>Open</span> <span>Synthesis</span>. Campbell Systematic Reviews 18. <a href="https://doi.org/10.1002/cl2.1230">https://doi.org/10.1002/cl2.1230</a>
+</div>
+<div id="ref-hansen_prioritizing_2020" class="csl-entry" role="listitem">
+Hansen, J., Nebel, M., 2020. Prioritizing <span>Archaeological</span> <span>Inventory</span> and <span>Protection</span> with <span>Predictive</span> <span>Probability</span> <span>Models</span> at <span>Glen</span> <span>Canyon</span> <span>National</span> <span>Recreation</span> <span>Area</span>, <span>USA</span>. Kiva-Journal of Southwestern Anthropology and History 86, 1–23. <a href="https://doi.org/10.1080/00231940.2019.1684003">https://doi.org/10.1080/00231940.2019.1684003</a>
+</div>
+<div id="ref-hodder_spatial_1976" class="csl-entry" role="listitem">
+Hodder, I., Orton, C., 1976. Spatial analysis in archaeology, New studies in archaeology. Cambridge university press, Cambridge London New York.
+</div>
+<div id="ref-ikaheimo_detecting_2023" class="csl-entry" role="listitem">
+Ikäheimo, J., 2023. Detecting pitfall systems in the <span>Suomenselka</span> watershed, <span>Finland</span>, with airborne laser scanning and artificial intelligence. Journal of Archaeological Science-Reports 51. <a href="https://doi.org/10.1016/j.jasrep.2023.104216">https://doi.org/10.1016/j.jasrep.2023.104216</a>
+</div>
+<div id="ref-imen_utilizing_2024" class="csl-entry" role="listitem">
+Imen, G., Halima, G., Ayoub, K., Djamel, A., 2024. Utilizing the <span>MaxEnt</span> machine learning model to forecast urban heritage sites in the desert regions of southwestern <span>Algeria</span>: <span>A</span> case study in the <span>Saoura</span> region. Archaeological Prospection 31, 23–35. <a href="https://doi.org/10.1002/arp.1923">https://doi.org/10.1002/arp.1923</a>
+</div>
+<div id="ref-jesson_doing_2012" class="csl-entry" role="listitem">
+Jesson, J.K., Matheson, L., Lacey, F.M., 2012. Doing your literature review: Traditional and systematic techniques, Repr. ed. Sage, Los Angeles, Calif.
+</div>
+<div id="ref-judge_quantifying_1988" class="csl-entry" role="listitem">
+Judge, J., Lynne, S., 1988b. <a href="https://www.worldcat.org/title/19925858">Quantifying the present and predicting the past : Theory, method, and application of archaeological predictive modeling</a>, U.S. Department of the Interior, Bureau of Land Management Service Center. ed. U.S. Department of the Interior, Bureau of Land Management Service Center., Denver.
+</div>
+<div id="ref-judge_predicting_1988" class="csl-entry" role="listitem">
+Judge, J., Lynne, S., 1988a. <a href="https://www.worldcat.org/title/19925858">Predicting the past: Correlation, explanation, <span>And</span> the use of archaeological models</a>, in: Judge, J., Lynne, S. (Eds.), Quantifying the Present and Predicting the Past : Theory, Method, and Application of Archaeological Predictive Modeling. U.S. Department of the Interior, Bureau of Land Management Service Center., Denver, pp. 1–18.
+</div>
+<div id="ref-kamermans_smashing_2008" class="csl-entry" role="listitem">
+Kamermans, H., 2008. Smashing the <span>Crystal</span> <span>Ball</span>. A <span>Critical</span> <span>Evaluation</span> of the <span>Dutch</span> <span>National</span> <span>Archaeological</span> <span>Predictive</span> <span>Model</span> (ikaw). International Journal of Humanities and Arts Computing 1, 71–84. <a href="https://doi.org/10.3366/E1753854808000116">https://doi.org/10.3366/E1753854808000116</a>
+</div>
+<div id="ref-kamermans_deconstructing_2004" class="csl-entry" role="listitem">
+Kamermans, H., Deeban, J., Hallewas, D., Leusen, M. van, Verhagen, P., Zoetbrood, P., 2004. Deconstructing the crystal ball: <span>CAA</span> 2003 : <span>Computer</span> <span>Applications</span> and <span>Quantitative</span> <span>Methods</span> in <span>Archaeology</span> : Proceedings of the 31st conference, in: The <span>E</span>-Way into the Four Dimensions of Cultural Heritage, <span>BAR</span> <span>International</span> <span>Series</span>. Vienna, Austria.
+</div>
+<div id="ref-kamermans_predictive_1999" class="csl-entry" role="listitem">
+Kamermans, H., Wansleeben, M., 1999. <a href="https://hdl.handle.net/1887/19783">Predictive modelling in <span>Dutch</span> archaeology, joining forces</a>, in: Barceló, J.A., Briz, I., Vila, A. (Eds.), New Techniques for Old Times—<span>CAA98</span>. BAR, pp. 225–230.
+</div>
+<div id="ref-karamitrou_identification_2023" class="csl-entry" role="listitem">
+Karamitrou, A., Sturt, F., Bogiatzis, P., 2023. Identification of <span>Black</span> <span>Reef</span> <span>Shipwreck</span> <span>Sites</span> <span>Using</span> <span>AI</span> and <span>Satellite</span> <span>Multispectral</span> <span>Imagery</span>. Remote Sensing 15. <a href="https://doi.org/10.3390/rs15082030">https://doi.org/10.3390/rs15082030</a>
+</div>
+<div id="ref-keck_what_2013" class="csl-entry" role="listitem">
+Keck, M., Sakdapolrak, P., 2013. What is social resilience? <span>Lessons</span> learned and ways forward. Erdkunde 67, 5–19. <a href="https://doi.org/10.3112/erdkunde.2013.01.02">https://doi.org/10.3112/erdkunde.2013.01.02</a>
+</div>
+<div id="ref-kelly_archaeology_2017" class="csl-entry" role="listitem">
+Kelly, R.L., Thomas, D.H., 2017. Archaeology, Seventh edition. ed. Cengage Learning, Boston, MA.
+</div>
+<div id="ref-kohler_predictive_1988" class="csl-entry" role="listitem">
+Kohler, T.A., 1988. <a href="https://www.worldcat.org/title/19925858">Predictive locational modeling: <span>History</span> and current practice</a>, in: Judge, J., Lynne, S. (Eds.), Quantifying the Present and Predicting the Past : Theory, Method, and Application of Archaeological Predictive Modeling. U.S. Department of the Interior, Bureau of Land Management Service Center., Denver, pp. 19–59.
+</div>
+<div id="ref-kohler_predictive_1986" class="csl-entry" role="listitem">
+Kohler, T.A., Parker, S.C., 1986. <a href="https://www.jstor.org/stable/20210081">Predictive <span>Models</span> for <span>Archaeological</span> <span>Resource</span> <span>Location</span></a>. Advances in Archaeological Method and Theory 9, 397–452.
+</div>
+<div id="ref-kroll_interpretation_1991" class="csl-entry" role="listitem">
+Kroll, E.M., Price, T.D., Jochim, M. (Eds.), 1991. The <span>Interpretation</span> of <span>Archaeological</span> <span>Spatial</span> <span>Patterning</span>, Interdisciplinary <span>Contributions</span> to <span>Archaeology</span>. Springer US, Boston, MA. <a href="https://doi.org/10.1007/978-1-4899-2602-9">https://doi.org/10.1007/978-1-4899-2602-9</a>
+</div>
+<div id="ref-kvamme_analysing_2020" class="csl-entry" role="listitem">
+Kvamme, K.L., 2020. Analysing <span>Regional</span> <span>Environmental</span> <span>Relationships</span>, in: Gillings, M., Hacigüzeller, P., Lock, G.R. (Eds.), Archaeological Spatial Analysis: A Methodological Guide. Routledge, New York, pp. 212–230.
+</div>
+<div id="ref-kvamme_there_2006" class="csl-entry" role="listitem">
+Kvamme, K.L., 2006. There and <span>Back</span> <span>Again</span>: <span>Revisiting</span> <span>Archaeologial</span> <span>Locational</span> <span>Modeling</span>, in: Mehrer, M., Wescott, K. (Eds.), <span>GIS</span> and Archaeological Site Location Modeling. Taylor &amp; Francis, Boca Raton, FL, pp. 3–38.
+</div>
+<div id="ref-kvamme_one-sample_1990" class="csl-entry" role="listitem">
+Kvamme, K.L., 1990. One-<span>Sample</span> <span>Tests</span> in <span>Regional</span> <span>Archaeological</span> <span>Analysis</span>: <span>New</span> <span>Possibilities</span> through <span>Computer</span> <span>Technology</span>. American Antiquity 55, 367–381. <a href="https://doi.org/10.2307/281655">https://doi.org/10.2307/281655</a>
+</div>
+<div id="ref-lake_explaining_2015" class="csl-entry" role="listitem">
+Lake, M.W., 2015. Explaining the <span>Past</span> with <span>ABM</span>: <span>On</span> <span>Modelling</span> <span>Philosophy</span>, in: Reschreiter, H., Wurzer, G., Kowarik, K. (Eds.), Agent-Based <span>Modeling</span> and <span>Simulation</span> in <span>Archaeology</span>, Advances in <span>Geographic</span> <span>Information</span> <span>Science</span>. Springer International Publishing, Cham, pp. 3–37. <a href="https://doi.org/10.1007/978-3-319-00008-4">https://doi.org/10.1007/978-3-319-00008-4</a>
+</div>
+<div id="ref-lecun_deep_2015" class="csl-entry" role="listitem">
+LeCun, Y., Bengio, Y., Hinton, G., 2015. Deep learning. Nature 521, 436–444. <a href="https://doi.org/10.1038/nature14539">https://doi.org/10.1038/nature14539</a>
+</div>
+<div id="ref-levi-strauss_contribution_1936" class="csl-entry" role="listitem">
+Lévi-Strauss, C., 1936. Contribution à l’étude de l’organisation sociale des <span>Indiens</span> <span>Bororo</span>. Journal de la société des américanistes 28, 269–304. <a href="https://doi.org/10.3406/jsa.1936.1942">https://doi.org/10.3406/jsa.1936.1942</a>
+</div>
+<div id="ref-li_gis_2024" class="csl-entry" role="listitem">
+Li, G., Dong, J., Che, M., Wang, X., Fan, J., Dong, G., 2024. <span>GIS</span> and <span>Machine</span> <span>Learning</span> <span>Models</span> <span>Target</span> <span>Dynamic</span> <span>Settlement</span> <span>Patterns</span> and <span>Their</span> <span>Driving</span> <span>Mechanisms</span> from the <span>Neolithic</span> to <span>Bronze</span> <span>Age</span> in the <span>Northeastern</span> <span>Tibetan</span> <span>Plateau</span>. Remote Sensing 16. <a href="https://doi.org/10.3390/rs16081454">https://doi.org/10.3390/rs16081454</a>
+</div>
+<div id="ref-lidberg_detection_2024" class="csl-entry" role="listitem">
+Lidberg, W., Westphal, F., Brax, C., Sandström, C., Östlund, L., 2024. Detection of <span>Hunting</span> <span>Pits</span> using <span>Airborne</span> <span>Laser</span> <span>Scanning</span> and <span>Deep</span> <span>Learning</span>. Journal of Field Archaeology 49, 395–405. <a href="https://doi.org/10.1080/00934690.2024.2364428">https://doi.org/10.1080/00934690.2024.2364428</a>
+</div>
+<div id="ref-liu_remote_2025" class="csl-entry" role="listitem">
+Liu, D., Zhong, L., Wu, H., Li, S., Li, Y., 2025. Remote sensing image <span>Super</span>-resolution reconstruction by fusing multi-scale receptive fields and hybrid transformer. Scientific Reports 15, 2140. <a href="https://doi.org/10.1038/s41598-025-86446-5">https://doi.org/10.1038/s41598-025-86446-5</a>
+</div>
+<div id="ref-marwick_is_2025" class="csl-entry" role="listitem">
+Marwick, B., 2025. Is archaeology a science? <span>Insights</span> and imperatives from 10,000 articles and a year of reproducibility reviews. Journal of Archaeological Science 180, 106281. <a href="https://doi.org/10.1016/j.jas.2025.106281">https://doi.org/10.1016/j.jas.2025.106281</a>
+</div>
+<div id="ref-mcdonald_site-based_2015" class="csl-entry" role="listitem">
+McDonald, P.R., 2015. <a href="https://digitalcommons.usu.edu/etd/4535">Site-<span>Based</span> and <span>Nonsite</span> <span>Archaeological</span> <span>Survey</span>: <span>A</span> <span>Comparison</span> of <span>Two</span> <span>Survey</span> <span>Methods</span> in the <span>City</span> of <span>Rocks</span>, <span>Idaho</span></a> (PhD thesis).
+</div>
+<div id="ref-menze_detection_2006" class="csl-entry" role="listitem">
+Menze, B.H., Ur, J.A., Sherratt, A.G., 2006. Detection of <span>Ancient</span> <span>Settlement</span> <span>Mounds</span>. Photogrammetric Engineering &amp; Remote Sensing 72, 321–327. <a href="https://doi.org/10.14358/PERS.72.3.321">https://doi.org/10.14358/PERS.72.3.321</a>
+</div>
+<div id="ref-monna_machine_2020" class="csl-entry" role="listitem">
+Monna, F., Magail, J., Rolland, T., Navarro, N., Wilczek, J., Gantulga, J.-O., Esin, Y., Granjon, L., Allard, A.-C., Chateau-Smith, C., 2020. Machine learning for rapid mapping of archaeological structures made of dry stones - <span>Example</span> of burial monuments from the <span>Khirgisuur</span> culture, <span>Mongolia</span> -. Journal of Cultural Heritage 43, 118–128. <a href="https://doi.org/10.1016/j.culher.2020.01.002">https://doi.org/10.1016/j.culher.2020.01.002</a>
+</div>
+<div id="ref-moon_archaeological_1993" class="csl-entry" role="listitem">
+Moon, H., 1993. Archaeological predictive modelling: An assessment (Discusssion document No. 016). The Earth Sciences Task Force Resources Inventory Committee, Victoria, Canada.
+</div>
+<div id="ref-oonk_supervised_2015" class="csl-entry" role="listitem">
+Oonk, S., Spijker, J., 2015. A supervised machine-learning approach towards geochemical predictive modelling in archaeology. Journal of Archaeological Science 59, 80–88. <a href="https://doi.org/10.1016/j.jas.2015.04.002">https://doi.org/10.1016/j.jas.2015.04.002</a>
+</div>
+<div id="ref-opitz_recent_2018" class="csl-entry" role="listitem">
+Opitz, R., Herrmann, J., 2018. Recent <span>Trends</span> and <span>Long</span>-standing <span>Problems</span> in <span>Archaeological</span> <span>Remote</span> <span>Sensing</span>. Journal of Computer Applications in Archaeology 1, 19–41. <a href="https://doi.org/10.5334/jcaa.11">https://doi.org/10.5334/jcaa.11</a>
+</div>
+<div id="ref-orengo_brave_2019" class="csl-entry" role="listitem">
+Orengo, H.A., Garcia-Molsosa, A., 2019. A brave new world for archaeological survey: <span>Automated</span> machine learning-based potsherd detection using high-resolution drone imagery. Journal of Archaeological Science 112, 105013. <a href="https://doi.org/10.1016/j.jas.2019.105013">https://doi.org/10.1016/j.jas.2019.105013</a>
+</div>
+<div id="ref-page_prisma_2021" class="csl-entry" role="listitem">
+Page, M.J., McKenzie, J.E., Bossuyt, P.M., Boutron, I., Hoffmann, T.C., Mulrow, C.D., Shamseer, L., Tetzlaff, J.M., Akl, E.A., Brennan, S.E., Chou, R., Glanville, J., Grimshaw, J.M., Hróbjartsson, A., Lalu, M.M., Li, T., Loder, E.W., Mayo-Wilson, E., McDonald, S., McGuinness, L.A., Stewart, L.A., Thomas, J., Tricco, A.C., Welch, V.A., Whiting, P., Moher, D., 2021. The <span>PRISMA</span> 2020 statement: An updated guideline for reporting systematic reviews. BMJ n71. <a href="https://doi.org/10.1136/bmj.n71">https://doi.org/10.1136/bmj.n71</a>
+</div>
+<div id="ref-parsons_archaeological_1972" class="csl-entry" role="listitem">
+Parsons, J.R., 1972. Archaeological <span>Settlement</span> <span>Patterns</span>. Annual Review of Anthropology 1, 127–150. <a href="https://doi.org/10.1146/annurev.an.01.100172.001015">https://doi.org/10.1146/annurev.an.01.100172.001015</a>
+</div>
+<div id="ref-phillips_method_1953" class="csl-entry" role="listitem">
+Phillips, P., Willey, G.R., 1953. <a href="https://www.jstor.org/stable/664720">Method and <span>Theory</span> in <span>American</span> <span>Archeology</span>: <span>An</span> <span>Operational</span> <span>Basis</span> for <span>Culture</span>-<span>Historical</span> <span>Integration</span></a>. American Anthropologist 55, 615–633.
+</div>
+<div id="ref-quintus_evaluating_2023" class="csl-entry" role="listitem">
+Quintus, S., Davis, D., Cochrane, E., 2023. Evaluating <span>Mask</span> <span>R</span>-<span>CNN</span> models to extract terracing across oceanic high islands: <span>A</span> case study from <span>Samoa</span>. Archaeological Prospection 30, 477–492. <a href="https://doi.org/10.1002/arp.1909">https://doi.org/10.1002/arp.1909</a>
+</div>
+<div id="ref-rayne_detecting_2020" class="csl-entry" role="listitem">
+Rayne, L., Gatto, M.C., Abdulaati, L., Al-Haddad, M., Sterry, M., Sheldrick, N., Mattingly, D., 2020. Detecting <span>Change</span> at <span>Archaeological</span> <span>Sites</span> in <span>North</span> <span>Africa</span> <span>Using</span> <span>Open</span>-<span>Source</span> <span>Satellite</span> <span>Imagery</span>. Remote Sensing 12, 3694. <a href="https://doi.org/10.3390/rs12223694">https://doi.org/10.3390/rs12223694</a>
+</div>
+<div id="ref-renfrew_archaeology_2020" class="csl-entry" role="listitem">
+Renfrew, C., Bahn, P.G., 2020. Archaeology: Theories, methods and practice, Eight edition, revised &amp; updated. ed. Thames &amp; Hudson, London.
+</div>
+<div id="ref-ronneberger_u-net_2015" class="csl-entry" role="listitem">
+Ronneberger, O., Fischer, P., Brox, T., 2015. U-<span>Net</span>: <span>Convolutional</span> <span>Networks</span> for <span>Biomedical</span> <span>Image</span> <span>Segmentation</span>. <a href="https://doi.org/10.48550/arXiv.1505.04597">https://doi.org/10.48550/arXiv.1505.04597</a>
+</div>
+<div id="ref-sakai_ai-accelerated_2024" class="csl-entry" role="listitem">
+Sakai, M., Sakurai, A., Lu, S., Olano, J., Albrecht, C.M., Hamann, H.F., Freitag, M., 2024. <span>AI</span>-accelerated <span>Nazca</span> survey nearly doubles the number of known figurative geoglyphs and sheds light on their purpose. Proceedings of the National Academy of Sciences of the United States of America 121, e2407652121. <a href="https://doi.org/10.1073/pnas.2407652121">https://doi.org/10.1073/pnas.2407652121</a>
+</div>
+<div id="ref-salmon_deductive_1976" class="csl-entry" role="listitem">
+Salmon, M.H., 1976. <span>“<span>Deductive</span>”</span> versus <span>“<span>Inductive</span>”</span> <span>Archaeology</span>. American Antiquity 41, 376–381. <a href="https://doi.org/10.2307/279528">https://doi.org/10.2307/279528</a>
+</div>
+<div id="ref-soroush_deep_2020" class="csl-entry" role="listitem">
+Soroush, M., Mehrtash, A., Khazraee, E., Ur, J., 2020. Deep <span>Learning</span> in <span>Archaeological</span> <span>Remote</span> <span>Sensing</span>: <span>Automated</span> <span>Qanat</span> <span>Detection</span> in the <span>Kurdistan</span> <span>Region</span> of <span>Iraq</span>. REMOTE SENSING 12. <a href="https://doi.org/10.3390/rs12030500">https://doi.org/10.3390/rs12030500</a>
+</div>
+<div id="ref-thomas_empirical_1973" class="csl-entry" role="listitem">
+Thomas, D.H., 1973. An <span>Empirical</span> <span>Test</span> for <span>Steward</span>’s <span>Model</span> of <span>Great</span> <span>Basin</span> <span>Settlement</span> <span>Patterns</span>. American Antiquity 38, 155–176. <a href="https://doi.org/10.2307/279362">https://doi.org/10.2307/279362</a>
+</div>
+<div id="ref-trigger_settlement_1967" class="csl-entry" role="listitem">
+Trigger, B.G., 1967. Settlement <span>Archaeology</span>. <span>Its</span> <span>Goals</span> and <span>Promise</span>. American Antiquity 32, 149–160. <a href="https://doi.org/10.2307/277900">https://doi.org/10.2307/277900</a>
+</div>
+<div id="ref-verhagen_case_2007" class="csl-entry" role="listitem">
+Verhagen, P., 2007. Case studies in archaeological predictive modelling, Archaeological studies <span>Leiden</span> <span>University</span>. Leiden University Press, Leiden.
+</div>
+<div id="ref-verhagen_integrating_2012" class="csl-entry" role="listitem">
+Verhagen, P., Whitley, T.G., 2012. Integrating <span>Archaeological</span> <span>Theory</span> and <span>Predictive</span> <span>Modeling</span>: A <span>Live</span> <span>Report</span> from the <span>Scene</span>. Journal of Archaeological Method and Theory 19, 49–100. <a href="https://doi.org/10.1007/s10816-011-9102-7">https://doi.org/10.1007/s10816-011-9102-7</a>
+</div>
+<div id="ref-verschoof-van_der_vaart_learning_2019" class="csl-entry" role="listitem">
+Verschoof-van der Vaart, W., Lambers, K., 2019. Learning to <span>Look</span> at <span>LiDAR</span>: <span>The</span> <span>Use</span> of <span>R</span>-<span>CNN</span> in the <span>Automated</span> <span>Detection</span> of <span>Archaeological</span> <span>Objects</span> in <span>LiDAR</span> <span>Data</span> from the <span>Netherlands</span>. Journal of Computer Applications in Archaeology 2, 31–40. <a href="https://doi.org/10.5334/jcaa.32">https://doi.org/10.5334/jcaa.32</a>
+</div>
+<div id="ref-wang_comprehensive_2022" class="csl-entry" role="listitem">
+Wang, P., Bayram, B., Sertel, E., 2022. A comprehensive review on deep learning based remote sensing image super-resolution methods. Earth-Science Reviews 232, 104110. <a href="https://doi.org/10.1016/j.earscirev.2022.104110">https://doi.org/10.1016/j.earscirev.2022.104110</a>
+</div>
+<div id="ref-wang_archaeological_2023" class="csl-entry" role="listitem">
+Wang, Y., Shi, X., Oguchi, T., 2023. Archaeological <span>Predictive</span> <span>Modeling</span> <span>Using</span> <span>Machine</span> <span>Learning</span> and <span>Statistical</span> <span>Methods</span> for <span>Japan</span> and <span>China</span>. Isprs International Journal of Geo-Information 12. <a href="https://doi.org/10.3390/ijgi12060238">https://doi.org/10.3390/ijgi12060238</a>
+</div>
+<div id="ref-allen_predictive_1990" class="csl-entry" role="listitem">
+Warren, R.E., 1990. Predictive <span>Modelling</span> in <span>Archaeology</span>: <span>A</span> <span>Primer</span>, in: Allen, K.M.S., Green, S.W., Zubrow, E.B.W. (Eds.), Interpreting Space: <span>GIS</span> and Archaeology, Applications of Geographic Information Systems. Taylor &amp; Francis, London ; New York, pp. 90–111.
+</div>
+<div id="ref-wheatley_spatial_2013" class="csl-entry" role="listitem">
+Wheatley, D., Gillings, M., 2013. Spatial <span>Technology</span> and <span>Archaeology</span>: <span>The</span> <span>Archaeological</span> <span>Applications</span> of <span>GIS</span>. CRC Press, London. <a href="https://doi.org/10.1201/b12806">https://doi.org/10.1201/b12806</a>
+</div>
+<div id="ref-willey_prehistoric_1953" class="csl-entry" role="listitem">
+Willey, G.R., 1953. <a href="http://repository.si.edu/xmlui/handle/10088/15450">Prehistoric settlement patterns in the <span>Virú</span>; <span>Valley</span>, <span>Peru</span></a>. Bureau of American Ethnology Bulletin 155.
+</div>
+<div id="ref-xu_explainable_2019" class="csl-entry" role="listitem">
+Xu, F., Uszkoreit, H., Du, Y., Fan, W., Zhao, D., Zhu, J., 2019. Explainable <span>AI</span>: <span>A</span> <span>Brief</span> <span>Survey</span> on <span>History</span>, <span>Research</span> <span>Areas</span>, <span>Approaches</span> and <span>Challenges</span>, in: Tang, J., Kan, M.-Y., Zhao, D., Li, S., Zan, H. (Eds.), Natural <span>Language</span> <span>Processing</span> and <span>Chinese</span> <span>Computing</span>. Springer International Publishing, Cham, pp. 563–574. <a href="https://doi.org/10.1007/978-3-030-32236-6_51">https://doi.org/10.1007/978-3-030-32236-6_51</a>
+</div>
+<div id="ref-yaworsky_neanderthal_2024" class="csl-entry" role="listitem">
+Yaworsky, P.M., Nielsen, E.S., Nielsen, T.K., 2024. The <span>Neanderthal</span> niche space of <span>Western</span> <span>Eurasia</span> 145 ka to 30 ka ago. Scientific Reports 14, 7788. <a href="https://doi.org/10.1038/s41598-024-57490-4">https://doi.org/10.1038/s41598-024-57490-4</a>
+</div>
+<div id="ref-yaworsky_advancing_2020" class="csl-entry" role="listitem">
+Yaworsky, P.M., Vernon, K.B., Spangler, J.D., Brewer, S.C., Codding, B.F., 2020. Advancing predictive modeling in archaeology: <span>An</span> evaluation of regression and machine learning methods on the <span>Grand</span> <span>Staircase</span>-<span>Escalante</span> <span>National</span> <span>Monument</span>. Plos One 15, e0239424. <a href="https://doi.org/10.1371/journal.pone.0239424">https://doi.org/10.1371/journal.pone.0239424</a>
+</div>
+<div id="ref-zhu_benefits_2019" class="csl-entry" role="listitem">
+Zhu, Z., Wulder, M.A., Roy, D.P., Woodcock, C.E., Hansen, M.C., Radeloff, V.C., Healey, S.P., Schaaf, C., Hostert, P., Strobl, P., Pekel, J.-F., Lymburner, L., Pahlevan, N., Scambos, T.A., 2019. Benefits of the free and open <span>Landsat</span> data policy. Remote Sensing of Environment 224, 382–385. <a href="https://doi.org/10.1016/j.rse.2019.02.016">https://doi.org/10.1016/j.rse.2019.02.016</a>
+</div>
+</div>
+<section id="colophon" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="colophon"><span class="header-section-number">7.1</span> Colophon</h2>
+<p>This report was generated on 2025-09-10 23:13:41.559521 using the following computational environment and dependencies:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>─ Session info ───────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.5.1 (2025-06-13 ucrt)
+ os       Windows 11 x64 (build 26100)
+ system   x86_64, mingw32
+ ui       RTerm
+ language (EN)
+ collate  French_France.utf8
+ ctype    French_France.utf8
+ tz       Europe/Paris
+ date     2025-09-10
+ pandoc   3.7.0.2 @ C:/Users/mathi/AppData/Local/Pandoc/ (via rmarkdown)
+ quarto   NA @ C:\\Users\\mathi\\AppData\\Local\\Programs\\Quarto\\bin\\quarto.exe
+
+─ Packages ───────────────────────────────────────────────────────────────────
+ package      * version date (UTC) lib source
+ cachem         1.1.0   2024-05-16 [1] CRAN (R 4.5.0)
+ cellranger     1.1.0   2016-07-27 [1] CRAN (R 4.5.0)
+ cli            3.6.5   2025-04-23 [1] CRAN (R 4.5.0)
+ colorspace     2.1-1   2024-07-26 [1] CRAN (R 4.5.0)
+ data.table     1.17.8  2025-07-10 [1] CRAN (R 4.5.1)
+ devtools       2.4.5   2022-10-11 [1] CRAN (R 4.5.0)
+ dichromat      2.0-0.1 2022-05-02 [1] CRAN (R 4.5.0)
+ digest         0.6.37  2024-08-19 [1] CRAN (R 4.5.0)
+ dplyr        * 1.1.4   2023-11-17 [1] CRAN (R 4.5.0)
+ ellipsis       0.3.2   2021-04-29 [1] CRAN (R 4.5.0)
+ evaluate       1.0.4   2025-06-18 [1] CRAN (R 4.5.1)
+ farver         2.1.2   2024-05-13 [1] CRAN (R 4.5.0)
+ fastmap        1.2.0   2024-05-15 [1] CRAN (R 4.5.0)
+ fs             1.6.6   2025-04-12 [1] CRAN (R 4.5.0)
+ generics       0.1.4   2025-05-09 [1] CRAN (R 4.5.0)
+ ggplot2      * 3.5.2   2025-04-09 [1] CRAN (R 4.5.0)
+ glue           1.8.0   2024-09-30 [1] CRAN (R 4.5.0)
+ gridBase       0.4-7   2014-02-24 [1] CRAN (R 4.5.1)
+ gtable         0.3.6   2024-10-25 [1] CRAN (R 4.5.0)
+ hms            1.1.3   2023-03-21 [1] CRAN (R 4.5.0)
+ htmltools      0.5.8.1 2024-04-04 [1] CRAN (R 4.5.0)
+ htmlwidgets    1.6.4   2023-12-06 [1] CRAN (R 4.5.0)
+ httpuv         1.6.16  2025-04-16 [1] CRAN (R 4.5.0)
+ igraph         2.1.4   2025-01-23 [1] CRAN (R 4.5.0)
+ jsonlite       2.0.0   2025-03-27 [1] CRAN (R 4.5.0)
+ kableExtra   * 1.4.0   2024-01-24 [1] CRAN (R 4.5.0)
+ knitr        * 1.50    2025-03-16 [1] CRAN (R 4.5.0)
+ later          1.4.2   2025-04-08 [1] CRAN (R 4.5.0)
+ lifecycle      1.0.4   2023-11-07 [1] CRAN (R 4.5.0)
+ lubridate    * 1.9.4   2024-12-08 [1] CRAN (R 4.5.0)
+ magrittr       2.0.3   2022-03-30 [1] CRAN (R 4.5.0)
+ memoise        2.0.1   2021-11-26 [1] CRAN (R 4.5.0)
+ mime           0.13    2025-03-17 [1] CRAN (R 4.5.0)
+ miniUI         0.1.2   2025-04-17 [1] CRAN (R 4.5.0)
+ pacman         0.5.1   2019-03-11 [1] CRAN (R 4.5.1)
+ patchwork    * 1.3.1   2025-06-21 [1] CRAN (R 4.5.1)
+ pillar         1.11.0  2025-07-04 [1] CRAN (R 4.5.1)
+ pkgbuild       1.4.8   2025-05-26 [1] CRAN (R 4.5.1)
+ pkgconfig      2.0.3   2019-09-22 [1] CRAN (R 4.5.0)
+ pkgload        1.4.0   2024-06-28 [1] CRAN (R 4.5.0)
+ profvis        0.4.0   2024-09-20 [1] CRAN (R 4.5.0)
+ promises       1.3.3   2025-05-29 [1] CRAN (R 4.5.1)
+ purrr          1.1.0   2025-07-10 [1] CRAN (R 4.5.1)
+ R6             2.6.1   2025-02-15 [1] CRAN (R 4.5.0)
+ RColorBrewer   1.1-3   2022-04-03 [1] CRAN (R 4.5.0)
+ Rcpp           1.1.0   2025-07-02 [1] CRAN (R 4.5.1)
+ readr        * 2.1.5   2024-01-10 [1] CRAN (R 4.5.0)
+ readxl       * 1.4.5   2025-03-07 [1] CRAN (R 4.5.0)
+ remotes        2.5.0   2024-03-17 [1] CRAN (R 4.5.0)
+ rlang          1.1.6   2025-04-11 [1] CRAN (R 4.5.0)
+ rmarkdown      2.29    2024-11-04 [1] CRAN (R 4.5.0)
+ rstudioapi     0.17.1  2024-10-22 [1] CRAN (R 4.5.0)
+ scales         1.4.0   2025-04-24 [1] CRAN (R 4.5.0)
+ sessioninfo    1.2.3   2025-02-05 [1] CRAN (R 4.5.0)
+ shiny          1.11.1  2025-07-03 [1] CRAN (R 4.5.1)
+ stringi        1.8.7   2025-03-27 [1] CRAN (R 4.5.0)
+ stringr      * 1.5.1   2023-11-14 [1] CRAN (R 4.5.0)
+ svglite        2.2.1   2025-05-12 [1] CRAN (R 4.5.0)
+ systemfonts    1.2.3   2025-04-30 [1] CRAN (R 4.5.0)
+ textshaping    1.0.1   2025-05-01 [1] CRAN (R 4.5.0)
+ tibble         3.3.0   2025-06-08 [1] CRAN (R 4.5.1)
+ tidyr        * 1.3.1   2024-01-24 [1] CRAN (R 4.5.0)
+ tidyselect     1.2.1   2024-03-11 [1] CRAN (R 4.5.0)
+ timechange     0.3.0   2024-01-18 [1] CRAN (R 4.5.0)
+ treemap      * 2.4-4   2023-05-25 [1] CRAN (R 4.5.1)
+ tzdb           0.5.0   2025-03-15 [1] CRAN (R 4.5.0)
+ urlchecker     1.0.1   2021-11-30 [1] CRAN (R 4.5.0)
+ usethis        3.1.0   2024-11-26 [1] CRAN (R 4.5.0)
+ vctrs          0.6.5   2023-12-01 [1] CRAN (R 4.5.0)
+ viridisLite    0.4.2   2023-05-02 [1] CRAN (R 4.5.0)
+ withr          3.0.2   2024-10-28 [1] CRAN (R 4.5.0)
+ xfun           0.52    2025-04-02 [1] CRAN (R 4.5.0)
+ xml2           1.3.8   2025-03-14 [1] CRAN (R 4.5.0)
+ xtable         1.8-4   2019-04-21 [1] CRAN (R 4.5.0)
+ yaml           2.3.10  2024-07-26 [1] CRAN (R 4.5.0)
+
+ [1] C:/Users/mathi/AppData/Local/R/win-library/4.5
+ [2] C:/Program Files/R/R-4.5.1/library
+ * ── Packages attached to the search path.
+
+──────────────────────────────────────────────────────────────────────────────</code></pre>
+</div>
+</div>
+<p>The current Git commit details are:</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
