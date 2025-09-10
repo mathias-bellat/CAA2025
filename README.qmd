@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 Title <- "Humans, are you there? Comparative approach of two distinguishable methods for human installation detection: Automatic structure detection and archaeological predictive models"
 ```
 
-# CAA.proceedings
+# Humans, are you there?
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh///master?urlpath=rstudio) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
