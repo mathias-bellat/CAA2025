@@ -2,20 +2,20 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Humans, are you there?
+# Comparative review of recent developments in archaeological predictive models and automatic structure detection.
 
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![License: CC BY-SA
 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17095617.svg)](https://doi.org/10.5281/zenodo.17095617)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18877468.svg)](https://doi.org/10.5281/zenodo.18877468)
 
 This repository contains the data and code for our paper:
 
 > Bellat, Hatton and Orellana-Figueroa (2026). *Comparative review of
 > recent developments in archaeological predictive models and automatic
 > structure detection*. CAA2025 Proceddings
-> <https://doi.org/10.5281/zenodo.17095617>
+> <https://doi.org/10.5281/zenodo.18877468>
 
 ### How to cite
 

@@ -24,11 +24,11 @@ date: now
 date-format: long
 format:
   aft-html: 
-      output-file: Comparative_review_APM-ASD.html
+      output-file: Comparative_review_APM-ASD_V2.0.0.html
       embed-resources: true
       number-sections: true
   docx:
-    output-file: Comparative_review_APM-ASD.docx
+    output-file: Comparative_review_APM-ASD_V2.0.0.docx
     reference-doc: "../templates/template.docx" # Insert path for the DOCX file
 editor_options: 
   chunk_output_type: console
@@ -56,7 +56,7 @@ highlights: |
 
 <!-- With the following code you can access and display values from the yml header above. -->
 
-Keywords: `r rmarkdown::metadata$keywords`
+<!--Keywords: `r rmarkdown::metadata$keywords`-->
 
 Highlights: `r rmarkdown::metadata$highlights`
 
@@ -672,7 +672,7 @@ asd_long <- asd %>%
   separate_rows(col_name, sep = ";")
 asd_long$type <- "asd"
 
-combined <- rbind(apm_long[,c(21,25)], asd_long[,c(23,28)])
+combined <- rbind(apm_long[,c(21,24)], asd_long[,c(23,27)])
 
 combined[[1]] <- str_replace_all(combined[[1]],
                               pattern = c("\\~"="", " "="", ","="", "km2"=""))
@@ -1051,7 +1051,7 @@ Finally, both ASD and APM will inevitably need to address broader concerns surro
 
 [**Conflict of interest statement:**]{.underline} The authors declare no conflict of interest.
 
-[**Data availability statement:**]{.underline} The data used in this study are openly available on the Zenodo repository at <https://doi.org/10.5281/zenodo.17095617>.
+[**Data availability statement:**]{.underline} The data used in this study are openly available on the Zenodo repository at <https://doi.org/10.5281/zenodo.18877468>.
 
 [**Declaration of Generative AI and AI-assisted technologies in the writing process:**]{.underline} During the preparation of this work, the authors used ChatGPT 4.5 [@brown_language_2020] in order to generate part of the R code and improve spelling and diction in already-written text. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
 

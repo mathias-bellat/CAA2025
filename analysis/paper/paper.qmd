@@ -24,7 +24,7 @@ date: now
 date-format: long
 format: 
   docx:
-    output-file: Comparative_review_APM-ASD.docx
+    output-file: Comparative_review_APM-ASD_V2.0.0.docx
     reference-doc: "../templates/template.docx" # Insert path for the DOCX file
 execute:
   echo: true
@@ -258,7 +258,7 @@ From this review, several future directions can be identified:
 
 Finally, both ASD and APM will inevitably need to address broader concerns surrounding the ethical use and development of artificial intelligence [@tenzer_debating_2024]. As these methods mature, balancing technological innovation with responsible practice will remain a central challenge for the future of AI in archaeology.
 
-An interactive version of this manuscript, with code and internal links, is accessible [online](https://mathias-bellat.io/CAA2025/).
+An interactive version of this manuscript, with code and internal links, is accessible [online](https://mathias-bellat.github.io/CAA2025/).
 
 [**Author contributions:**]{.underline} M.B. and A.H., conceived the idea for the manuscript and initiated and designed the research. M.B., A.H. and J.D.O.F., collected data and selected the articles. M.B. and A.H., performed the statistical analysis and interpreted the results. M.B., A.H. and J.D.O.F., wrote the manuscript, with critical input from all co-authors. M.B., A.H. and J.D.O.F., reviewed the manuscript.
 
@@ -268,7 +268,7 @@ An interactive version of this manuscript, with code and internal links, is acce
 
 [**Conflict of interest statement:**]{.underline} The authors declare no conflict of interest.
 
-[**Data availability statement:**]{.underline} The data used in this study are openly available on the Zenodo repository at <https://doi.org/10.5281/zenodo.17095617>.
+[**Data availability statement:**]{.underline} The data used in this study are openly available on the Zenodo repository at <https://doi.org/10.5281/zenodo.18877468>.
 
 [**Declaration of Generative AI and AI-assisted technologies in the writing process:**]{.underline} During the preparation of this work, the authors used ChatGPT 4.5 [@brown_language_2020] in order to generate part of the R code and improve spelling and diction in already-written text. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
 

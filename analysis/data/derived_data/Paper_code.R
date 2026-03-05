@@ -448,7 +448,7 @@ asd_long <- asd %>%
   separate_rows(col_name, sep = ";")
 asd_long$type <- "asd"
 
-combined <- rbind(apm_long[,c(21,25)], asd_long[,c(23,28)])
+combined <- rbind(apm_long[,c(21,24)], asd_long[,c(23,27)])
 
 combined[[1]] <- str_replace_all(combined[[1]],
                               pattern = c("\\~"="", " "="", ","="", "km2"=""))
