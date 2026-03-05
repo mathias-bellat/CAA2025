@@ -1,0 +1,103 @@
+TY  - JOUR
+TI  - Interacting with the Artificial Intelligence (AI) Language Model ChatGPT: A Synopsis of Earth Observation and Remote Sensing in Archaeology
+AU  - Agapiou, Athos
+AU  - Lysandrou, Vasiliki
+T2  - Heritage
+AB  - In this communication we aim to provide an overview of Earth observation and remote sensing in archaeology following a non-traditional literature review approach, that is, investigating recent developments in artificial intelligence (AI) and language models. Towards this direction, the generative pre-trained transformer (ChatGPT) language model was used to extract relevant information. The ChatGPT language model—recently released by OpenAI—appears to provide an alternative way for retrieving comprehensive information for various thematic topics. ChatGPT is currently operated on a beta version by millions of users worldwide, free of access for a limited period. In this study, specific queries related to Earth observation and remote sensing in archaeology were made by the authors to the ChatGPT. Innovations and limitations are discussed, while a comparison with traditional bibliographic analysis is performed.
+DA  - 2023/05//
+PY  - 2023
+DO  - 10.3390/heritage6050214
+DP  - www.mdpi.com
+VL  - 6
+IS  - 5
+SP  - 4072
+EP  - 4085
+LA  - en
+PB  - Multidisciplinary Digital Publishing Institute
+SN  - 2571-9408
+ST  - Interacting with the Artificial Intelligence (AI) Language Model ChatGPT
+UR  - https://www.mdpi.com/2571-9408/6/5/214
+Y2  - 2024/02/16/13:30:32
+L1  - https://www.mdpi.com/2571-9408/6/5/214/pdf?version=1682842080
+KW  - ChatGPT
+KW  - cropmarks
+KW  - Earth observation archaeology
+KW  - programming model
+KW  - review
+KW  - satellite archaeology
+ER  - 
+
+TY  - JOUR
+TI  - A Critical Review of Remote Sensing Approaches and Deep Learning Techniques in Archaeology.
+AU  - Kadhim, Israa
+AU  - Abed, Fanar M.
+T2  - Sensors (Basel, Switzerland)
+AB  - To date, comprehensive reviews and discussions of the strengths and limitations of Remote Sensing (RS) standalone and combination approaches, and Deep Learning  (DL)-based RS datasets in archaeology have been limited. The objective of this  paper is, therefore, to review and critically discuss existing studies that have  applied these advanced approaches in archaeology, with a specific focus on  digital preservation and object detection. RS standalone approaches including  range-based and image-based modelling (e.g., laser scanning and SfM  photogrammetry) have several disadvantages in terms of spatial resolution,  penetrations, textures, colours, and accuracy. These limitations have led some  archaeological studies to fuse/integrate multiple RS datasets to overcome  limitations and produce comparatively detailed outcomes. However, there are still  knowledge gaps in examining the effectiveness of these RS approaches in enhancing  the detection of archaeological remains/areas. Thus, this review paper is likely  to deliver valuable comprehension for archaeological studies to fill knowledge  gaps and further advance exploration of archaeological areas/features using RS  along with DL approaches.
+DA  - 2023/03/08/
+PY  - 2023
+DO  - 10.3390/s23062918
+VL  - 23
+IS  - 6
+J2  - Sensors (Basel)
+LA  - eng
+SN  - 1424-8220
+L1  - https://www.mdpi.com/1424-8220/23/6/2918/pdf?version=1678258772
+KW  - AERIAL
+KW  - AREA
+KW  - COST
+KW  - Deep Learning
+KW  - digital archaeology
+KW  - digital preservation
+KW  - fusion approaches
+KW  - hidden features
+KW  - INTEGRATION
+KW  - LiDAR
+KW  - MODELS
+KW  - photogrammetry
+KW  - PHOTOGRAMMETRY
+KW  - RADAR
+KW  - Remote Sensing
+KW  - standalone approaches
+KW  - TECHNOLOGIES
+KW  - TERRESTRIAL
+ER  - 
+
+TY  - JOUR
+TI  - A Comprehensive Review of Conventional and Deep Learning Approaches for Ground-Penetrating Radar Detection of Raw Data
+AU  - Bai, X
+AU  - Yang, Y
+AU  - Wei, SM
+AU  - Chen, GY
+AU  - Li, HR
+AU  - Li, YH
+AU  - Tian, HX
+AU  - Zhang, TX
+AU  - Cui, HT
+T2  - Applied Sciences-Basel
+AB  - Ground-penetrating radar (GPR) is a nondestructive testing technology that is widely applied in infrastructure maintenance, archaeological research, military operations, and other geological studies. A crucial step in GPR data processing is the detection and classification of underground structures and buried objects, including reinforcement bars, landmines, pipelines, bedrock, and underground cavities. With the development of machine learning algorithms, traditional methods such as SVM, K-NN, ANN, and HMM, as well as deep learning algorithms, have gradually been incorporated into A-scan, B-scan, and C-scan GPR image processing. This paper provides a summary of the typical machine learning and deep learning algorithms employed in the field of GPR and categorizes them based on the feature extraction method or classifier used. Additionally, this work discusses the sources and forms of data utilized in these studies. Finally, potential future development directions are presented.
+DA  - 2023/07//undefined
+PY  - 2023
+DO  - 10.3390/app13137992
+VL  - 13
+IS  - 13
+LA  - English
+SN  - 2076-3417
+AN  - WOS:001028569500001
+L1  - https://www.mdpi.com/2076-3417/13/13/7992/pdf?version=1689058296
+KW  - ALGORITHM
+KW  - classification
+KW  - CLASSIFICATION
+KW  - CLUTTER
+KW  - deep learning
+KW  - detection
+KW  - DISCRIMINATION
+KW  - GPR IMAGES
+KW  - ground-penetrating radar
+KW  - LANDMINE DETECTION
+KW  - machine learning
+KW  - NEURAL-NETWORKS
+KW  - raw data
+KW  - RECOGNITION
+KW  - UTILITIES
+ER  - 
+

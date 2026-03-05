@@ -1,0 +1,139 @@
+TY  - JOUR
+TI  - Google Earth Engine for archaeologists: An updated look at the progress and promise of remotely sensed big data
+AU  - Herndon, KE
+AU  - Griffin, R
+AU  - Schroder, W
+AU  - Murtha, T
+AU  - Golden, C
+AU  - Contreras, DA
+AU  - Cherrington, E
+AU  - Wang, LW
+AU  - Bazarsky, A
+AU  - Van Kollias, G
+AU  - Firpi, OA
+T2  - Journal of Archaeological Science-Reports
+AB  - A wealth of remotely sensed data has accumulated over the past several decades and now constitutes an analytical resource primed for archaeological applications. To date, remotely sensed big data (RSBD) analytics in archaeology have focused on filling spatial gaps in the distribution of sites and features, characterizing environmental landscapes, and monitoring cultural heritage sites. The scientific promise of these data to expand our understanding of past human-environment interactions has not been fully realized. Limitations of data access, sufficient analytical and computational resources, and methodological awareness and education on the appropriate use of RSBD have limited the adoption and widespread use of RSBD in archaeology, despite its ubiquity in the Earth sciences. Google Earth Engine (GEE) is a freely available planetary-scale cloud computing platform that addresses the perennial challenges of data access, analysis, and computing power that are particularly acute among archaeologists aiming to derive insights from RSBD. GEE lowers the barrier to entry for analyzing RSBD, expanding the potential for these data in the automated identification of archaeological features through deep learning; fieldwork planning and archaeological practice; modeling of past environments and environmental variability; and cultural heritage impact and risk assessments. In doing so, it also contributes to open science via increased access, transparency, and reproducibility.
+DA  - 2023/08//undefined
+PY  - 2023
+DO  - 10.1016/j.jasrep.2023.104094
+VL  - 50
+LA  - English
+SN  - 2352-409X
+AN  - WOS:001060331200001
+KW  - AGRICULTURE
+KW  - ANCIENT LANDSCAPE
+KW  - Big data
+KW  - CLASSIFICATION
+KW  - Cloud computing
+KW  - Digital archaeology
+KW  - Environmental archaeology
+KW  - Google Earth Engine (GEE)
+KW  - LAND-USE
+KW  - Landscape archaeology
+KW  - LIDAR SURVEY
+KW  - MAIZE
+KW  - RAIN-FOREST
+KW  - Remote sensing
+KW  - SCALE
+KW  - SETTLEMENT
+KW  - WORLD HERITAGE
+ER  - 
+
+TY  - JOUR
+TI  - Unstructured satellite survey detects up to 20% of archaeological sites in coastal valleys of southern Peru.
+AU  - Snyder, Thomas J.
+AU  - Haas, Randall
+T2  - PloS one
+AB  - Satellite survey is widely used for archaeological site discovery, but the efficacy of the method has received little systematic investigation. In this  analysis, twelve study participants of different experience levels performed an  unstructured remote survey of 197 km2 in the Sama and Moquegua valleys of south  central Peru where previous pedestrian surveys recorded 546 archaeological sites.  Results indicate an average site discovery rate of 9.3% (0-18%, 95% range). The  most experienced participants detect up to 20% (17-22%) of known archaeological  sites. These detection rates can be used to derive reliable site frequency  estimates on the Andean coast, which can be used in planning and budgeting for  field efforts and estimating demographic patterns at large spatial scales that  are difficult to achieve through pedestrian survey. More generally, this analysis  offers a method for deriving correction terms specific to other parts of the  world. Additionally, the results can serve as a baseline for evaluating the  effectiveness of emerging artificial intelligence routines for archaeological  site detection.
+DA  - 2024///
+PY  - 2024
+DO  - 10.1371/journal.pone.0292272
+VL  - 19
+IS  - 2
+SP  - e0292272
+J2  - PLoS One
+LA  - eng
+SN  - 1932-6203
+L1  - https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0292272&type=printable
+KW  - *Archaeology/methods
+KW  - *Artificial Intelligence
+KW  - Humans
+KW  - IMAGERY
+KW  - MOUNDS
+KW  - PATTERNS
+KW  - Peru
+KW  - PROSPECTION
+KW  - SETTLEMENT
+KW  - TIWANAKU
+KW  - UTILITY
+ER  - 
+
+TY  - JOUR
+TI  - Creating large, high-quality geospatial datasets from historical maps using novice volunteers
+AU  - Sobotkova, A
+AU  - Ross, SA
+AU  - Nassif-Haynes, C
+AU  - Ballsun-Stanton, B
+T2  - Applied Geography
+AB  - Unlocking data from historical maps for landscape analysis is costly. Automatic extraction using Machine Learning (ML) requires extensive preparation and expertise. Crowdsourcing scales better than direct digitisation by experts, but requires an appropriate platform and the technical skills to adapt it. Existing research provides little guidance as to when investments in these approaches become worthwhile. Here we present a customisation of the Field Acquired Information Management Systems (FAIMS) Mobile platform tailored to offer a streamlined, collaborative system for crowdsourcing map digitisation by volunteers with no prior GIS experience. Deployed in Bulgaria as an ancillary activity during 2017-2018 archaeological fieldwork, FAIMS Mobile was used to digitise 10,827 mound features from Soviet military topographic maps. This digitisation required 241 person-hours (57 from staff; 184 from novice volunteers), with an error rate under 6%. The resulting dataset was consistent, well -documented, and ready for analysis with a few hours of processing. A conservative estimate based on our work suggests our crowdsourcing approach is most efficient for digitisation projects of 10,000-60,000 features, but may offer advantages for datasets as small as a few hundred records. Furthermore, it indicates that systems designed for field data collection, running on mobile devices, can be profitably customised to serve as partici-patory geospatial data systems accessible to novice volunteers.
+DA  - 2023/06//undefined
+PY  - 2023
+DO  - 10.1016/j.apgeog.2023.102967
+VL  - 155
+LA  - English
+SN  - 0143-6228
+AN  - WOS:000984753600001
+KW  - Bulgaria
+KW  - Crowdsourcing
+KW  - FAIR data
+KW  - Historical maps
+KW  - INFORMATION
+KW  - Landscape archaeology
+KW  - Machine learning
+KW  - Mobile computing
+KW  - Participatory GIS
+ER  - 
+
+TY  - JOUR
+TI  - Large-scale, collaborative imagery survey in archaeology: the Geospatial Platform for Andean Culture, History and Archaeology (GeoPACHA)
+AU  - Wernke, SA
+AU  - Van Valkenburgh, P
+AU  - Zimmer-Dauphinee, J
+AU  - Whitlock, B
+AU  - Morrow, GS
+AU  - Smith, R
+AU  - Smit, D
+AU  - Ortega, GR
+AU  - Jara, KR
+AU  - Plekhov, D
+AU  - Menéndez, GO
+AU  - Norman, S
+AU  - Marcone, G
+AU  - Calloapaza, MM
+AU  - Kohut, L
+AU  - Garavito, CH
+AU  - Chacaltana-Cortez, S
+AU  - Arkush, E
+T2  - Antiquity
+AB  - Imagery-based survey is capable of producing archaeological datasets that complement those collected through field-based survey methods, widening the scope of analysis beyond regions. The Geospatial Platform for Andean Culture, History and Archaeology (GeoPACHA) enables systematic registry of imagery survey data through a 'federated' approach. Using GeoPACHA, teams pursue problem-specific research questions through a common data schema and interface that allows for inter-project comparisons, analyses and syntheses. The authors present an overview of the platform's rationale and functionality, as well as a summary of results from the first survey campaign, which was carried out by six projects distributed across the central Andes, five of which are represented here.
+DA  - 2024/02//undefined
+PY  - 2024
+DO  - 10.15184/aqy.2023.177
+VL  - 98
+IS  - 397
+SP  - 155
+EP  - 171
+LA  - English
+SN  - 0003-598X
+AN  - WOS:001126725600001
+L1  - https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EE49A1159422C7EA5B223B56147A2E80/S0003598X23001771a.pdf/div-class-title-large-scale-collaborative-imagery-survey-in-archaeology-the-geospatial-platform-for-andean-culture-history-and-archaeology-geopacha-div.pdf
+KW  - Andes
+KW  - big data
+KW  - DIGITAL INDEX
+KW  - large-scale imagery survey
+KW  - QGIS
+KW  - satellite survey
+KW  - settlement pattern analysis
+KW  - South America
+ER  - 
+

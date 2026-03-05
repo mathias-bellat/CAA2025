@@ -20,8 +20,8 @@ rm(list = ls(all.names = TRUE))
 # 0.2 Load packages ============================================================
 install.packages("pacman")
 library(pacman) # Easier way of loading packages
-pacman::p_load(dplyr, readr, stringr, tidyr, treemap, knitr, kableExtra,
-               ggplot2, readxl,patchwork,lubridate) # Specify required packages and download it if needed
+pacman::p_load(dplyr, readr, stringr, tidyr, treemap, knitr, kableExtra, sf, rnaturalearth,
+               ggplot2, readxl, patchwork, lubridate) # Specify required packages and download it if needed
 
 # 0.3 Show session infos =======================================================
 sessionInfo()
@@ -29,15 +29,15 @@ sessionInfo()
 # 01 Figure 2, year of publication of the papers ###############################
 
 # 1.1 Prepare the data =========================================================
-asd <- read_excel("../data/raw_data/Statistics_papers.xlsx", sheet = "Final_results_ASD")
-apm <- read_excel("../data/raw_data/Statistics_papers.xlsx", sheet = "Final_results_APMs")
+asd <- read_excel("./analysis/data/raw_data/Statistics_papers.xlsx", sheet = "Final_results_ASD")
+apm <- read_excel("./analysis/data/raw_data/Statistics_papers.xlsx", sheet = "Final_results_APMs")
 
 # Remove Theory (Reason 1) and not ML (Reason 2) papers
 asd <- asd[!asd$Results %in%  c("Reason 1", "Reason 2"), ]
 
-# Remove the duplicate study case from Agapiou et al. 2021 and li et al. 2023
+# Remove the duplicate study case from Agapiou et al. 2021 and Li et al. 2024
 asd.single <- asd[!asd$Name %in%  "Agapiou et al. 2021-2", ]
-apm.single <- apm[!apm$Name %in%  "Li et al. 2023a-2", ]
+apm.single <- apm[!apm$Name %in%  "Li et al. 2024-2", ]
 
 # 1.2 Format the data ==========================================
 asd_table <- table(asd.single$Year)
@@ -107,14 +107,14 @@ plot <- ggplot(df_final_filtered, aes(x = year, y = Freq, color = type)) +
 # Check the plot
 plot
 
-ggsave("../figures/Fig.2/Fig.2.png", plot = plot, width = 7, height = 6, units = "in", dpi = 600)
-ggsave("../figures/Fig.2/Fig.2.pdf", plot = plot, width = 7, height = 6, units = "in")
+ggsave("./analysis/figures/Fig.2/Fig.2.png", plot = plot, width = 7, height = 6, units = "in", dpi = 600)
+ggsave("./analysis/figures/Fig.2/Fig.2.pdf", plot = plot, width = 7, height = 6, units = "in")
 
 # 02 Figure 3, tree map ########################################################
 
 # 2.1 Import the data ==========================================================
-df <- read_excel("data/Statistics_papers.xlsx", sheet = "Models statistics")
-df <- df[-109,-c(6:10)]
+df <- read_excel("./analysis/data/raw_data/Statistics_papers.xlsx", sheet = "Models statistics")
+df <- df[-nrow(df),-c(6:10)]
 df <- df[df[3] !=0,] # Remove models with no occurences
 
 # 2.2 Format the data ==========================================================
@@ -123,8 +123,8 @@ names(df_counted) <- c("description", "model", "value", "value.best", "family")
 df_counted$family[df_counted$family == "N/A"] <- "Statistics"
 
 # 2.2 Create and export the graph  =============================================
-png("../figures/Fig.3/Fig.3.png", width = 1200, height = 1000)
-pdf("../figures/Fig.3/Fig.3.pdf", width = 12, height = 10)
+png("./analysis/figures/Fig.3/Fig.3_raw.png", width = 1200, height = 1000)
+pdf("./analysis/figures/Fig.3/Fig.3_raw.pdf", width = 12, height = 10)
 par(mar = c(0, 0, 0, 0))
 tm <- treemap(df_counted,
               index = c("family", "model"),
@@ -145,8 +145,9 @@ dev.off()
 # 3.1 Prepare the data =========================================================
 df_counted$approach <- "Machine learning"
 df_counted$approach[df_counted$family == "Statistics"] <- "Statistics"
-df_counted$family[df_counted$model == "LR"] <- "Linear regression"
-df_counted$family[df_counted$model == "k-MC"] <- "Dimensionality reduction"
+df_counted$family[df_counted$model == "FR"] <- "Probability"
+df_counted$family[df_counted$model == "LR"] <- "Linear Regression"
+df_counted$family[df_counted$model == "k-MC" | df_counted$model == "PCA" ] <- "Dimensionality Reduction"
 
 # 3.2 Format the data ==========================================================
 df_counted <- select(df_counted, approach, family, description, model, value, value.best)
@@ -231,13 +232,13 @@ plot<- ggplot(freq_df, aes(x = year, y = Freq, fill = reorder(family, -as.numeri
 # Plot
 plot
 
-ggsave("../figures/Fig.4/Fig.4.png", plot = plot, width = 9, height = 6, units = "in", dpi = 600)
-ggsave("../figures/Fig.4/Fig.4.pdf", plot = plot, width = 9, height = 6, units = "in")
+ggsave("./analysis/figures/Fig.4/Fig.4_raw.png", plot = plot, width = 9, height = 6, units = "in", dpi = 600)
+ggsave("./analysis/figures/Fig.4/Fig.4_raw.pdf", plot = plot, width = 9, height = 6, units = "in")
 
 # 05 Figure 5, results and metrics #############################################
 
 # 5.1 Import the data ==========================================================
-metrics <- read_excel("data/Statistics_papers.xlsx", sheet = "Metrics_full")
+metrics <- read_excel("./analysis/data/raw_data/Statistics_papers.xlsx", sheet = "Metrics_full")
 
 # 5.2 Prepare the data =========================================================
 metrics <- as.data.frame(metrics)
@@ -251,7 +252,7 @@ metrics_df <- data.frame(
 metrics_df[1,] <- c("","",0,"")
 
 for (i in 1:nrow(metrics)) {
-  metric <- metrics[i,c(5:23)]
+  metric <- metrics[i,c(5:24)]
   metric <- metric[, colSums(is.na(metric)) == 0, drop = FALSE]
   metric <- round(metric, digit = 2)
   if (ncol(metric) == 0) {
@@ -343,8 +344,8 @@ plot <- ggplot(plot_data, aes(x = study_id, y = eval_metrics))+
 
 plot
 
-ggsave("../figures/Fig.5/Fig.5_raw.png", plot = plot, width = 20, height = 6, units = "in", dpi = 600)
-ggsave("../figures/Fig.5/Fig.5_raw.pdf", plot = plot, width = 20, height = 6, units = "in")
+ggsave("./analysis/figures/Fig.5/Fig.5_raw.png", plot = plot, width = 20, height = 6, units = "in", dpi = 600)
+ggsave("./analysis/figures/Fig.5/Fig.5_raw.pdf", plot = plot, width = 20, height = 6, units = "in")
 
 
 # 5.5 Basic stats ==============================================================
@@ -380,12 +381,156 @@ plot <- ggplot(scatter_df , aes(x = Recall, y = Precision, label = ID)) +
 
 plot
 
-ggsave("../figures/Fig.6/Fig.6_raw.png", plot = plot, width = 7, height = 6, units = "in", dpi = 600)
-ggsave("../figures/Fig.6/Fig.6_raw.pdf", plot = plot, width = 7, height = 6, units = "in")
+ggsave("./analysis/figures/Fig.6/Fig.6_raw.png", plot = plot, width = 7, height = 6, units = "in", dpi = 600)
+ggsave("./analysis/figures/Fig.6/Fig.6_raw.pdf", plot = plot, width = 7, height = 6, units = "in")
 
-# 07 Figure 7, Remote sensing publication ######################################
+# 07 Figure 7, Country of the study area #######################################
 
-# 7.1 Prepare the data for dimension ===========================================
+# 7.1 Prepare the data  ========================================================
+col_name <- names(apm)[19]
+apm_long <- apm %>%
+  separate_rows(col_name, sep = ";")
+
+asd_long <- asd %>%
+  separate_rows(col_name, sep = ";")
+
+combined <- rbind(apm_long[,19], asd_long[,21])
+table <- table(combined)
+freq_df <- as.data.frame(table)
+colnames(freq_df) <- c("name", "value")
+
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+# 7.2 Formate the names  =======================================================
+
+replace <- c("USA" = "United States of America",
+             "American Sāmoa" = "American Samoa",
+             "Maurice" = "Mauritius",
+             "Republic of the Marshall Islands" = "Marshall Is.")
+
+freq_df  <- freq_df  %>%
+  mutate(name = recode(name, !!!replace))
+
+freq_df$name[freq_df$name == ""] <- NA
+
+freq_df <- na.omit(freq_df)
+
+map_data <- world %>%
+  left_join(freq_df, by = "name")
+
+plot <- ggplot(map_data) +
+  geom_sf(aes(fill = value)) +
+  labs(fill = "Number of \nstudies") +
+  scale_fill_gradient(
+    low = "#deebf7",
+    high = "#08306b",
+    na.value = "grey95"
+  ) +
+  coord_sf(crs = "+proj=robin") +
+  theme_minimal() +
+  theme(axis.text.x = element_blank())
+
+plot
+
+ggsave("./analysis/figures/Fig.7/Fig.7.png", plot = plot, width = 7, height = 3, units = "in", dpi = 600)
+ggsave("./analysis/figures/Fig.7/Fig.7.pdf", plot = plot, width = 7, height = 3, units = "in")
+
+# 08 Figure 8, Surface of the AOI and structure ################################
+
+# 8.1 Prepare the data for the first figure ====================================
+
+col_name <- names(apm)[21]
+apm_long <- apm %>%
+  separate_rows(col_name, sep = ";")
+apm_long$type <- "apm"
+
+asd_long <- asd %>%
+  separate_rows(col_name, sep = ";")
+asd_long$type <- "asd"
+
+combined <- rbind(apm_long[,c(21,25)], asd_long[,c(23,28)])
+
+combined[[1]] <- str_replace_all(combined[[1]],
+                              pattern = c("\\~"="", " "="", ","="", "km2"=""))
+
+
+text_clean1 <- str_replace_all(apm_long[[21]],
+                              pattern = c("\\~"="", " "="", ","="", "km2"=""))
+text_clean1 <- na.omit(as.numeric(text_clean1))
+
+text_clean2 <- str_replace_all(asd_long[[23]],
+                               pattern = c("\\~"="", " "="", ","="", "km2"=""))
+text_clean2 <- na.omit(as.numeric(text_clean2))
+
+df <- data.frame(combined)
+df <- na.omit(df)
+df[[1]] <- as.numeric(df[[1]])
+
+df <- df %>%
+  mutate(pct = 1 / nrow(df))
+
+colnames(df) <- c("size_num", "type", "pct")
+
+# 8.2 First figure plot ========================================================
+
+gg1 <- ggplot(df, aes(x = size_num, weight = pct, fill = type)) +
+  geom_density(position = "stack", color = "NA", alpha = 0.6) +
+  scale_x_continuous(trans='log10') +
+  scale_fill_manual(values = c("apm" = "#440154",
+                                 "asd" = "#31688e")) +
+  labs(
+    x = "Size of the study (log scale km²)",
+    y = "Proportion of studies") +
+  theme_minimal() +
+  theme(legend.position="none",
+        panel.grid.minor.x = element_blank(),
+        panel.grid.minor.y = element_blank()) +
+  annotate("text", x = 0, y = 0.42, label = "A", fontface = "bold", size = 9, hjust = -0.2, vjust = 0.5) +
+  annotate("text", x = 500, y = 0.25, label = "APMs", size = 7, hjust = -0.2, vjust = 0.5) +
+  annotate("text", x = 10, y = 0.05, label = "ASDs", size = 7, hjust = -0.2, vjust = 0.5)
+
+gg1
+
+# 8.3 Prepare the data for the second figure ===================================
+
+col_name <- names(asd)[24]
+asd_long <- asd %>%
+  separate_rows(col_name, sep = ", ")
+
+size_num <- as.factor(na.omit(asd_long[[24]]))
+size_num <- factor(size_num, levels=c('Layer level (< 5 m)', 'Small (5 > 50 m)', 'Medium (50 > 200 m)',
+                                      'Large (200 > 500 m)', 'Site level (> 500m)'))
+df <- as.data.frame(size_num)
+
+# 8.4 Second figure plot =======================================================
+
+gg2 <- ggplot(df, aes(x = size_num, fill = size_num)) +
+  geom_bar() +
+  labs(
+    x = "",
+    y = "Number of studies") +
+  scale_fill_viridis_d() +
+  theme_classic() +
+  scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
+  theme(legend.position="none",
+        axis.line.x =element_blank(),
+        axis.ticks.x=element_blank()) +
+  annotate("text", x = 0.5, y = 40, label = "B", fontface = "bold", size = 9, hjust = -0.2, vjust = 0.5) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.9, hjust =1))
+
+gg2
+
+# 8.5 Combined figure ==========================================================
+
+plot <- gg1|gg2
+plot
+
+ggsave("./analysis/figures/Fig.8/Fig.8_raw.png", plot = plot, width = 8, height = 4, units = "in", dpi = 600)
+ggsave("./analysis/figures/Fig.8/Fig.8_raw.pdf", plot = plot, width = 8, height = 4, units = "in")
+
+# 09 Figure 9, Remote sensing publication ######################################
+
+# 9.1 Prepare the data for dimension ===========================================
 
 # For the Dimension website (visited on the 20/08/2025)
 # Inclusion criteria "remote sensing" keyword; 43 (History, Heritage and Archaeology) category
@@ -396,7 +541,7 @@ number <- c(176,192,188,181,205,213,246,322,345,375,431,
 years <- seq(2000, 2024, by = 1)
 df_dimension <- data.frame(year = years, Freq = number)
 
-# 7.2 Prepare the data for web of science ======================================
+# 9.2 Prepare the data for web of science ======================================
 # For the Web of Science website (visited on the 20/08/2025)
 # Inclusion criteria "remote sensing" keyword; Arcaheology Web of Science category
 # Years 2000 to 2024
@@ -405,9 +550,9 @@ number <- c(6,4,2,5,2,9,10,14,13,32,18,61,22,22,25,21,61,64,147,243,88,73,128,75
 years <- seq(2000, 2024, by = 1)
 df_web <- data.frame(year = years, Freq = number)
 
-# 7.3 Prepare the data for UCS Satellite Database ==============================
+# 9.3 Prepare the data for UCS Satellite Database ==============================
 # Visited on the 20/08/2025 at https://test.ucsaction.org/resources/satellite-database
-sat <- read_excel("data/UCS-Satellite-Database 5-1-2023.xlsx")
+sat <- read_excel("./analysis/data/raw_data/UCS-Satellite-Database 5-1-2023.xlsx")
 
 # Select only satellites for earh observation non military
 sat <- sat[sat$Purpose == "Earth Observation",]
@@ -424,7 +569,7 @@ df_sat <- as.data.frame(table(year))
 df_sat$year <- as.character(df_sat$year)
 df_sat$year <- as.numeric(df_sat$year)
 
-# 7.4 Plot the data ============================================================
+# 9.4 Plot the data ============================================================
 
 plot1 <- ggplot(df_dimension, aes(x = year, y = Freq)) +
   coord_cartesian(xlim = c(min(years), max(years) + 1),
@@ -471,19 +616,19 @@ plot3
 plot <- (plot1 | plot2) / plot3
 plot
 
-ggsave("../figures/Fig.7/Fig.7.png", plot = plot, width = 10, height = 8, units = "in", dpi = 600)
-ggsave("../figures/Fig.7/Fig.7.pdf", plot = plot, width = 10, height = 8, units = "in")
+ggsave("./analysis/figures/Fig.9/Fig.9.png", plot = plot, width = 10, height = 8, units = "in", dpi = 600)
+ggsave("./analysis/figures/Fig.9/Fig.9.pdf", plot = plot, width = 10, height = 8, units = "in")
 
-# 08 Figure 8, covariates selection ############################################
+# 10 Figure 10, covariates selection ############################################
 
-# 8.1 Prepare the data =========================================================
+# 10.1 Prepare the data =========================================================
 
 cov <- data.frame(name = apm$Name, nb.cov = apm$`Nb. Cov.`, cov.sel = apm$`Cov. Selec.`)
 cov <- na.omit(cov)
 cov$nb.cov
 cov$cov.sel
-cov$cov.sel <- c(8,2,8,21,10,25,6,65,8,16,16,7,12)
-cov$cov.type <- c("PCA", NA, NA,"Human", "PCA", NA, "Human",
+cov$cov.sel <- c(8,2,8,21,10,25,6,27,65,8,16,16,7,12)
+cov$cov.type <- c("PCA", NA, NA,"Human", "PCA", NA, "Human", NA,
               NA, "VIF/auto-correl", NA, NA, NA, NA)
 
 cov_long <- cov %>%
@@ -497,7 +642,7 @@ cov_long <- cov %>%
   ))
 
 
-# 8.2 Plot the data ============================================================
+# 10.2 Plot the data ============================================================
 
 plot <- ggplot(cov, aes(x = name)) +
   geom_col(aes(y = nb.cov),
@@ -518,5 +663,40 @@ plot <- ggplot(cov, aes(x = name)) +
   scale_fill_brewer(type = "qual", palette = "Pastel2")
 
 plot
-ggsave("../figures/Fig.8/Fig.8_raw.png", plot = plot, width = 8, height = 6, units = "in", dpi = 600)
-ggsave("../figures/Fig.8/Fig.8_raw.pdf", plot = plot, width = 8, height = 6, units = "in")
+ggsave("./analysis/figures/Fig.10/Fig.10_raw.png", plot = plot, width = 8, height = 6, units = "in", dpi = 600)
+ggsave("./analysis/figures/Fig.10/Fig.10_raw.pdf", plot = plot, width = 8, height = 6, units = "in")
+
+# 11 Table for the data/code-access ############################################
+
+# 11.1 Table for data ==========================================================
+data_table <- rbind(asd.single[,c(2,25)], apm.single[,c(2,22)])
+data_df <- as.data.frame(data_table)
+
+data_df <- data_df[data_df[2] != "No",]
+
+colnames(data_df) <- c("name", "Availability")
+table_data <- data_df %>%
+  group_by(Availability) %>%
+  summarise(
+    Number = n(),
+    References = paste(name, collapse = "; "),
+    .groups = "drop"
+  )
+
+# 11.2 Table for code ==========================================================
+data_table <- rbind(asd.single[,c(2,26)], apm.single[,c(2,23)])
+data_df <- as.data.frame(data_table)
+
+data_df <- data_df[data_df[2] == TRUE,]
+
+colnames(data_df) <- c("name", "Availability")
+table_code <- data_df %>%
+  group_by(Availability) %>%
+  summarise(
+    Number = n(),
+    References = paste(name, collapse = "; "),
+    .groups = "drop"
+  )
+
+table_final <- rbind(table_data, table_code)
+table_final <- as.data.frame(table_final)

@@ -11,18 +11,17 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 # Please put your title here to include it in the file below.
-Title <- "Humans, are you there? Comparative approach of two distinguishable methods for human installation detection: Automatic structure detection and archaeological predictive models"
+Title <- "Comparative review of recent developments in archaeological predictive models and automatic structure detection"
 ```
 
 # Humans, are you there?
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh///master?urlpath=rstudio) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17095617.svg)](https://doi.org/10.5281/zenodo.17095617)
 
 This repository contains the data and code for our paper:
 
-> Bellat, Hatton and Orellana-Figueroa (2025). _`r Title`_. CAA2025 Proceddings <https://doi.org/10.5281/zenodo.17095617>
+> Bellat, Hatton and Orellana-Figueroa (2026). _`r Title`_. CAA2025 Proceddings <https://doi.org/10.5281/zenodo.17095617>
 
 ### How to cite
 
@@ -40,9 +39,9 @@ The **analysis** directory contains:
     `paper.docx`, suitable for reading (the code is replaced by figures
     and tables in this file)
   - [:file\_folder: derived data](/analysis/data/derived_data): Data produced in the analysis (code file).
-  - [:file\_folder: raw data](/analysis/data/raw_data): Data used in the analysis.
-  - [:file\_folder: figures](/analysis/figures): Plots and other
-    illustrations
+  - [:file\_folder: raw data](/analysis/data/raw_data): Data used in the analysis and the RIS files from the screening process.
+  - [:file\_folder: figures](/analysis/figures): Plots and other illustrations.
+  - [:file\_folder: templates](/analysis/templates): Visual templates for the paper.
 
 ## How to run in your browser or download and run locally
 

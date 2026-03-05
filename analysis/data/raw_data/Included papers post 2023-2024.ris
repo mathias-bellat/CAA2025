@@ -1,0 +1,1410 @@
+TY  - JOUR
+TI  - Deep learning-based detection of qanat underground water distribution systems using HEXAGON spy satellite imagery
+AU  - Bulawka, N
+AU  - Orengo, HA
+AU  - Berganzo-Besga, I
+T2  - Journal of archaeological science
+AB  - Qanats are a remarkable type of ancient hydraulic structure for sustainable water distribution in arid environments that use subterranean channels to transport water from highland or mountainous areas. The presence of the qanat system is marked by a line of regularly spaced shafts visible from the surface, which can be used to detect qanats using satellite imagery. Typically, qanats have been documented by field mapping or manual digitisation within a Geographic Information System (GIS) environment. This process is time-consuming due to the numerous shafts within each qanat line. However, several automated methods for detecting qanat structures have been explored, using techniques such as morphological filters, custom convolutional neural networks (CNN) and, more recently, YOLOv5 and Mask R-CNN. These approaches used high-resolution RGB images and CORONA images. However, the use of black and white CORONA in CNNs has been limited in its applicability due to a high rate of false positives. This paper explores the potential of YOLOv9 in processing the black and white HEXAGON (KH-9) highresolution spy satellite system launched in 1971. Two areas in Afghanistan (Maiwand) and Iran (Gorgan Plain) were selected to train the system images extracted from HEXAGON imagery and artificial synthetic data. The training dataset was augmented using the Albumentation library, which increased the number of tiles used. The model was tested using two types of HEXAGON imagery for selected areas in Afghanistan (Maiwand), Iran (Gorgan Plain) and Morocco (Rissani), and CORONA imagery in Iran (Gorgan Plain). Our study provided a model capable of predicting the location of qanat shafts with a precision of over 0.881 and a recall of 0.627 for most of the case studies tested. This is the first case study aimed at detecting qanats in different landscapes using different types of satellite imagery. Using real, augmented, and artificial data allowed us to generalise the representation of qanats into lineal groups of circular features. Thanks to applying labelling for individual qanats and their pairs as separate classes, our approach eliminated most of the isolated and clustered false positives.
+DA  - 2024/11//undefined
+PY  - 2024
+DO  - 10.1016/j.jas.2024.106053
+VL  - 171
+LA  - English
+SN  - 0305-4403
+AN  - WOS:001310692600001
+KW  - CLIMATE
+KW  - Deep learning
+KW  - HEXAGON
+KW  - IRAN
+KW  - IRRIGATION
+KW  - Karez
+KW  - KAREZ
+KW  - MANAGEMENT
+KW  - OASIS
+KW  - ORIGIN
+KW  - Qanat
+KW  - SETTLEMENT
+KW  - TAFILALT
+KW  - TECHNOLOGY
+KW  - YOLOv9
+ER  - 
+
+TY  - JOUR
+TI  - Utilizing the MaxEnt machine learning model to forecast urban heritage sites in the desert regions of southwestern Algeria: A case study in the Saoura region
+AU  - Imen, G
+AU  - Halima, G
+AU  - Ayoub, K
+AU  - Djamel, A
+T2  - Archaeological Prospection
+AB  - The Saoura region, a renowned oasis in North Africa with heritage and archaeological significance of both national and universal importance, has witnessed a gradual deterioration over time. This research involves archaeological predictive modelling, aiming to create models capable of predicting the likelihood of discovering archaeological sites, cultural resources or evidence of past landscape use within a specific region. The study specifically focuses on predicting the locations of historical sites in the Sahara Desert, employing the maximum entropy (MaxEnt) model and six geo-environmental criteria, including slope, elevation (digital elevation model [DEM]), distance from water, normalized difference vegetation index (NDVI), fertility and proximity to palm groves. The research is based on data from 58 historical sites and includes an assessment of the model's accuracy. The study highlights the remarkable significance of the fertility variable, which accounts for 94.1% of the predictive influence, making it the most crucial geo-environmental factor in forecasting the location of historical sites in the Sahara. This underscores its pivotal role in shaping settlement patterns and subsistence strategies within the region, followed by the distance variable from the palm cove (3.2%) and the distance variable from the river (2.3%). The MaxEnt model proves to be suitable for predicting historical site positions, with an impressive average area under the ROC curve (AUC) score of 0.859, reflecting its effectiveness. Notably, areas with a high prediction probability are predominantly situated near the Saoura Valley. The study's findings hold the potential to assist planners in safeguarding archaeological sites by avoiding areas where historical sites are likely to be present.
+DA  - 2024/01//undefined
+PY  - 2024
+DO  - 10.1002/arp.1923
+VL  - 31
+IS  - 1
+SP  - 23
+EP  - 35
+LA  - English
+SN  - 1075-2196
+AN  - WOS:001125810200001
+KW  - cultural resource management
+KW  - Lu
+KW  - MaxEnt model
+KW  - predictive modelling
+KW  - Saoura Valley
+KW  - SPECIES DISTRIBUTION
+KW  - urban heritage sites
+ER  - 
+
+TY  - JOUR
+TI  - Detection of Hunting Pits using Airborne Laser Scanning and Deep Learning
+AU  - Lidberg, W
+AU  - Westphal, F
+AU  - Brax, C
+AU  - Sandström, C
+AU  - Östlund, L
+T2  - Journal of Field Archaeology
+AB  - Forests worldwide contain unique cultural traces of past human land use. Increased pressure on forest ecosystems and intensive modern forest management methods threaten these ancient monuments and cultural remains. In northern Europe, older forests often contain very old traces, such as millennia-old hunting pits and indigenous Sami hearths. Investigations have repeatedly found that forest owners often fail to protect these cultural remains and that many are damaged by forestry operations. Current maps of hunting pits are incomplete, and the locations of known pits have poor spatial accuracy. This study investigated whether hunting pits can be automatically mapped using national airborne laser data and deep learning. The best model correctly mapped 70% of all the hunting pits in the test data with an F1 score of 0.76. This model can be implemented across northern Scandinavia and could have an immediate effect on the protection of cultural remains.
+DA  - 2024/08/17/
+PY  - 2024
+DO  - 10.1080/00934690.2024.2364428
+VL  - 49
+IS  - 6
+SP  - 395
+EP  - 405
+LA  - English
+SN  - 0093-4690
+AN  - WOS:001284888800001
+L1  - https://www.tandfonline.com/doi/pdf/10.1080/00934690.2024.2364428
+KW  - airborne laser scanning
+KW  - Archaeology
+KW  - artificial intelligence
+KW  - deep learning
+KW  - forest history
+KW  - hunting pits
+KW  - IMPACT
+KW  - LIDAR
+KW  - LIGHT DETECTION
+KW  - machine learning
+KW  - TOPOGRAPHIC POSITION
+ER  - 
+
+TY  - JOUR
+TI  - Archaeological Predictive Modeling Using Machine Learning and Statistical Methods for Japan and China
+AU  - Wang, Y
+AU  - Shi, XD
+AU  - Oguchi, T
+T2  - Isprs International Journal of Geo-Information
+AB  - Archaeological predictive modeling (APM) is an essential method for quantitatively assessing the probability of archaeological sites present in a region. It is a necessary tool for archaeological research and cultural heritage management. In particular, the predictive modeling process could help us understand the relationship between past human civilizations and the natural environment; moreover, a better understanding of the mechanisms of the human-land relationship can provide new ideas for sustainable development. This study aims to investigate the impact of topographic and hydrological factors on archaeological sites in the Japanese archipelago and Shaanxi Province, China and proposes a hybrid integration approach for APM. This approach employed a conditional attention mechanism (AM) using deep learning and a frequency ratio (FR) model, in addition to a separate FR model and the widely-used machine learning MaxEnt method. The models' outcomes were cross-checked using the four-fold cross-validation method, and the models' performances were compared using the area under the receiver operating characteristic curve (AUC) and Kvamme's Gain. The results showed that in both study areas, the AM_FR model exhibited the most satisfactory performances.
+DA  - 2023/06//undefined
+PY  - 2023
+DO  - 10.3390/ijgi12060238
+VL  - 12
+IS  - 6
+LA  - English
+SN  - 2220-9964
+AN  - WOS:001015088000001
+L1  - https://www.mdpi.com/2220-9964/12/6/238/pdf?version=1686144742
+KW  - archaeological predictive modeling
+KW  - AREA
+KW  - CLASSIFICATION
+KW  - conditional attention mechanism
+KW  - deep learning
+KW  - ECOLOGICAL NICHE
+KW  - ENTROPY
+KW  - FREQUENCY RATIO
+KW  - frequency ratio model
+KW  - GIS
+KW  - LOGISTIC-REGRESSION
+KW  - maximum entropy
+KW  - SITE LOCATION
+KW  - spatial analysis
+KW  - topographic factors
+KW  - VALLEY
+ER  - 
+
+TY  - JOUR
+TI  - GIS and Machine Learning Models Target Dynamic Settlement Patterns and Their Driving Mechanisms from the Neolithic to Bronze Age in the Northeastern Tibetan Plateau
+AU  - Li, G
+AU  - Dong, JJ
+AU  - Che, ML
+AU  - Wang, X
+AU  - Fan, J
+AU  - Dong, GH
+T2  - Remote Sensing
+AB  - Traditional GIS-based statistical models are intended to extrapolate patterns of settlements and their interactions with the environment. They contribute significantly to our knowledge of past human-land relationships. Yet, these models are often criticized for their empiricism, lopsided specific factors, and for overlooking the synergy between variables. Though largely untested, machine learning and artificial intelligence methods have the potential to overcome these shortcomings comprehensively and objectively. The northeastern Tibetan Plateau (NETP) is characterized by diverse environments and significant changes to the social system from the Neolithic to Bronze Age. In this study, this area serves as a representative case for assessing the complex relationships between settlement locations and geographic environments, taking full advantages of these new models. We have explored a novel modeling case by employing GIS and random forests to consider multiple factors, including terrain, vegetation, soil, climate, hydrology, and land suitability, to construct classification models identifying environmental variation across different cultural periods. The model exhibited strong performance and a high archaeological prediction value. Potential living maps were generated for each cultural stage, revealing distinct environmental selection strategies from the Neolithic to Bronze Age. The key environmental parameters of elevation, climate, soil erosion, and cultivated land suitability were calculated with high weights, influencing human environmental decisions synergistically. Furthermore, we conducted a quantitative analysis of temporal dynamics in climate and subsistence to understand driving mechanisms behind environmental strategies. These findings suggest that past human environmental strategies were based on the comprehensive consideration of various factors, coupled with their social economic scenario. Such subsistence-oriented activities supported human beings in overcoming elevation limitation, and thus allowed them to inhabit wider pastoral areas. This study showcases the potential of machine learning in predicting archaeological probabilities and in interpreting the environmental influence on settlement patterns.
+DA  - 2024/04//undefined
+PY  - 2024
+DO  - 10.3390/rs16081454
+VL  - 16
+IS  - 8
+LA  - English
+SN  - 2072-4292
+AN  - WOS:001210324100001
+L1  - https://www.mdpi.com/2072-4292/16/8/1454/pdf?version=1713539626
+KW  - AGRICULTURE
+KW  - archaeological predictive modeling
+KW  - ARCHAEOLOGICAL SITES
+KW  - AREA
+KW  - CLASSIFICATION
+KW  - DOMESTICATION
+KW  - ENVIRONMENT
+KW  - environmental selection strategies
+KW  - HOLOCENE
+KW  - machine learning
+KW  - ORGANIZING MAPS
+KW  - PERMANENT HUMAN OCCUPATION
+KW  - settlement patterns
+KW  - STRATEGIES
+KW  - the northeastern Tibetan Plateau
+ER  - 
+
+TY  - JOUR
+TI  - Evaluating Mask R-CNN models to extract terracing across oceanic high islands: A case study from Samoa
+AU  - Quintus, S
+AU  - Davis, DS
+AU  - Cochrane, EE
+T2  - Archaeological Prospection
+AB  - Lidar datasets have been crucial for documenting the scale and nature of human ecosystem engineering and land use. Automated analysis methods, which have been rising in popularity and efficiency, allow for systematic evaluations of vast landscapes. Here, we use a Mask R-CNN deep learning model to evaluate terracing-artificially flattened areas surrounded by steeper slopes-on islands in American Samoa. Mask R-CNN is notable for its ability to simultaneously perform detection and segmentation tasks related to object recognition, thereby providing robust datasets of both geographic locations of terracing features and their spatial morphometry. Using training datasets from across American Samoa, we train this model to recognize terracing features and then apply it to the island of Tutuila to undertake an island-wide survey for terrace locations, distributions and morphologies. We demonstrate that this model is effective (F1 = 0.718), but limitations are also documented that relate to the quality of the lidar data and the size of terracing features. Our data show that the islands of American Samoa display shared patterns of terracing, but the nature of these patterns are distinct on Tutuila compared with the Manu'a island group. These patterns speak to the different interior configurations of the islands. This study demonstrates how deep learning provides a better understanding of landscape construction and behavioural patterning on Tutuila and has the capacity to expand our understanding of these processes on other islands beyond our case study.
+DA  - 2023/10//undefined
+PY  - 2023
+DO  - 10.1002/arp.1909
+VL  - 30
+IS  - 4
+SP  - 477
+EP  - 492
+LA  - English
+SN  - 1075-2196
+AN  - WOS:001027270800001
+L1  - https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/arp.1909
+KW  - AGRICULTURAL TERRACES
+KW  - AIRBORNE LIDAR SURVEY
+KW  - ARCHAEOLOGICAL SURVEY
+KW  - CLASSIFICATION
+KW  - FIELD
+KW  - instance segmentation
+KW  - LAND-USE
+KW  - LANDSCAPES
+KW  - lidar
+KW  - Mask R-CNN
+KW  - MIXTECA ALTA
+KW  - Oceania
+KW  - SETTLEMENT
+KW  - terracing
+KW  - TUTUILA
+ER  - 
+
+TY  - JOUR
+TI  - Detecting pitfall systems in the Suomenselka watershed, Finland, with airborne laser scanning and artificial intelligence
+AU  - Ikäheimo, J
+T2  - Journal of Archaeological Science-Reports
+AB  - This article examines the use of airborne laser scanning data and semi-automatic detection algorithms to identify pitfall sites in the northern part of the Suomenselka center dot watershed in Finland. The results show that new sites can be effectively detected with these methods, even in areas recently surveyed archaeologically. Most of the previously known pitfall sites were also easily distinguishable from the data. The geographic location of the newly discovered sites confirmed previous interpretations of the prehistoric and historic hunting of cervids with pitfalls in the research area. Yet, further research is needed to refine the interpretations concerning the use and temporal sequence of pitfall rows both in Finland and elsewhere in Fennoscandia.
+DA  - 2023/10//undefined
+PY  - 2023
+DO  - 10.1016/j.jasrep.2023.104216
+VL  - 51
+LA  - English
+SN  - 2352-409X
+AN  - WOS:001108698000001
+L1  - https://oulurepo.oulu.fi/bitstream/10024/46041/1/nbnfi-fe20231031142073.pdf
+KW  - Airborne laser scanning
+KW  - Artificial intelligence
+KW  - Cervid hunting
+KW  - Finnish archaeology
+KW  - Pitfalls
+KW  - Semi-automatic detection
+KW  - Suomenselka watershed
+ER  - 
+
+TY  - JOUR
+TI  - Identification of Black Reef Shipwreck Sites Using AI and Satellite Multispectral Imagery
+AU  - Karamitrou, A
+AU  - Sturt, F
+AU  - Bogiatzis, P
+T2  - Remote Sensing
+AB  - UNESCO estimates that our planet's oceans and lakes are home to more than three million shipwrecks. Of these three million, the locations of only 10% are currently known. Apart from the historical and archaeological interest in finding wrecks, there are other reasons why we need to know their precise locations. While a shipwreck can provide an excellent habitat for marine life, acting as an artificial reef, shipwrecks are also potential sources of pollution, leaking fuel and corroding heavy metals. When a vessel runs aground on an iron-free environment, changes in the chemistry of the surrounding environment can occur, creating a discoloration called black reef. In this work, we examine the use of supervised deep learning methods for the detection of shipwrecks on coral reefs through the presence of this discoloration using satellite images. One of the main challenges is the limited number of known locations of black reefs, and therefore, the limited training dataset. Our results show that even with relatively limited data, the simple eight-layer, fully convolutional network has been trained efficiently using minimal computational resources and has identified and classified all investigated black reefs and consequently the presence of shipwrecks. Furthermore, it has proven to be a useful tool for monitoring the extent of discoloration and consequently the ecological impact on the reef by using time series imagery.
+DA  - 2023/04//undefined
+PY  - 2023
+DO  - 10.3390/rs15082030
+VL  - 15
+IS  - 8
+LA  - English
+SN  - 2072-4292
+AN  - WOS:000977392200001
+L1  - https://www.mdpi.com/2072-4292/15/8/2030/pdf?version=1681225176
+KW  - artificial intelligence
+KW  - ATOLL
+KW  - black reefs
+KW  - COMMUNITIES
+KW  - coral reefs
+KW  - environment
+KW  - LIDAR
+KW  - PHASE-SHIFTS
+KW  - remote sensing
+KW  - SEGMENTATION
+KW  - shipwreck
+KW  - ST BRANDONS ROCK
+ER  - 
+
+TY  - JOUR
+TI  - Archaeological site segmentation of ancient city walls based on deep learning and LiDAR remote sensing
+AU  - Wang, SL
+AU  - Hu, QW
+AU  - Wang, SH
+AU  - Ai, MY
+AU  - Zhao, PC
+T2  - Journal of Cultural Heritage
+AB  - Ancient city walls, one of the most notable distinguishing features of Chinese ancient cities, are military defenses constructed of rammed earth. The ancient city walls have considerable study value because they served as the city's boundary and a symbol of power. However, as a result of natural erosion and human activities, many sites have been ruined. Existing optical remote sensing technologies, LiDAR point cloud processing algorithms, and deep learning methods are inadequate for the extraction and segmentation of ancient city wall sites. The novel semantic segmentation method for ancient city wall sites is described in this paper that extracts sites at the pixel level from LiDAR remote sensing data based on deep learning. To begin, the point cloud data collected by airborne laser scanning is processed into DEM data, and the distribution of ancient city walls in the study area is obtained through archaeological survey and expert interpretation. The dataset for deep learning semantic segmentation is then generated using image cropping and data augmentation techniques. Third, implement a U-Net semantic segmentation framework for microtopographic archaeological sites, and predict ancient city wall sites in the testing region after model training. Finally, the deep learning results are optimized using the connected component analysis method, and prediction mistakes such as holes and noise are removed. Taking Jinancheng, the capital city of the Chu kingdom, as an example, the proposed method process can identify and extract the ancient city wall sites at the pixel level, where the evaluation metrics reach 94.12% (Precision) and 81.38% (IoU). The experiment results are excellent due to improvement strategies in the dataset generation, model training, and post-processing steps. Thus, this study is significant for the current survey and protection of ancient city wall sites. The source code will be freely available at https://github.com/wshunli/Open- CHAI-CityWalls .(c) 2023 Consiglio Nazionale delle Ricerche (CNR). Published by Elsevier Masson SAS. All rights reserved.
+DA  - 2024/03//undefined
+PY  - 2024
+DO  - 10.1016/j.culher.2023.11.005
+VL  - 66
+SP  - 117
+EP  - 131
+LA  - English
+SN  - 1296-2074
+AN  - WOS:001130064000001
+KW  - Archaeological remote sensing
+KW  - Archaeological site segmentation
+KW  - Archaeological survey
+KW  - CITIES
+KW  - Deep learning
+KW  - LiDAR remote sensing
+KW  - MACHINE
+KW  - Semantic segmentation
+ER  - 
+
+TY  - JOUR
+TI  - Uncovering Archaeological Sites in Airborne LiDAR Data With Data-Centric Artificial Intelligence
+AU  - Canedo, D
+AU  - Fonte, J
+AU  - Seco, LG
+AU  - Vázquez, M
+AU  - Dias, R
+AU  - Do Pereiro, T
+AU  - Hipólito, J
+AU  - Menéndez-Marsh, F
+AU  - Georgieva, P
+AU  - Neves, AJR
+T2  - IEEE Access
+AB  - Mapping potential archaeological sites using remote sensing and artificial intelligence can be an efficient tool to assist archaeologists during project planning and fieldwork. This paper explores the use of airborne LiDAR data and data-centric artificial intelligence for identifying potential burial mounds. The challenge of exploring the landscape and mapping new archaeological sites, coupled with the difficulty of identifying them through visual analysis of remote sensing data, results in the recurring issue of insufficient annotations. Additionally, the top-down nature of LiDAR data hinders artificial intelligence in its search, as the morphology of archaeological sites blends with the morphology of natural and artificial shapes, leading to a frequent occurrence of false positives. To address this problem, a novel data-centric artificial intelligence approach is proposed, exploring the available data and tools. The LiDAR data is pre-processed into a dataset of 2D digital elevation images, and the known burial mounds are annotated. This dataset is augmented with a copy-paste object embedding based on Location-Based Ranking. This technique uses the Land-Use and Occupation Charter to segment the regions of interest, where burial mounds can be pasted. YOLOv5 is trained on the resulting dataset to propose new burial mounds. These proposals go through a post-processing step, directly using the 3D data acquired by the LiDAR to verify if its 3D shape is similar to the annotated sites. This approach drastically reduced false positives, attaining a 72.53% positive rate, relevant for the ground-truthing phase where archaeologists visit the coordinates of proposed burial mounds to confirm their existence.
+DA  - 2023///
+PY  - 2023
+DO  - 10.1109/ACCESS.2023.3290305
+VL  - 11
+SP  - 65608
+EP  - 65619
+LA  - English
+SN  - 2169-3536
+AN  - WOS:001025455700001
+L1  - https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=10167652&ref=
+KW  - & nbsp
+KW  - Archaeology
+KW  - data augmentation
+KW  - data-centric artificial intelligence
+KW  - deep learning
+KW  - LiDAR
+KW  - location-based ranking
+KW  - object detection
+ER  - 
+
+TY  - JOUR
+TI  - Automated Detection of Hillforts in Remote Sensing Imagery With Deep Multimodal Segmentation
+AU  - Canedo, D
+AU  - Fonte, J
+AU  - Dias, R
+AU  - do Pereiro, T
+AU  - Gonçalves-Seco, L
+AU  - Vázquez, M
+AU  - Georgieva, P
+AU  - Neves, AJR
+T2  - Archaeological Prospection
+AB  - Recent advancements in remote sensing and artificial intelligence can potentially revolutionize the automated detection of archaeological sites. However, the challenging task of interpreting remote sensing imagery combined with the intricate shapes of archaeological sites can hinder the performance of computer vision systems. This work presents a computer vision system trained for efficient hillfort detection in remote sensing imagery. Equipped with an adapted multimodal semantic segmentation model, the system integrates LiDAR-derived LRM images and aerial orthoimages for feature fusion, generating a binary mask pinpointing detected hillforts. Post-processing includes margin and area filters to remove edge inferences and smaller anomalies. The resulting inferences are subjected to hard positive and negative mining, where expert archaeologists classify them to populate the training data with new samples for retraining the segmentation model. As the computer vision system is far more likely to encounter background images during its search, the training data are intentionally biased towards negative examples. This approach aims to reduce the number of false positives, typically seen when applying machine learning solutions to remote sensing imagery. Northwest Iberia experiments witnessed a drastic reduction in false positives, from 5678 to 40 after a single hard positive and negative mining iteration, yielding a 99.3% reduction, with a resulting F-1 score of 66%. In England experiments, the system achieved a 59% F1 score when fine-tuned and deployed countrywide. Its scalability to diverse archaeological sites is demonstrated by successfully detecting hillforts and other types of enclosures despite their typical complex and varied shapes. Future work will explore archaeological predictive modelling to identify regions with higher archaeological potential to focus the search, addressing processing time challenges.
+DA  - 2024/09/16/
+PY  - 2024
+DO  - 10.1002/arp.1958
+LA  - English
+SN  - 1075-2196
+AN  - WOS:001313972100001
+L1  - https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/arp.1958
+KW  - computer vision
+KW  - hillforts
+KW  - LiDAR
+KW  - multimodal semantic segmentation
+KW  - orthoimagery
+KW  - RELIEF MODELS
+KW  - transformer
+KW  - VISUALIZATION
+ER  - 
+
+TY  - JOUR
+TI  - The Synergy between Artificial Intelligence, Remote Sensing, and Archaeological Fieldwork Validation
+AU  - Canedo, D
+AU  - Hipólito, J
+AU  - Fonte, J
+AU  - Dias, R
+AU  - do Pereiro, T
+AU  - Georgieva, P
+AU  - Gonçalves-Seco, L
+AU  - Vázquez, M
+AU  - Pires, N
+AU  - Fábrega-Alvarez, P
+AU  - Menéndez-Marsh, F
+AU  - Neves, AJR
+T2  - Remote Sensing
+AB  - The increasing relevance of remote sensing and artificial intelligence (AI) for archaeological research and cultural heritage management is undeniable. However, there is a critical gap in this field. Many studies conclude with identifying hundreds or even thousands of potential sites, but very few follow through with crucial fieldwork validation to confirm their existence. This research addresses this gap by proposing and implementing a fieldwork validation pipeline. In northern Portugal's Alto Minho region, we employed this pipeline to verify 237 potential burial mounds identified by an AI-powered algorithm. Fieldwork provided valuable information on the optimal conditions for burial mounds and the specific factors that led the algorithm to err. Based on these insights, we implemented two key improvements to the algorithm. First, we incorporated a slope map derived from LiDAR-generated terrain models to eliminate potential burial mound inferences in areas with high slopes. Second, we trained a Vision Transformer model using digital orthophotos of both confirmed burial mounds and previously identified False Positives. This further refines the algorithm's ability to distinguish genuine sites. The improved algorithm was then tested in two areas: the original Alto Minho validation region and the Barbanza region in Spain, where the location of burial mounds was well established through prior field work.
+DA  - 2024/06//undefined
+PY  - 2024
+DO  - 10.3390/rs16111933
+VL  - 16
+IS  - 11
+LA  - English
+SN  - 2072-4292
+AN  - WOS:001246685600001
+L1  - https://www.mdpi.com/2072-4292/16/11/1933/pdf?version=1716883539
+KW  - archaeology
+KW  - artificial intelligence
+KW  - burial mounds
+KW  - fieldwork validation
+KW  - LiDAR
+KW  - LIDAR
+KW  - object detection
+KW  - remote sensing
+KW  - vision transformer
+ER  - 
+
+TY  - JOUR
+TI  - Google Earth Engine for archaeologists: An updated look at the progress and promise of remotely sensed big data
+AU  - Herndon, KE
+AU  - Griffin, R
+AU  - Schroder, W
+AU  - Murtha, T
+AU  - Golden, C
+AU  - Contreras, DA
+AU  - Cherrington, E
+AU  - Wang, LW
+AU  - Bazarsky, A
+AU  - Van Kollias, G
+AU  - Firpi, OA
+T2  - Journal of Archaeological Science-Reports
+AB  - A wealth of remotely sensed data has accumulated over the past several decades and now constitutes an analytical resource primed for archaeological applications. To date, remotely sensed big data (RSBD) analytics in archaeology have focused on filling spatial gaps in the distribution of sites and features, characterizing environmental landscapes, and monitoring cultural heritage sites. The scientific promise of these data to expand our understanding of past human-environment interactions has not been fully realized. Limitations of data access, sufficient analytical and computational resources, and methodological awareness and education on the appropriate use of RSBD have limited the adoption and widespread use of RSBD in archaeology, despite its ubiquity in the Earth sciences. Google Earth Engine (GEE) is a freely available planetary-scale cloud computing platform that addresses the perennial challenges of data access, analysis, and computing power that are particularly acute among archaeologists aiming to derive insights from RSBD. GEE lowers the barrier to entry for analyzing RSBD, expanding the potential for these data in the automated identification of archaeological features through deep learning; fieldwork planning and archaeological practice; modeling of past environments and environmental variability; and cultural heritage impact and risk assessments. In doing so, it also contributes to open science via increased access, transparency, and reproducibility.
+DA  - 2023/08//undefined
+PY  - 2023
+DO  - 10.1016/j.jasrep.2023.104094
+VL  - 50
+LA  - English
+SN  - 2352-409X
+AN  - WOS:001060331200001
+KW  - AGRICULTURE
+KW  - ANCIENT LANDSCAPE
+KW  - Big data
+KW  - CLASSIFICATION
+KW  - Cloud computing
+KW  - Digital archaeology
+KW  - Environmental archaeology
+KW  - Google Earth Engine (GEE)
+KW  - LAND-USE
+KW  - Landscape archaeology
+KW  - LIDAR SURVEY
+KW  - MAIZE
+KW  - RAIN-FOREST
+KW  - Remote sensing
+KW  - SCALE
+KW  - SETTLEMENT
+KW  - WORLD HERITAGE
+ER  - 
+
+TY  - JOUR
+TI  - Interacting with the Artificial Intelligence (AI) Language Model ChatGPT: A Synopsis of Earth Observation and Remote Sensing in Archaeology
+AU  - Agapiou, Athos
+AU  - Lysandrou, Vasiliki
+T2  - Heritage
+AB  - In this communication we aim to provide an overview of Earth observation and remote sensing in archaeology following a non-traditional literature review approach, that is, investigating recent developments in artificial intelligence (AI) and language models. Towards this direction, the generative pre-trained transformer (ChatGPT) language model was used to extract relevant information. The ChatGPT language model—recently released by OpenAI—appears to provide an alternative way for retrieving comprehensive information for various thematic topics. ChatGPT is currently operated on a beta version by millions of users worldwide, free of access for a limited period. In this study, specific queries related to Earth observation and remote sensing in archaeology were made by the authors to the ChatGPT. Innovations and limitations are discussed, while a comparison with traditional bibliographic analysis is performed.
+DA  - 2023/05//
+PY  - 2023
+DO  - 10.3390/heritage6050214
+DP  - www.mdpi.com
+VL  - 6
+IS  - 5
+SP  - 4072
+EP  - 4085
+LA  - en
+PB  - Multidisciplinary Digital Publishing Institute
+SN  - 2571-9408
+ST  - Interacting with the Artificial Intelligence (AI) Language Model ChatGPT
+UR  - https://www.mdpi.com/2571-9408/6/5/214
+Y2  - 2024/02/16/13:30:32
+L1  - https://www.mdpi.com/2571-9408/6/5/214/pdf?version=1682842080
+KW  - ChatGPT
+KW  - cropmarks
+KW  - Earth observation archaeology
+KW  - programming model
+KW  - review
+KW  - satellite archaeology
+ER  - 
+
+TY  - JOUR
+TI  - A Critical Review of Remote Sensing Approaches and Deep Learning Techniques in Archaeology.
+AU  - Kadhim, Israa
+AU  - Abed, Fanar M.
+T2  - Sensors (Basel, Switzerland)
+AB  - To date, comprehensive reviews and discussions of the strengths and limitations of Remote Sensing (RS) standalone and combination approaches, and Deep Learning  (DL)-based RS datasets in archaeology have been limited. The objective of this  paper is, therefore, to review and critically discuss existing studies that have  applied these advanced approaches in archaeology, with a specific focus on  digital preservation and object detection. RS standalone approaches including  range-based and image-based modelling (e.g., laser scanning and SfM  photogrammetry) have several disadvantages in terms of spatial resolution,  penetrations, textures, colours, and accuracy. These limitations have led some  archaeological studies to fuse/integrate multiple RS datasets to overcome  limitations and produce comparatively detailed outcomes. However, there are still  knowledge gaps in examining the effectiveness of these RS approaches in enhancing  the detection of archaeological remains/areas. Thus, this review paper is likely  to deliver valuable comprehension for archaeological studies to fill knowledge  gaps and further advance exploration of archaeological areas/features using RS  along with DL approaches.
+DA  - 2023/03/08/
+PY  - 2023
+DO  - 10.3390/s23062918
+VL  - 23
+IS  - 6
+J2  - Sensors (Basel)
+LA  - eng
+SN  - 1424-8220
+L1  - https://www.mdpi.com/1424-8220/23/6/2918/pdf?version=1678258772
+KW  - AERIAL
+KW  - AREA
+KW  - COST
+KW  - Deep Learning
+KW  - digital archaeology
+KW  - digital preservation
+KW  - fusion approaches
+KW  - hidden features
+KW  - INTEGRATION
+KW  - LiDAR
+KW  - MODELS
+KW  - photogrammetry
+KW  - PHOTOGRAMMETRY
+KW  - RADAR
+KW  - Remote Sensing
+KW  - standalone approaches
+KW  - TECHNOLOGIES
+KW  - TERRESTRIAL
+ER  - 
+
+TY  - JOUR
+TI  - A human–AI collaboration workflow for archaeological sites detection
+AU  - Casini, Luca
+AU  - Marchetti, Nicolò
+AU  - Montanucci, Andrea
+AU  - Orrù, Valentina
+AU  - Roccetti, Marco
+T2  - Scientific Reports
+AB  - Abstract
+            This paper illustrates the results obtained by using pre-trained semantic segmentation deep learning models for the detection of archaeological sites within the Mesopotamian floodplains environment. The models were fine-tuned using openly available satellite imagery and vector shapes coming from a large corpus of annotations (i.e., surveyed sites). A randomized test showed that the best model reaches a detection accuracy in the neighborhood of 80%. Integrating domain expertise was crucial to define how to build the dataset and how to evaluate the predictions, since defining if a proposed mask counts as a prediction is very subjective. Furthermore, even an inaccurate prediction can be useful when put into context and interpreted by a trained archaeologist. Coming from these considerations we close the paper with a vision for a Human–AI collaboration workflow. Starting with an annotated dataset that is refined by the human expert we obtain a model whose predictions can either be combined to create a heatmap, to be overlaid on satellite and/or aerial imagery, or alternatively can be vectorized to make further analysis in a GIS software easier and automatic. In turn, the archaeologists can analyze the predictions, organize their onsite surveys, and refine the dataset with new, corrected, annotations.
+DA  - 2023/05/29/
+PY  - 2023
+DO  - 10.1038/s41598-023-36015-5
+DP  - DOI.org (Crossref)
+VL  - 13
+IS  - 1
+SP  - 8699
+J2  - Sci Rep
+LA  - en
+SN  - 2045-2322
+UR  - https://www.nature.com/articles/s41598-023-36015-5
+Y2  - 2023/06/06/08:30:31
+L1  - https://www.nature.com/articles/s41598-023-36015-5.pdf
+KW  - Lu
+KW  - MOUNDS
+ER  - 
+
+TY  - JOUR
+TI  - Detecting desertification in the ancient oases of southern Morocco.
+AU  - Rayne, Louise
+AU  - Brandolini, Filippo
+AU  - Makovics, Jen Lavris
+AU  - Hayes-Rich, Emily
+AU  - Levy, Jackson
+AU  - Irvine, Hope
+AU  - Assi, Lima
+AU  - Bokbot, Youssef
+T2  - Scientific reports
+AB  - Understanding what led to desertification in the long-term is crucial for adaptation to climate change and pressures on resources in North Africa, but  existing maps do not accurately show the extent of degraded land or the  traditional water systems which underpinned cultivation. These products rely on  recent vegetation trends and hindcasted statistical data. Desertification which  occurred prior to the later twentieth century is poorly represented, if at all.  However, large areas of abandoned fields are distinctive in satellite imagery as  brightly reflectant and smooth surfaces. We present a new and open-source  machine-learning workflow for detecting desertification using satellite data. We  used Google Earth Engine and the random forest algorithm to classify five  landcover categories including a class representing desertified fields. The input  datasets comprised training polygons, a 12-band Sentinel-2 composite and derived  tasselled cap components, and a Sentinel-1 VV-polarisation composite. We test our  approach for a case study of Skoura oasis in southern Morocco with a resulting  accuracy of 74-76% for the desertification class. We used image interpretation  and archaeological survey to map the traditional irrigation systems which supply  the oasis.
+DA  - 2023/11/08/
+PY  - 2023
+DO  - 10.1038/s41598-023-46319-1
+VL  - 13
+IS  - 1
+SP  - 19424
+J2  - Sci Rep
+LA  - eng
+SN  - 2045-2322
+L1  - https://www.nature.com/articles/s41598-023-46319-1.pdf
+KW  - AGRICULTURE
+KW  - GLOBAL LAND-COVER
+KW  - IRRIGATION
+KW  - KHETTARA
+KW  - OASIS
+KW  - SYSTEM
+KW  - TRANSFORMATION
+ER  - 
+
+TY  - JOUR
+TI  - Unstructured satellite survey detects up to 20% of archaeological sites in coastal valleys of southern Peru.
+AU  - Snyder, Thomas J.
+AU  - Haas, Randall
+T2  - PloS one
+AB  - Satellite survey is widely used for archaeological site discovery, but the efficacy of the method has received little systematic investigation. In this  analysis, twelve study participants of different experience levels performed an  unstructured remote survey of 197 km2 in the Sama and Moquegua valleys of south  central Peru where previous pedestrian surveys recorded 546 archaeological sites.  Results indicate an average site discovery rate of 9.3% (0-18%, 95% range). The  most experienced participants detect up to 20% (17-22%) of known archaeological  sites. These detection rates can be used to derive reliable site frequency  estimates on the Andean coast, which can be used in planning and budgeting for  field efforts and estimating demographic patterns at large spatial scales that  are difficult to achieve through pedestrian survey. More generally, this analysis  offers a method for deriving correction terms specific to other parts of the  world. Additionally, the results can serve as a baseline for evaluating the  effectiveness of emerging artificial intelligence routines for archaeological  site detection.
+DA  - 2024///
+PY  - 2024
+DO  - 10.1371/journal.pone.0292272
+VL  - 19
+IS  - 2
+SP  - e0292272
+J2  - PLoS One
+LA  - eng
+SN  - 1932-6203
+L1  - https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0292272&type=printable
+KW  - *Archaeology/methods
+KW  - *Artificial Intelligence
+KW  - Humans
+KW  - IMAGERY
+KW  - MOUNDS
+KW  - PATTERNS
+KW  - Peru
+KW  - PROSPECTION
+KW  - SETTLEMENT
+KW  - TIWANAKU
+KW  - UTILITY
+ER  - 
+
+TY  - JOUR
+TI  - A deep learning approach for automatic identification of ancient agricultural water harvesting systems.
+AU  - Tiwari, Arti
+AU  - Silver, Micha
+AU  - Karnieli, Arnon
+T2  - International journal of applied earth observation and geoinformation : ITC journal
+AB  - Despite the harsh climatic conditions in the Central Negev Desert, Israel, thousands of dry stonewalls were built across ephemeral streams between the  fourth and seventh centuries CE to sustain productive agricultural activity.  Since 640 CE, many of these ancient terraces have remained untouched but buried  by sediments, covered by natural vegetation, and partially destroyed. The main  goal of the current research is to develop a procedure for the automatic  recognition of ancient water harvesting systems by incorporating two remote  sensing datasets (a high-resolution color orthophoto and LiDAR-derived  topographic variables) and two advanced processing methods (an object-based image  analysis (OBIA) and a deep convolutional neural networks (DCNN) model). A  confusion matrix of object-based classification revealed an overall accuracy of  86% and a Kappa coefficient of 0.79. The DCNN model achieved a Mean Intersection  over Union (MIoU) value for testing datasets of 53. The individual IoU values of  terraces and sidewalls were 33.2 and 30.1, respectively. The current study  demonstrates how incorporating OBIA, aerial photographs, and LiDAR in the context  of DCNN improves the identification and mapping of archaeological structures.
+DA  - 2023/04//undefined
+PY  - 2023
+DO  - 10.1016/j.jag.2023.103270
+VL  - 118
+SP  - 103270
+J2  - Int J Appl Earth Obs Geoinf
+LA  - eng
+SN  - 1569-8432 1872-826X
+KW  - ACCURACY
+KW  - ARCHAEOLOGICAL FEATURES
+KW  - CLASSIFICATION
+KW  - DCNN
+KW  - EXTRACTION
+KW  - IRON-AGE AGRICULTURE
+KW  - LiDAR
+KW  - LIDAR
+KW  - LOESS
+KW  - Machine learning
+KW  - NEGEV HIGHLANDS
+KW  - OBIA
+KW  - OBJECT
+KW  - Orthophoto
+KW  - RUNOFF
+KW  - Semantic segmentation
+KW  - Terraces
+KW  - U-Net
+ER  - 
+
+TY  - JOUR
+TI  - Predicting the geographic distribution of ancient Amazonian archaeological sites with machine learning.
+AU  - Walker, Robert S.
+AU  - Ferguson, Jeffrey R.
+AU  - Olmeda, Angelica
+AU  - Hamilton, Marcus J.
+AU  - Elghammer, Jim
+AU  - Buchanan, Briggs
+T2  - PeerJ
+AB  - Amazonia has as least two major centers of ancient human social complexity, but the full geographic extents of these centers remain uncertain. Across the  southern rim of Amazonia, over 1,000 earthwork sites comprised of fortified  settlements, mound villages, and ditched enclosures with geometric designs known  as geoglyphs have been discovered. Qualitatively distinct and densely located  along the lower stretches of major river systems and the Atlantic coast are  Amazonian Dark Earth sites (ADEs) with deep anthropogenic soils enriched by  long-term human habitation. Models predicting the geographic extents of  earthworks and ADEs can assist in their discovery and preservation and help  answer questions about the full degree of indigenous landscape modifications  across Amazonia. We classify earthworks versus ADEs versus other  non-earthwork/non-ADE archaeological sites with multi-class machine learning  algorithms using soils, climate, and distances to rivers of different types and  sizes as geospatial predictors. Model testing is done with spatial  cross-validation, and the best model at the optimal spatial scale of 1 km has an  Area Under the Curve of 0.91. Our predictive model has led to the discovery of 13  new geoglyphs, and it pinpoints specific areas with high probabilities of  undiscovered archaeological sites that are currently hidden by rainforests. The  limited, albeit impressive, predicted extents of earthworks and ADEs means that  other non-ADE/non-earthwork sites are expected to predominate most of Western and  Northern Amazonia.
+DA  - 2023///
+PY  - 2023
+DO  - 10.7717/peerj.15137
+VL  - 11
+SP  - e15137
+J2  - PeerJ
+LA  - eng
+SN  - 2167-8359
+L1  - https://peerj.com/articles/15137.pdf
+KW  - *Rainforest
+KW  - *Soil
+KW  - ACRE
+KW  - Agriculture
+KW  - Amazonia
+KW  - Amazonian Dark Earths
+KW  - Archaeology
+KW  - Brazil
+KW  - Deforestation
+KW  - GEOGLYPH BUILDERS
+KW  - Geoglyphs
+KW  - Human-environment interactions
+KW  - Humans
+KW  - LANDSCAPE
+KW  - LIDAR
+KW  - Machine learning
+KW  - PHYLOGEOGRAPHY
+KW  - Random forest
+KW  - RANDOM FOREST
+KW  - Remote sensing
+KW  - Rivers
+KW  - SETTLEMENT
+KW  - SOILS
+ER  - 
+
+TY  - JOUR
+TI  - Square ancient sites detection in typical regions of the Mongolian plateau using improved faster R-CNN from Google Earth high-resolution images
+AU  - Li, W
+AU  - Li, Z
+AU  - Wei, YF
+AU  - Gong, CL
+AU  - Zhang, M
+AU  - Chen, L
+T2  - International Journal of Remote Sensing
+AB  - Many square ancient sites exist in the Mongolian plateau region, and locating them is of great importance for archaeological research. In recent years, object detection in Google Earth (GE) high-resolution remote sensing (RS) images based on deep learning has driven archaeologists' research of ancient site detection. Deep learning techniques significantly improve the accuracy of site detection in RS images when compared with traditional detection methods while reducing design and computation time. Based on the characteristics of the research objectives, this paper proposes an improved Faster R-CNN algorithm for the detection of square ancient sites in GE high-resolution RS images, which employs Swin-Transformer, VGG16, Atrous Spatial Pyramid Pooling (ASPP), Squeeze-and-Excitation Networks (SENet) to form an improved backbone network, and three methods to optimize the Region Proposal Network (RPN). In addition, a dataset of known square ancient sites containing four typical regions of the Mongolian plateau is built using GE high-resolution RS images for training and evaluating the algorithm model. The experimental results show that the Precision, Recall, F1, IoU, and Average Precision (AP) of the proposed improved Faster R-CNN are 91.38%, 91.16%, 91.27%, 83.49%, and 93.57%, respectively, which are 34.89%, 2.70%, 22.29%, 31.46%, and 7.32% higher than those of the original Faster R-CNN. The algorithm also has high evaluation metrics for object detection in four typical regions: hills, Gobi, cropland, and grassland. Finally, the proposed algorithm is applied to detect square ancient sites in six selected typical regions, and numerous new ones are discovered. Overall, the proposed algorithm provides an effective method for archaeological investigations in the study region.
+Deep learning is applied to Google Earth high-resolution RS images of the Mongolian Plateau for archaeological detection. A dataset of square ancient sites on typical regions of the Mongolian Plateau has been created. An improved Faster R-CNN algorithm is proposed by modifying the backbone network and the region proposal network. The proposed algorithm is used to detect square ancient sites in typical regions of the Mongolian plateau with good effects.
+DA  - 2023/09/02/
+PY  - 2023
+DO  - 10.1080/01431161.2023.2244641
+VL  - 44
+IS  - 17
+SP  - 5207
+EP  - 5227
+LA  - English
+SN  - 0143-1161
+AN  - WOS:001053356000001
+L1  - https://www.tandfonline.com/doi/pdf/10.1080/01431161.2023.2244641
+KW  - Archaeology
+KW  - CLASSIFICATION
+KW  - MODEL
+KW  - neural networks
+KW  - remote sensing
+KW  - SAR IMAGES
+KW  - WAVELET ENERGY
+ER  - 
+
+TY  - JOUR
+TI  - Classification of rock slope cavernous weathering on UAV photogrammetric point clouds: The example of Hegra (UNESCO World Heritage Site, Kingdom of Saudi Arabia)
+AU  - Beni, T
+AU  - Nava, L
+AU  - Gigli, G
+AU  - Frodella, W
+AU  - Catani, F
+AU  - Casagli, N
+AU  - Gallego, JI
+AU  - Margottini, C
+AU  - Spizzichino, D
+T2  - Engineering Geology
+AB  - The analysis of three-dimensional point cloud data is becoming one of the most used approaches to assess instabilities processes affecting rock slopes. With the increased collection of point cloud data, there is an increasing demand for rapid computational point cloud segmentation techniques to format data for rock fall risk analysis. However, there is a scarcity of semantic segmentation research focusing on geological data and the practical issues they pose. In this study, we propose a novel application to automatically define the spatial extent and intensity of weathered rock slope areas. The studied rock slopes are in Hegra Archaeological Site (al-Hijr / Mada in Salih), the first UNESCO World Heritage area inscribed in the Kingdom of Saudi Arabia (KSA) in 2008. Here, cavernous weathering processes, with honeycombs and tafoni features, affect the carved rock slope and increase the rockfall hazard. With the spread and improvement of close-range methods, such as Terrestrial Laser Scanner (TLS) and Unmanned Aerial Vehicle Digital Photogrammetry (UAV-DP), it is possible to obtain fast and accurate high-resolution point cloud data of the studied scenario, i.e., rock mass. This paper presents the automated mapping results obtained by a combination of explainable artificial intelligence (XAI) algorithms and threedimensional geometric analysis of a point cloud using the geometric feature tools available for free on CloudCompare (CC) open-source software. Three-dimensional data were obtained using the UAV-DP technique. The proposed workflow allows, using random forest modelling (RF), to quantify the cavernous weathering extent and estimate the relative intensity on the rock slope, faster than using traditional time-consuming manual segmentation processes. The RF model was able to accurately forecast the cavernous weathering regions (accuracy of up to 85%), with a slight propensity to underpredict, as indicated by the somewhat low recall (similar to 63%), and a limited number of false positives, as indicated by the high precision (up to 84%). This approach is easily reproducible at low cost in terms of computational, human, and financial resources. The results highlight the reliability of the proposed method for the preliminary assessment of cavernous erosional features with the aim of future assessment, monitoring, and deeper analysis of rock-carved slopes.
+DA  - 2023/11//undefined
+PY  - 2023
+DO  - 10.1016/j.enggeo.2023.107286
+VL  - 325
+LA  - English
+SN  - 0013-7952
+AN  - WOS:001108681500001
+L1  - https://flore.unifi.it/bitstream/2158/1343131/1/Beni%20et%20al%20ENGINEERING%20GEOLOGY%202023.pdf
+KW  - BLOCK
+KW  - Cavernous weathering
+KW  - CloudCompare
+KW  - DISCONTINUITIES
+KW  - Machine learning
+KW  - PETRA
+KW  - Point cloud data
+KW  - Random forest
+KW  - TAFONI
+KW  - TOOL
+KW  - World Heritage
+ER  - 
+
+TY  - JOUR
+TI  - Creating large, high-quality geospatial datasets from historical maps using novice volunteers
+AU  - Sobotkova, A
+AU  - Ross, SA
+AU  - Nassif-Haynes, C
+AU  - Ballsun-Stanton, B
+T2  - Applied Geography
+AB  - Unlocking data from historical maps for landscape analysis is costly. Automatic extraction using Machine Learning (ML) requires extensive preparation and expertise. Crowdsourcing scales better than direct digitisation by experts, but requires an appropriate platform and the technical skills to adapt it. Existing research provides little guidance as to when investments in these approaches become worthwhile. Here we present a customisation of the Field Acquired Information Management Systems (FAIMS) Mobile platform tailored to offer a streamlined, collaborative system for crowdsourcing map digitisation by volunteers with no prior GIS experience. Deployed in Bulgaria as an ancillary activity during 2017-2018 archaeological fieldwork, FAIMS Mobile was used to digitise 10,827 mound features from Soviet military topographic maps. This digitisation required 241 person-hours (57 from staff; 184 from novice volunteers), with an error rate under 6%. The resulting dataset was consistent, well -documented, and ready for analysis with a few hours of processing. A conservative estimate based on our work suggests our crowdsourcing approach is most efficient for digitisation projects of 10,000-60,000 features, but may offer advantages for datasets as small as a few hundred records. Furthermore, it indicates that systems designed for field data collection, running on mobile devices, can be profitably customised to serve as partici-patory geospatial data systems accessible to novice volunteers.
+DA  - 2023/06//undefined
+PY  - 2023
+DO  - 10.1016/j.apgeog.2023.102967
+VL  - 155
+LA  - English
+SN  - 0143-6228
+AN  - WOS:000984753600001
+KW  - Bulgaria
+KW  - Crowdsourcing
+KW  - FAIR data
+KW  - Historical maps
+KW  - INFORMATION
+KW  - Landscape archaeology
+KW  - Machine learning
+KW  - Mobile computing
+KW  - Participatory GIS
+ER  - 
+
+TY  - JOUR
+TI  - Monitoring Looting at Cultural Heritage Sites: Applying Deep Learning on Optical Unmanned Aerial Vehicles Data as a Solution
+AU  - Altaweel, M
+AU  - Khelifi, A
+AU  - Shana'ah, MM
+T2  - Social Science Computer Review
+AB  - The looting of cultural heritage sites has been a growing problem and threatens national economies, social identity, destroys research potential, and traumatizes communities. For many countries, the challenge in protecting heritage is that there are often too few resources, particularly paid site guards, while sites can also be in remote locations. Here, we develop a new approach that applies deep learning methods to detect the presence of looting at heritage sites using optical imagery from unmanned aerial vehicles (UAVs). We present results that demonstrate the accuracy, precision, and recall of our approach. Results show that optical UAV data can be an easy way for authorities to monitor heritage sites, demonstrating the utility of deep learning in aiding the protection of heritage sites by automating the detection of any new damage to sites. We discuss the impact and potential for deep learning to be used as a tool for the protection of heritage sites. How the approach could be improved with new data is also discussed. Additionally, the code and data used are provided as part of the outputs.
+DA  - 2024/04//undefined
+PY  - 2024
+DO  - 10.1177/08944393231188471
+VL  - 42
+IS  - 2
+SP  - 480
+EP  - 495
+LA  - English
+SN  - 0894-4393
+AN  - WOS:001022596400001
+L1  - https://journals.sagepub.com/doi/pdf/10.1177/08944393231188471
+KW  - archaeological sites
+KW  - deep learning
+KW  - heritage
+KW  - looting
+KW  - optical imagery
+KW  - security
+KW  - unmanned aerial vehicles
+ER  - 
+
+TY  - JOUR
+TI  - Large-scale, collaborative imagery survey in archaeology: the Geospatial Platform for Andean Culture, History and Archaeology (GeoPACHA)
+AU  - Wernke, SA
+AU  - Van Valkenburgh, P
+AU  - Zimmer-Dauphinee, J
+AU  - Whitlock, B
+AU  - Morrow, GS
+AU  - Smith, R
+AU  - Smit, D
+AU  - Ortega, GR
+AU  - Jara, KR
+AU  - Plekhov, D
+AU  - Menéndez, GO
+AU  - Norman, S
+AU  - Marcone, G
+AU  - Calloapaza, MM
+AU  - Kohut, L
+AU  - Garavito, CH
+AU  - Chacaltana-Cortez, S
+AU  - Arkush, E
+T2  - Antiquity
+AB  - Imagery-based survey is capable of producing archaeological datasets that complement those collected through field-based survey methods, widening the scope of analysis beyond regions. The Geospatial Platform for Andean Culture, History and Archaeology (GeoPACHA) enables systematic registry of imagery survey data through a 'federated' approach. Using GeoPACHA, teams pursue problem-specific research questions through a common data schema and interface that allows for inter-project comparisons, analyses and syntheses. The authors present an overview of the platform's rationale and functionality, as well as a summary of results from the first survey campaign, which was carried out by six projects distributed across the central Andes, five of which are represented here.
+DA  - 2024/02//undefined
+PY  - 2024
+DO  - 10.15184/aqy.2023.177
+VL  - 98
+IS  - 397
+SP  - 155
+EP  - 171
+LA  - English
+SN  - 0003-598X
+AN  - WOS:001126725600001
+L1  - https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EE49A1159422C7EA5B223B56147A2E80/S0003598X23001771a.pdf/div-class-title-large-scale-collaborative-imagery-survey-in-archaeology-the-geospatial-platform-for-andean-culture-history-and-archaeology-geopacha-div.pdf
+KW  - Andes
+KW  - big data
+KW  - DIGITAL INDEX
+KW  - large-scale imagery survey
+KW  - QGIS
+KW  - satellite survey
+KW  - settlement pattern analysis
+KW  - South America
+ER  - 
+
+TY  - JOUR
+TI  - Extracting Ancient Maya Structures from Aerial LiDAR Data using Deep Learning
+AU  - Jannat, Fatema-E
+AU  - Zhang, Jincheng
+AU  - Willis, Andrew
+AU  - Ringle, William
+T2  - IEEE
+T3  - SoutheastCon 2023
+AB  - The advent of LiDAR technology has had a revolutionary impact on archaeological prospection by vastly enlarging the coverage of ancient landscapes and consequently the number of ancient surface features. However, manual analysis by experts requires a significant time and money investment. This paper describes a deep learning model developed to segment, i.e., label, the semantics of objects of interest as a means to augment or supplant manual labeling of LiDAR data. The U-Net deep learning model forms the backbone of the system which has shown success in providing accurate outputs on similar LiDAR data set. The trained U-Net model is integrated into an inference pipeline to transform expansive LiDAR datasets into labeled output images. Work focuses on the classification of two semantic types: (1) platforms and (2) annular structures whose attributes, e.g., location, shape, and distribution, play an important role in improving our understanding of ancient Maya civilizations. This article provides a deep learning-based system that efficiently extracted these structures. CNN-generated inferences were compared against expert-labeled features to measure algorithm performance. Results for a LiDAR survey of 479 sq. km. indicate that the CNN provides an IoU performance of 0.82 and 0.74 for annular structures and platforms respectively. The discussion further analyzes how IoU performance relates to the viability of this approach as an aid or substitute for manual labeling.
+DA  - 2023///
+PY  - 2023
+DO  - 10.1109/SoutheastCon51012.2023.10115095
+SP  - 295
+EP  - 302
+LA  - English
+AN  - WOS:000996154700046
+KW  - deep-learning
+KW  - LiDAR
+KW  - remote-sensing
+KW  - segmentation
+KW  - U-Net
+ER  - 
+
+TY  - JOUR
+TI  - Evaluating the Performance of Geographic Object-Based Image Analysis in Mapping Archaeological Landscapes Previously Occupied by Farming Communities: A Case of Shashi-Limpopo Confluence Area
+AU  - Thabeng, OL
+AU  - Adam, E
+AU  - Merlo, S
+T2  - Remote Sensing
+AB  - The use of pixel-based remote sensing techniques in archaeology is usually limited by spectral confusion between archaeological material and the surrounding environment because they rely on the spectral contrast between features. To deal with this problem, we investigated the possibility of using geographic object-based image analysis (GEOBIA) to predict archaeological and non-archaeological features. The chosen study area was previously occupied by farming communities and is characterised by natural soils (non-sites), vitrified dung, non-vitrified dung, and savannah woody vegetation. The study uses a three-stage GEOBIA that comprises (1) image object segmentation, (2) feature selection, and (3) object classification. The spectral mean of each band and the area extent of an object were selected as input variables for object classifications in support vector machines (SVM) and random forest (RF) classifiers. The results of this study have shown that GEOBIA approaches have the potential to map archaeological landscapes. The SVM and RF classifiers achieved high classification accuracies of 96.58% and 94.87%, respectively. Visual inspection of the classified images has demonstrated the importance of the aforementioned models in mapping archaeological and non-archaeological features because of their ability to manage the spectral confusion between non-sites and vitrified dung sites. In summary, the results have demonstrated that the GEOBIAs ability to incorporate spatial elements in the classification model ameliorates the chances of distinguishing materials with limited spectral differences.
+DA  - 2023/12//undefined
+PY  - 2023
+DO  - 10.3390/rs15235491
+VL  - 15
+IS  - 23
+LA  - English
+SN  - 2072-4292
+AN  - WOS:001116055900001
+L1  - https://www.mdpi.com/2072-4292/15/23/5491/pdf?version=1700822953
+KW  - advanced classification algorithms
+KW  - AERIAL-PHOTOGRAPHY
+KW  - CLASSIFICATION TECHNIQUES
+KW  - CROP CLASSIFICATION
+KW  - FEATURE-SELECTION
+KW  - IKONOS IMAGERY
+KW  - image segmentation
+KW  - IRON-AGE
+KW  - LAND-COVER
+KW  - LEARNING ALGORITHMS
+KW  - non-vitrified dung
+KW  - RANDOM FOREST
+KW  - remote sensing
+KW  - SUPPORT VECTOR MACHINES
+KW  - very high spatial resolution
+KW  - vitrified dung
+ER  - 
+
+TY  - JOUR
+TI  - Machine Learning and Image-Processing-Based Method for the Detection of Archaeological Structures in Areas with Large Amounts of Vegetation Using Satellite Images
+AU  - Fuentes-Carbajal, JA
+AU  - Carrasco-Ochoa, JA
+AU  - Martínez-Trinidad, JF
+AU  - Flores-López, JA
+T2  - Applied Sciences-Basel
+AB  - The detection of archaeological structures in satellite images is beneficial for archaeologists since it allows quick identification of structures across large areas of land. To date, some methods have been proposed to solve this task; however, these methods do not give good results in areas with large amounts of vegetation, such as those found in the southeast of Mexico and Guatemala. The method proposed in this paper works on satellite images obtained with SASPlanet. It uses two color spaces (RGB and HSL) and filters (Canny, Sobel, and Laplacian) jointly with supervised machine learning to improve the detection of archaeological structures in areas with a lot of vegetation. The method obtains an average performance of at least 93% on precision, recall, F1 score, and accuracy. Thus, our proposal is a very good option compared with traditional techniques for manual or semi-automatic detection of structures, identifying archaeological sites in a shorter time.
+DA  - 2023/05/30/
+PY  - 2023
+DO  - 10.3390/app13116663
+VL  - 13
+IS  - 11
+LA  - English
+SN  - 2076-3417
+AN  - WOS:001006537200001
+L1  - https://www.mdpi.com/2076-3417/13/11/6663/pdf?version=1685458257
+KW  - AERIAL
+KW  - CLASSIFICATION
+KW  - computational learning
+KW  - detection of Mayan structures
+KW  - image processing
+KW  - NEURAL-NETWORK
+ER  - 
+
+TY  - JOUR
+TI  - Moated site object detection using time series satellite imagery and an improved deep learning model in northeast Thailand
+AU  - Yang, H
+AU  - Wang, SH
+AU  - Wang, SL
+AU  - Zhao, PC
+AU  - Ai, MY
+AU  - Hu, QW
+T2  - Journal of Archaeological Science
+AB  - Moated sites are crucial for revealing the formation of early civilizations and societies in Southeast Asia, and a significant amount of effort has been expended in investigating their distribution. This work is the first application of deep learning object detection methods to identify moated sites from time series satellite images. We presented multi-information fusion data (N-RGB) based on the fusion of multispectral and vegetation indices from Sentinel-2 time series imagery, generated a dataset of moated sites via the data augmentation method, and improved the YOLOv5s model by adding bidirectional feature pyramid network (BiFPN) structures for automatically identifying moated sites. The results indicate that the model trained with time series N-RGB data improves precision, recall, and mAP by more than 20.0% compared with single image data. The improved model was able to enhance the identification of small, moated sites and achieved 100% detection in a test of 100 moated sites. Ultimately, , 629 targets were detected in northeast Thailand, with a false-negative rate of less than 3%, and 116 probable sites were identified. Among these, 6 probable sites were highly likely to be moated sites, as visually verified by high-resolution GEE imagery. In addition, , among the targets automatically detected in other regions of continental Southeast Asia, the 5, 3, 2, 1, and 7 most probable sites were identified in Cambodia, Myanmar, Laos, Vietnam and other regions of Thailand, respectively. In summary, , our approach enables the automatic detection of exposed and visible moated sites from satellite imagery, and could improve site discovery and documentation capabilities, opening new perspectives in larger geographic site units and even in civilization surveys.
+DA  - 2024/11//undefined
+PY  - 2024
+DO  - 10.1016/j.jas.2024.106070
+VL  - 171
+LA  - English
+SN  - 0305-4403
+AN  - WOS:001313155700001
+KW  - ARCHAEOLOGY
+KW  - CLASSIFICATION
+KW  - CULTURAL-HERITAGE
+KW  - IRON-AGE
+KW  - SPECTROSCOPY
+KW  - VALLEY
+ER  - 
+
+TY  - JOUR
+TI  - The Use of Machine Learning and Satellite Imagery to Detect Roman Fortified Sites: The Case Study of Blad Talh (Tunisia Section)
+AU  - Bachagha, N
+AU  - Elnashar, A
+AU  - Tababi, M
+AU  - Souei, F
+AU  - Xu, WB
+T2  - Applied Sciences-Basel
+AB  - This study focuses on an ad hoc machine-learning method for locating archaeological sites in arid environments. Pleiades (P1B) were uploaded to the cloud asset of the Google Earth Engine (GEE) environment because they are not yet available on the platform. The average of the SAR data was combined with the P1B image in the selected study area called Blad Talh at Gafsa, which is located in southern Tunisia. This pre-desert region has long been investigated as an important area of Roman civilization (106 BCE). The results show an accurate probability map with an overall accuracy and Kappa coefficient of 0.93 and 0.91, respectively, when validated with field survey data. The results of this research demonstrate, from the perspective of archaeologists, the capability of satellite data and machine learning to discover buried archaeological sites. This work shows that the area presents more archaeological sites, which has major implications for understanding the archaeological significance of the region. Remote sensing combined with machine learning algorithms provides an effective way to augment archaeological surveys and detect new cultural deposits.
+DA  - 2023/02//undefined
+PY  - 2023
+DO  - 10.3390/app13042613
+VL  - 13
+IS  - 4
+LA  - English
+SN  - 2076-3417
+AN  - WOS:000938203000001
+L1  - https://www.mdpi.com/2076-3417/13/4/2613/pdf?version=1676636713
+KW  - archaeological
+KW  - CLASSIFICATION
+KW  - CULTURAL-HERITAGE
+KW  - DISCOVERY
+KW  - fortified sites
+KW  - Google Earth Engine
+KW  - LANDSCAPE
+KW  - LIDAR
+KW  - machine learning
+KW  - PROSPECTION
+KW  - RECOGNITION
+KW  - remote sensing
+ER  - 
+
+TY  - JOUR
+TI  - Machine Learning-Driven Archaeological Site Prediction in the Central Part of Jharkhand, India Using Multi-parametric Geospatial Data
+AU  - Pal, SK
+AU  - Maity, S
+AU  - Bera, A
+AU  - Ghosh, D
+AU  - Kumar, A
+T2  - Journal of the Indian Society of Remote Sensing
+AB  - The central part of Jharkhand, India, harbours a complex history shaped by ancient civilisations, notably Buddhism, Jainism, and Brahmanism, necessitating a meticulous identification of potential archaeological sites. This study employs a cutting-edge machine learning approach to predict the suitability of archaeological sites in the region, marking a significant evolution in the documentation of such sites. Machine learning-based integration of 12 geoenvironmental datasets using a random forest model reveals a nuanced spatial distribution of potential archaeological sites, categorised into four suitability zones: high, moderately high, moderately low, and low. The region with the best-anticipated suitability comprises around 20.33% of the research area, whereas the area with the lowest expected suitability comprises nearly 41.81%. High suitability zones, characterised by gentle terrain, open vegetation, fertile soils, and water proximity, suggest conditions conducive to human habitation and archaeological preservation. Conversely, low suitability zones exhibit rugged terrain, dense vegetation, poor soil quality, limited water availability, and remoteness from natural resources, indicating potential hindrances to human occupation and archaeological preservation. The model exhibited high predictive accuracy, as evidenced by the ROC-AUC score of 88.3%, enhancing its reliability. Specific locations within the study area demonstrate varying degrees of suitability, providing valuable insights for archaeological site management, cultural heritage preservation, and land-use planning, which will support the restoration and conservation plan of the heritage sites. Furthermore, this machine learning-based archaeological site prediction study underscores its potential applicability in historically rich regions globally, showcasing its significance in uncovering and preserving our shared human history.
+DA  - 2024/08/29/
+PY  - 2024
+DO  - 10.1007/s12524-024-01983-2
+LA  - English
+SN  - 0255-660X
+AN  - WOS:001302301900001
+L1  - https://link.springer.com/content/pdf/10.1007%2Fs12524-024-01983-2.pdf
+KW  - Archaeological site prediction
+KW  - BRONZE
+KW  - CLASSIFICATION
+KW  - Geoenvironmental datasets
+KW  - GIS and remote sensing approach
+KW  - IMPACT
+KW  - LANDSCAPE
+KW  - MODELS
+KW  - Prioritising exploration
+KW  - Random forest algorithm
+KW  - SOIL
+ER  - 
+
+TY  - JOUR
+TI  - Machine learning for cave entrance detection in a Maya archaeological area
+AU  - Character, LD
+AU  - Beach, T
+AU  - Luzzadder-Beach, S
+AU  - Cook, D
+AU  - Schank, C
+AU  - Valdez, F Jr
+AU  - Mallner, M
+T2  - Physical Geography
+AB  - Machine learning can offer an efficient method to identify and map caves, sinkholes, and other cave-like features (i.e. sinkholes, rockshelters, voids) using remotely sensed imagery. While there exists a body of work applying machine learning for sinkhole identification, little work exists for caves. In the densely forested and rugged Maya Lowlands, developing such a methodology can help archaeologists to identify previously unknown caves that may contain important archaeological materials. Here, we introduce a proof-of-concept project that uses random forest and lidar-derived landscape morphometrics to map caves and other cave-like features in northwest Belize. Several undocumented caves and cave-like features were identified in our study area based on model results. Next steps towards making a more robust version of this model include the addition of more training data and integration of a larger number of morphologic parameters. Based on the results described here as well as those in cited works focused on caves, we proposed machine learning as a first step in cave and cave-like feature identification, followed then by fieldwork and ground-truthing.
+DA  - 2024/07/03/
+PY  - 2024
+DO  - 10.1080/02723646.2023.2261182
+VL  - 45
+IS  - 4
+SP  - 416
+EP  - 438
+LA  - English
+SN  - 0272-3646
+AN  - WOS:001084590100001
+L1  - https://www.tandfonline.com/doi/pdf/10.1080/02723646.2023.2261182
+KW  - BRITISH-MUSEUM EXPEDITION
+KW  - caves
+KW  - CLASSIFICATION
+KW  - FOREST
+KW  - GIS
+KW  - HONDURAS
+KW  - LANDSCAPE
+KW  - lidar
+KW  - LIDAR
+KW  - Machine learning
+KW  - Maya
+KW  - Remote sensing
+ER  - 
+
+TY  - JOUR
+TI  - A Machine-Learning-Assisted Classification Algorithm for the Detection of Archaeological Proxies (Cropmarks) Based on Reflectance Signatures
+AU  - Agapiou, A
+AU  - Gravanis, E
+T2  - Remote Sensing
+AB  - The detection of subsurface archaeological remains using a range of remote sensing methods poses several challenges. Recent studies regarding the detection of archaeological proxies like those of cropmarks highlight the complexity of the phenomenon. In this work, we present three different methods, and associated indices, for identifying stressed reflectance signatures indicating buried archaeological remains, based on a dataset of measured ground spectroradiometric reflectance. Several spectral profiles between the visible and near-infrared parts of the spectrum were taken in a controlled environment in Cyprus during 2011-2012 and are re-used in this study. The first two (spectral) methods are based on a suitable analysis of the spectral signatures in (1) the visible part of the spectrum, in particular in the neighborhood of 570 nm, and (2) the red edge part of the spectrum, in the neighborhood of 730 nm. Machine learning (decision trees) allows for the deduction of suitable wavelengths to focus on in order to formulate the proposed indices and the associated classification criteria (decision boundaries) that can enhance the detection probability of stressed vegetation. Noise in the signal is taken into account by simulating reflectance signatures perturbed by white noise. Applying decision tree classification on the ensemble of simulations and basic statistical analysis, we refine the formulation of the indices and criteria for the noisy signatures. The success rate of the proposed methods is over 90%. The third method rests on the estimation of vegetation/canopy reflectance parameters through inversion of the physical-based PROSAIL reflectance model and the associated classification through machine learning methods. The obtained results provide further insights into the formation of stress vegetation that occurred due to the presence of shallow buried archaeological remains, which are well aligned with physical-based models and existing empirical knowledge. To the best of the authors' knowledge, this is the first study demonstrating the usefulness of radiative transfer models such as PROSAIL for understanding the formation of cropmarks. Similar studies can support future research directions towards the development of regional remote sensing methods and algorithms if systematic observations are adequately dispersed in space and time.
+DA  - 2024/05//undefined
+PY  - 2024
+DO  - 10.3390/rs16101705
+VL  - 16
+IS  - 10
+LA  - English
+SN  - 2072-4292
+AN  - WOS:001231386800001
+L1  - https://www.mdpi.com/2072-4292/16/10/1705/pdf?version=1715413196
+KW  - AERIAL
+KW  - archaeological proxies
+KW  - AREA
+KW  - CROP MARKS
+KW  - cropmarks formation
+KW  - detection
+KW  - IDENTIFICATION
+KW  - IMAGERY
+KW  - LANDSCAPE
+KW  - machine learning
+KW  - MAIZE
+KW  - SITES
+KW  - spectral signatures
+KW  - subsurface archaeological remains
+ER  - 
+
+TY  - JOUR
+TI  - A Comprehensive Review of Conventional and Deep Learning Approaches for Ground-Penetrating Radar Detection of Raw Data
+AU  - Bai, X
+AU  - Yang, Y
+AU  - Wei, SM
+AU  - Chen, GY
+AU  - Li, HR
+AU  - Li, YH
+AU  - Tian, HX
+AU  - Zhang, TX
+AU  - Cui, HT
+T2  - Applied Sciences-Basel
+AB  - Ground-penetrating radar (GPR) is a nondestructive testing technology that is widely applied in infrastructure maintenance, archaeological research, military operations, and other geological studies. A crucial step in GPR data processing is the detection and classification of underground structures and buried objects, including reinforcement bars, landmines, pipelines, bedrock, and underground cavities. With the development of machine learning algorithms, traditional methods such as SVM, K-NN, ANN, and HMM, as well as deep learning algorithms, have gradually been incorporated into A-scan, B-scan, and C-scan GPR image processing. This paper provides a summary of the typical machine learning and deep learning algorithms employed in the field of GPR and categorizes them based on the feature extraction method or classifier used. Additionally, this work discusses the sources and forms of data utilized in these studies. Finally, potential future development directions are presented.
+DA  - 2023/07//undefined
+PY  - 2023
+DO  - 10.3390/app13137992
+VL  - 13
+IS  - 13
+LA  - English
+SN  - 2076-3417
+AN  - WOS:001028569500001
+L1  - https://www.mdpi.com/2076-3417/13/13/7992/pdf?version=1689058296
+KW  - ALGORITHM
+KW  - classification
+KW  - CLASSIFICATION
+KW  - CLUTTER
+KW  - deep learning
+KW  - detection
+KW  - DISCRIMINATION
+KW  - GPR IMAGES
+KW  - ground-penetrating radar
+KW  - LANDMINE DETECTION
+KW  - machine learning
+KW  - NEURAL-NETWORKS
+KW  - raw data
+KW  - RECOGNITION
+KW  - UTILITIES
+ER  - 
+
+TY  - JOUR
+TI  - A Semi-Automatic-Based Approach to the Extraction of Underwater Archaeological Features from Ultra-High-Resolution Bathymetric Data: The Case of the Submerged Baia Archaeological Park
+AU  - Abate, N
+AU  - Violante, C
+AU  - Masini, N
+T2  - Remote Sensing
+AB  - Coastal and underwater archaeological sites pose significant challenges in terms of investigation, conservation, valorisation, and management. These sites are often at risk due to climate change and various human-made impacts such as urban expansion, maritime pollution, and natural deterioration. However, advances in remote sensing (RS) and Earth observation (EO) technologies applied to cultural heritage (CH) sites have led to the development of various techniques for underwater cultural heritage (UCH) exploration. The aim of this work was the evaluation of an integrated methodological approach using ultra-high-resolution (UHR) bathymetric data to aid in the identification and interpretation of submerged archaeological contexts. The study focused on a selected area of the submerged Archaeological Park of Baia (Campi Flegrei, south Italy) as a test site. The study highlighted the potential of an approach based on UHR digital bathymetric model (DBM) derivatives and the use of machine learning and statistical techniques to automatically extract and discriminate features of archaeological interest from other components of the seabed substrate. The results achieved accuracy rates of around 90% and created a georeferenced vector map similar to that usually drawn by hand by archaeologists.
+DA  - 2024/06//undefined
+PY  - 2024
+DO  - 10.3390/rs16111908
+VL  - 16
+IS  - 11
+LA  - English
+SN  - 2072-4292
+AN  - WOS:001245380200001
+L1  - https://www.mdpi.com/2072-4292/16/11/1908/pdf?version=1716633788
+KW  - archaeological feature extraction
+KW  - Baia submerged archaeological park
+KW  - CLASSIFICATION
+KW  - COMPLEX
+KW  - CULTURAL-HERITAGE
+KW  - FRAMEWORK
+KW  - LANDSCAPES
+KW  - machine learning
+KW  - multibeam echosounder
+KW  - OPENNESS
+KW  - roman archaeology
+KW  - SENSORS
+KW  - SKY-VIEW FACTOR
+KW  - SPACE
+KW  - ultra-high-resolution bathymetry
+KW  - underwater archaeology
+KW  - underwater cultural heritage
+KW  - VISUALIZATION
+ER  - 
+
+TY  - JOUR
+TI  - Accelerating the discovery of new Nasca geoglyphs using deep learning
+AU  - Sakai, M
+AU  - Lai, YR
+AU  - Canales, JO
+AU  - Hayashi, M
+AU  - Nomura, K
+T2  - Journal of archaeological science
+AB  - We discuss an archaeological research of employing deep learning (DL) based object detection on high-resolution aerial photographs to discover Nasca geoglyphs, which have been designated as a UNESCO World Heritage Site. Owing to extremely limited archaeological ground truth data and their differences in scale and design, it is difficult to detect new geoglyphs merely training DL on the known geoglyphs. Therefore, we developed a pipeline of DL to mine such data and address the challenges unique to archaeology. With this approach, we identified four new geoglyphs in the northern area of the Nasca Pampa, namely: a humanoid, a pair of legs, a fish, and a bird. The geoglyphs got verified through on-site surveys. We could identify new geoglyph's candidates approximately 21 times faster than with the naked eye alone. The approach would be beneficial for the future of archaeology in a new paradigm of combining field survey and AI.
+DA  - 2023/07//undefined
+PY  - 2023
+DO  - 10.1016/j.jas.2023.105777
+VL  - 155
+LA  - English
+SN  - 0305-4403
+AN  - WOS:001012387300001
+KW  - Deep learning
+KW  - Geoglyph
+KW  - High-resolution aerial photograph
+KW  - Nasca
+KW  - Object detection
+KW  - Remote sensing
+ER  - 
+
+TY  - JOUR
+TI  - A Multi-Temporal Analysis of Archaeological Site Destruction using Landsat Satellite Data and Machine Learning, Moche Valley, Peru
+AU  - Payntar, ND
+T2  - Acm journal on computing and cultural heritage
+AB  - The destruction of archaeological sites and the loss of archaeological landscapes remains a global concern as populations and urban areas continue to expand. Archaeological sites are not only significant to local communities, national identities, and modern tourist economies but also provide critical knowledge of past sociocultural interactions, settlement patterns, human-environment relationships, and risk mitigation strategies. While archaeological landscapes and site destruction have remained outside of traditional land use land cover change (LULCC) studies, they are a form of urban and agricultural land use. By conceptualizing archaeological site destruction within land change science, this study provides an innovative approach for assessing "what's left" of historically surveyed archaeological landscapes. Using a Random Forest algorithm and Landsat satellite data, this study quantifies archaeological site destruction attributed to LULCC in Peru's lowerMoche Valley between 1985 and 2020. More than 400 archaeological sites previously recorded during the Chan Chan-Moche Valley Project (CCMVP, 1969-1974) are analyzed. Results indicate that less than a quarter of the original CCMVP sites remain on the landscape. The primary drivers of LULCC in the lower Moche Valley include population growth, migration, and government policies, while secondary drivers include heritage values. Positioning archaeological survey data within land change science and integrating machine learning techniques can benefit historic survey reassessments globally and provides significant knowledge of archaeological site destruction and the socioeconomic conditions that underly dynamic landscape changes.
+DA  - 2023/09//undefined
+PY  - 2023
+DO  - 10.1145/3586079
+VL  - 16
+IS  - 3
+LA  - English
+SN  - 1556-4673
+AN  - WOS:001098217000007
+L1  - https://dl.acm.org/doi/pdf/10.1145/3586079
+KW  - AGRICULTURE
+KW  - archaeology
+KW  - CHALLENGES
+KW  - CULTURAL-HERITAGE
+KW  - DRIVERS
+KW  - DYNAMICS
+KW  - GLOBALIZATION
+KW  - heritage
+KW  - IRRIGATION
+KW  - Land-use change
+KW  - LANDSCAPES
+KW  - machine learning
+KW  - OPPORTUNITIES
+KW  - Peru
+KW  - remote sensing
+KW  - SCIENCE
+ER  - 
+
+TY  - JOUR
+TI  - Discovering the Ancient Tomb under the Forest Using Machine Learning with Timing-Series Features of Sentinel Images: Taking Baling Mountain in Jingzhou as an Example
+AU  - Liu, YC
+AU  - Hu, QW
+AU  - Wang, SH
+AU  - Zou, FL
+AU  - Ai, MY
+AU  - Zhao, PC
+T2  - Remote Sensing
+AB  - Cultural traces under forests are one of the main problems affecting the identification of archaeological sites in densely forested areas, so it is full of challenges to discover ancient tombs buried under dense vegetation. The covered ancient tombs can be identified by studying the time-series features of the vegetation covering the ancient tombs on the multi-time series remote sensing images because the ancient tombs buried deep underground have long-term underground space structures, which affect the intrinsic properties of the surface soil so that the growth status of the covering vegetation is different from that of the vegetation in the area without ancient tombs. We first use the highly detailed DSM data to select the ancient tombs that cannot be visually distinguished on the optical images. Then, we explored and constructed the temporal features of the ancient tombs under the forest and the non-ancient tombs in the images, such as the radar timing-series features of Sentinel 1 and the multi-spectral and vegetation index timing-series features of Sentinel 2. Finally, based on these features and machine learning, we designed an automatic identification algorithm for ancient tombs under the forest. The method has been validated in Baling Mountain in Jingzhou, China. It is very feasible to automatically identify ancient tombs covered by surface vegetation by using the timing-series features of remote sensing images. Additionally, the identification of large ancient tombs or concentrated ancient tombs is more accurate, and the accuracy is improved after adding radar features. The paper concludes with a discussion of the current limitations and future directions of the method.
+DA  - 2023/02//undefined
+PY  - 2023
+DO  - 10.3390/rs15030554
+VL  - 15
+IS  - 3
+LA  - English
+SN  - 2072-4292
+AN  - WOS:000930994200001
+L1  - https://www.mdpi.com/2072-4292/15/3/554/pdf?version=1673949912
+KW  - AIRBORNE LIDAR
+KW  - ancient tombs identification under a forest
+KW  - ARCHAEOLOGICAL FEATURES
+KW  - CLASSIFICATION
+KW  - GOOGLE EARTH ENGINE
+KW  - HIGH-RESOLUTION MISSION
+KW  - INDEX
+KW  - LANDSCAPE
+KW  - machine learning
+KW  - remote sensing archaeology
+KW  - satellite
+KW  - SPATIAL-RESOLUTION
+KW  - spectral timing-series features
+KW  - VEGETATION GROWTH
+KW  - VISUALIZATION
+ER  - 
+
+TY  - JOUR
+TI  - Eyes of the machine: AI-assisted satellite archaeological survey in the Andes
+AU  - Zimmer-Dauphinee, J
+AU  - Vanvalkenburgh, P
+AU  - Wernke, SA
+T2  - Antiquity
+AB  - Archaeological surveys conducted through the inspection of high-resolution satellite imagery promise to transform how archaeologists conduct large-scale regional and supra-regional research. However, conducting manual surveys of satellite imagery is labour- and time-intensive, and low target prevalence substantially increases the likelihood of miss-errors (false negatives). In this article, the authors compare the results of an imagery survey conducted using artificial intelligence computer vision techniques (Convolutional Neural Networks) to a survey conducted manually by a team of experts through the Geo-PACHA platform (for further details of the project, see Wernke et al. 2023). Results suggest that future surveys may benefit from a hybrid approach-combining manual and automated methods-to conduct an AI-assisted survey and improve data completeness and robustness.
+DA  - 2024/02//undefined
+PY  - 2024
+DO  - 10.15184/aqy.2023.175
+VL  - 98
+IS  - 397
+SP  - 245
+EP  - 259
+LA  - English
+SN  - 0003-598X
+AN  - WOS:001129388800001
+L1  - https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E0E17B1CFDEFD877933BFA0C0A71BED0/S0003598X23001758a.pdf/div-class-title-eyes-of-the-machine-ai-assisted-satellite-archaeological-survey-in-the-andes-div.pdf
+KW  - Andes
+KW  - artificial intelligence
+KW  - CROP MARKS
+KW  - deep learning
+KW  - GeoPACHA
+KW  - IDENTIFICATION
+KW  - IMAGERY
+KW  - REMAINS
+KW  - remote sensing
+KW  - satellite survey
+KW  - South America
+ER  - 
+
+TY  - JOUR
+TI  - Validating predictions of burial mounds with field data: the promise and reality of machine learning
+AU  - Sobotkova, A
+AU  - Kristensen-Mclachlan, RD
+AU  - Mallon, O
+AU  - Ross, SA
+T2  - Journal of Documentation
+AB  - PurposeThis paper provides practical advice for archaeologists and heritage specialists wishing to use ML approaches to identify archaeological features in high-resolution satellite imagery (or other remotely sensed data sources). We seek to balance the disproportionately optimistic literature related to the application of ML to archaeological prospection through a discussion of limitations, challenges and other difficulties. We further seek to raise awareness among researchers of the time, effort, expertise and resources necessary to implement ML successfully, so that they can make an informed choice between ML and manual inspection approaches.Design/methodology/approachAutomated object detection has been the holy grail of archaeological remote sensing for the last two decades. Machine learning (ML) models have proven able to detect uniform features across a consistent background, but more variegated imagery remains a challenge. We set out to detect burial mounds in satellite imagery from a diverse landscape in Central Bulgaria using a pre-trained Convolutional Neural Network (CNN) plus additional but low-touch training to improve performance. Training was accomplished using MOUND/NOT MOUND cutouts, and the model assessed arbitrary tiles of the same size from the image. Results were assessed using field data.FindingsValidation of results against field data showed that self-reported success rates were misleadingly high, and that the model was misidentifying most features. Setting an identification threshold at 60% probability, and noting that we used an approach where the CNN assessed tiles of a fixed size, tile-based false negative rates were 95-96%, false positive rates were 87-95% of tagged tiles, while true positives were only 5-13%. Counterintuitively, the model provided with training data selected for highly visible mounds (rather than all mounds) performed worse. Development of the model, meanwhile, required approximately 135 person-hours of work.Research limitations/implicationsOur attempt to deploy a pre-trained CNN demonstrates the limitations of this approach when it is used to detect varied features of different sizes within a heterogeneous landscape that contains confounding natural and modern features, such as roads, forests and field boundaries. The model has detected incidental features rather than the mounds themselves, making external validation with field data an essential part of CNN workflows. Correcting the model would require refining the training data as well as adopting different approaches to model choice and execution, raising the computational requirements beyond the level of most cultural heritage practitioners.Practical implicationsImproving the pre-trained model's performance would require considerable time and resources, on top of the time already invested. The degree of manual intervention required - particularly around the subsetting and annotation of training data - is so significant that it raises the question of whether it would be more efficient to identify all of the mounds manually, either through brute-force inspection by experts or by crowdsourcing the analysis to trained - or even untrained - volunteers. Researchers and heritage specialists seeking efficient methods for extracting features from remotely sensed data should weigh the costs and benefits of ML versus manual approaches carefully.
+Social implicationsOur literature review indicates that use of artificial intelligence (AI) and ML approaches to archaeological prospection have grown exponentially in the past decade, approaching adoption levels associated with "crossing the chasm" from innovators and early adopters to the majority of researchers. The literature itself, however, is overwhelmingly positive, reflecting some combination of publication bias and a rhetoric of unconditional success. This paper presents the failure of a good-faith attempt to utilise these approaches as a counterbalance and cautionary tale to potential adopters of the technology. Early-majority adopters may find ML difficult to implement effectively in real-life scenarios.Originality/valueUnlike many high-profile reports from well-funded projects, our paper represents a serious but modestly resourced attempt to apply an ML approach to archaeological remote sensing, using techniques like transfer learning that are promoted as solutions to time and cost problems associated with, e.g. annotating and manipulating training data. While the majority of articles uncritically promote ML, or only discuss how challenges were overcome, our paper investigates how - despite reasonable self-reported scores - the model failed to locate the target features when compared to field data. We also present time, expertise and resourcing requirements, a rarity in ML-for-archaeology publications.
+DA  - 2024/09/03/
+PY  - 2024
+DO  - 10.1108/JD-05-2022-0096
+VL  - 80
+IS  - 5
+SP  - 1167
+EP  - 1189
+LA  - English
+SN  - 0022-0418
+AN  - WOS:001207881500001
+L1  - https://www.emerald.com/insight/content/doi/10.1108/JD-05-2022-0096/full/pdf?title=validating-predictions-of-burial-mounds-with-field-data-the-promise-and-reality-of-machine-learning
+KW  - Archaeology
+KW  - AUTOMATIC DETECTION
+KW  - CNN
+KW  - EXTRACTION
+KW  - IDENTIFICATION
+KW  - LIDAR DATA
+KW  - Machine learning
+KW  - Remote sensing
+KW  - REMOTE-SENSING IMAGERY
+KW  - Satellite imagery
+KW  - SATELLITE IMAGERY
+KW  - SETTLEMENT-PATTERNS
+KW  - SITES
+ER  - 
+
+TY  - JOUR
+TI  - Detecting and Predicting Archaeological Sites Using Remote Sensing and Machine Learning-Application to the Saruq Al-Hadid Site, Dubai, UAE
+AU  - Ben-Romdhane, H
+AU  - Francis, D
+AU  - Cherif, C
+AU  - Pavlopoulos, K
+AU  - Ghedira, H
+AU  - Griffiths, S
+T2  - Geosciences
+AB  - In this paper, the feasibility of satellite remote sensing in detecting and predicting locations of buried objects in the archaeological site of Saruq Al-Hadid, United Arab Emirates (UAE) was investigated. Satellite-borne synthetic aperture radar (SAR) is proposed as the main technology for this initial investigation. In fact, SAR is the only satellite-based technology able to detect buried artefacts from space, and it is expected that fine-resolution images of ALOS/PALSAR-2 (L-band SAR) would be able to detect large features (>1 m) that might be buried in the subsurface (<2 m) under optimum conditions, i.e., dry and bare soil. SAR data were complemented with very high-resolution Worldview-3 multispectral images (0.31 m panchromatic, 1.24 m VNIR) to obtain a visual assessment of the study area and its land cover features. An integrated approach, featuring the application of advanced image processing techniques and geospatial analysis using machine learning, was adopted to characterise the site while automating the process and investigating its applicability. Results from SAR feature extraction and geospatial analyses showed detection of the areas on the site that were already under excavation and predicted new, hitherto unexplored archaeological areas. The validation of these results was performed using previous archaeological works as well as geological and geomorphological field surveys. The modelling and prediction accuracies are expected to improve with the insertion of a neural network and backpropagation algorithms based on the performed cluster groups following more recent field surveys. The validated results can provide guidance for future on-site archaeological work. The pilot process developed in this work can therefore be applied to similar arid environments for the detection of archaeological features and guidance of on-site investigations.
+DA  - 2023/06//undefined
+PY  - 2023
+DO  - 10.3390/geosciences13060179
+VL  - 13
+IS  - 6
+LA  - English
+SN  - 2076-3263
+AN  - WOS:001017544800001
+L1  - https://www.mdpi.com/2076-3263/13/6/179/pdf?version=1730459457
+KW  - archaeology
+KW  - artificial intelligence
+KW  - DESERT
+KW  - Dubai
+KW  - EVOLUTION
+KW  - geospatial analysis
+KW  - GIS
+KW  - GREECE
+KW  - machine learning
+KW  - OCCUPATION
+KW  - PALSAR-2
+KW  - RADAR
+KW  - remote sensing
+KW  - SAR
+KW  - Saruq Al-Hadid
+KW  - SATELLITE IMAGERY
+KW  - SETTLEMENT
+KW  - SYSTEM
+KW  - United Arab Emirates
+KW  - Worldview-3
+ER  - 
+
+TY  - JOUR
+TI  - Detecting the Archaeological Traces of Tar Production Kilns in the Northern Boreal Forests Based on Airborne Laser Scanning and Deep Learning
+AU  - Anttiroiko, N
+AU  - Groesz, FJ
+AU  - Ikäheimo, J
+AU  - Kelloniemi, A
+AU  - Nurmi, R
+AU  - Rostad, S
+AU  - Seitsonen, O
+T2  - Remote sensing
+AB  - This paper presents the development and application of a deep learning-based approach for semi-automated detection of tar production kilns using new Finnish high-density Airborne Laser Scanning (ALS) data in the boreal taiga forest zone. The historical significance of tar production, an important livelihood for centuries, has had extensive environmental and ecological impacts, particularly in the thinly inhabited northern and eastern parts of Finland. Despite being one of the most widespread archaeological features in the country, tar kilns have received relatively little attention until recently. The authors employed a Convolutional Neural Networks (CNN) U-Net-based algorithm to detect these features from the ALS data, which proved to be more accurate, faster, and capable of covering systematically larger spatial areas than human actors. It also produces more consistent, replicable, and ethically sustainable results. This semi-automated approach enabled the efficient location of a vast number of previously unknown archaeological features, significantly increasing the number of tar kilns in each study area compared to the previous situation. This has implications also for the cultural resource management in Finland. The authors' findings have influenced the preparation of the renewal of the Finnish Antiquities Act, raising concerns about the perceived impacts on cultural heritage management and land use sectors due to the projected tenfold increase in archaeological site detection using deep learning algorithms. The use of environmental remote sensing data may provide a means of examining the long-term cultural and ecological impacts of tar production in greater detail. Our pilot studies suggest that artificial intelligence and deep learning techniques have the potential to revolutionize archaeological research and cultural resource management in Finland, offering promising avenues for future exploration.
+DA  - 2023/04//undefined
+PY  - 2023
+DO  - 10.3390/rs15071799
+VL  - 15
+IS  - 7
+LA  - English
+SN  - 2072-4292
+AN  - WOS:000970384600001
+L1  - https://www.mdpi.com/2072-4292/15/7/1799/pdf?version=1679991085
+KW  - airborne laser scanning
+KW  - archaeology
+KW  - boreal forest
+KW  - deep learning
+KW  - feature detection
+KW  - Finland
+KW  - tar production
+ER  - 
+
+TY  - JOUR
+TI  - Broadscale deep learning model for archaeological feature detection across the Maya area
+AU  - Character, L
+AU  - Beach, T
+AU  - Inomata, T
+AU  - Garrison, TG
+AU  - Luzzadder-Beach, S
+AU  - Baldwin, JD
+AU  - Cambranes, R
+AU  - Pinzón, F
+AU  - Ranchos, JL
+T2  - Journal of Archaeological Science
+AB  - Many Maya archaeological areas are not comprehensively or systematically mapped because ruins, often hidden under tropical forest canopy in rugged terrain, can take decades to locate, identify, and map. Recent years have seen an explosion of lidar data collection, and machine learning provides a way to exploit these lidar data, making feature analyses more efficient and consistently executed. At present, there are a limited number of small, area-specific models that exist for the Maya area, the largest of which covers 230 km 2 . Here we present the foundation for a broadscale, multi-area-based convolutional neural network (CNN) object detection model that uses airborne laser scanning data, or lidar, for archaeological feature detection across 615 km 2 of the Maya area, as well as preliminary results from an additional 885 km 2 test area. This sets the path for a model that will enable researchers to map archaeological areas across the entire Maya Lowland area in weeks or months instead of decades. Notably, we find that a model trained on multiple areas with significantly different topographies produces better results for all areas as compared to a model trained on a single area. The broadscale model here presented produced an F1 score of 0.80. Results also include many potential new structure detections, including detections on lidar at an archaeological area that has not yet been comprehensively ground-surveyed and is located in an entirely different country in the Maya Lowlands from where the model was trained on. This model represents an attempt at a broadscale machine learning approach for archaeological feature mapping in the Maya area and demonstrates how big data can be integrated into traditional archaeological workflows. Lidar has already shown much greater ancient Maya infrastructure throughout the Maya world and elsewhere in the tropics, and this study using machine learning with lidar is showing even greater Maya infrastructure through vast areas of the Maya tropical forest.
+DA  - 2024/09//undefined
+PY  - 2024
+DO  - 10.1016/j.jas.2024.106022
+VL  - 169
+LA  - English
+SN  - 0305-4403
+AN  - WOS:001274013000001
+KW  - AIRBORNE LIDAR DATA
+KW  - Archaeology
+KW  - BELIZE
+KW  - CLIMATE
+KW  - Convolutional neural network
+KW  - Lidar
+KW  - Machine learning
+KW  - Maya
+KW  - OBJECT
+KW  - SETTLEMENTS
+KW  - VISUALIZATION TECHNIQUES
+KW  - WORKFLOW
+ER  - 
+
+TY  - JOUR
+TI  - AI-accelerated Nazca survey nearly doubles the number of known figurative geoglyphs and sheds light on their purpose.
+AU  - Sakai, Masato
+AU  - Sakurai, Akihisa
+AU  - Lu, Siyuan
+AU  - Olano, Jorge
+AU  - Albrecht, Conrad M.
+AU  - Hamann, Hendrik F.
+AU  - Freitag, Marcus
+T2  - Proceedings of the National Academy of Sciences of the United States of America
+AB  - It took nearly a century to discover a total of 430 figurative Nazca geoglyphs, which offer significant insights into the ancient cultures at the Nazca Pampa.  Here, we report the deployment of an AI system to the entire Nazca region, a  UNESCO World Heritage site, leading to the discovery of 303 new figurative  geoglyphs within only 6 mo of field survey, nearly doubling the number of known  figurative geoglyphs. Even with limited training examples, the developed AI  approach is demonstrated to be effective in detecting the smaller relief-type  geoglyphs, which unlike the giant line-type geoglyphs are very difficult to  discern. The improved account of figurative geoglyphs enables us to analyze their  motifs and distribution across the Nazca Pampa. We find that relief-type  geoglyphs depict mainly human motifs or motifs of things modified by humans, such  as domesticated animals and decapitated heads (81.6%). They are typically located  within viewing distance (on average 43 m) of ancient trails that crisscross the  Nazca Pampa and were most likely built and viewed at the individual or  small-group level. On the other hand, the giant line-type figurative geoglyphs  mainly depict wild animals (64%). They are found an average of 34 m from the  elaborate linear/trapezoidal network of geoglyphs, which suggests that they were  probably built and used on a community level for ritual activities.
+DA  - 2024/10//undefined
+PY  - 2024
+DO  - 10.1073/pnas.2407652121
+VL  - 121
+IS  - 40
+SP  - e2407652121
+J2  - Proc Natl Acad Sci U S A
+LA  - eng
+SN  - 1091-6490 0027-8424
+L1  - https://www.pnas.org/doi/pdf/10.1073/pnas.2407652121
+KW  - *Archaeology
+KW  - archaeology
+KW  - geoglyphs
+KW  - History, Ancient
+KW  - Humans
+KW  - machine learning
+KW  - Nasca
+KW  - remote sensing
+ER  - 
+
