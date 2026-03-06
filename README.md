@@ -14,7 +14,7 @@ This repository contains the data and code for our paper:
 
 > Bellat, Hatton and Orellana-Figueroa (2026). *Comparative review of
 > recent developments in archaeological predictive models and automatic
-> structure detection*. CAA2025 Proceddings
+> structure detection*. CAA2025 Proceedings
 > <https://doi.org/10.5281/zenodo.18882443>
 
 ### How to cite
@@ -25,7 +25,7 @@ Please cite this compendium as:
 > and data for Comparative review of recent developments in
 > archaeological predictive models and automatic structure detection*.
 > Accessed 06 mars 2026. Online at
-> <https://doi.org/10.5281/zenodo.17095617>
+> <https://doi.org/10.5281/zenodo.18882443>
 
 ## Contents
 

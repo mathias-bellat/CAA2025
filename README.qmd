@@ -21,13 +21,13 @@ Title <- "Comparative review of recent developments in archaeological predictive
 
 This repository contains the data and code for our paper:
 
-> Bellat, Hatton and Orellana-Figueroa (2026). _`r Title`_. CAA2025 Proceddings <https://doi.org/10.5281/zenodo.18882443>
+> Bellat, Hatton and Orellana-Figueroa (2026). _`r Title`_. CAA2025 Proceedings <https://doi.org/10.5281/zenodo.18882443>
 
 ### How to cite
 
 Please cite this compendium as:
 
-> Bellat, Hatton and Orellana-Figueroa, (`r format(Sys.Date(), "%Y")`). _Compendium of R code and data for `r Title`_. Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/10.5281/zenodo.17095617>
+> Bellat, Hatton and Orellana-Figueroa, (`r format(Sys.Date(), "%Y")`). _Compendium of R code and data for `r Title`_. Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/10.5281/zenodo.18882443>
 
 ## Contents
 
