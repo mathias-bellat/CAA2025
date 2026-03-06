@@ -24,7 +24,7 @@ date: now
 date-format: long
 format: 
   docx:
-    output-file: Comparative_review_APM-ASD_V2.0.0.docx
+    output-file: Comparative_review_APM-ASD_V2.0.1.docx
     reference-doc: "../templates/template.docx" # Insert path for the DOCX file
 execute:
   echo: true

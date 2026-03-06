@@ -24,11 +24,11 @@ date: now
 date-format: long
 format:
   aft-html: 
-      output-file: Comparative_review_APM-ASD_V2.0.0.html
+      output-file: Comparative_review_APM-ASD_V2.0.1.html
       embed-resources: true
       number-sections: true
   docx:
-    output-file: Comparative_review_APM-ASD_V2.0.0.docx
+    output-file: Comparative_review_APM-ASD_V2.0.1.docx
     reference-doc: "../templates/template.docx" # Insert path for the DOCX file
 editor_options: 
   chunk_output_type: console
