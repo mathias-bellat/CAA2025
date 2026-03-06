@@ -17,11 +17,11 @@ Title <- "Comparative review of recent developments in archaeological predictive
 # Comparative review of recent developments in archaeological predictive models and automatic structure detection.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18877468.svg)](https://doi.org/10.5281/zenodo.18877468)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18882443.svg)](https://doi.org/10.5281/zenodo.18882443)
 
 This repository contains the data and code for our paper:
 
-> Bellat, Hatton and Orellana-Figueroa (2026). _`r Title`_. CAA2025 Proceddings <https://doi.org/10.5281/zenodo.18877468>
+> Bellat, Hatton and Orellana-Figueroa (2026). _`r Title`_. CAA2025 Proceddings <https://doi.org/10.5281/zenodo.18882443>
 
 ### How to cite
 
