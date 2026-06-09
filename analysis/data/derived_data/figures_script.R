@@ -113,7 +113,7 @@ ggsave("./analysis/figures/Fig.2/Fig.2.pdf", plot = plot, width = 7, height = 6,
 # 02 Figure 3, tree map ########################################################
 
 # 2.1 Import the data ==========================================================
-df <- read_excel("./analysis/data/raw_data/Statistics_papers.xlsx", sheet = "Models statistics")
+df <- read_excel("./analysis/data/raw_data/Statistics_papers_copie.xlsx", sheet = "Models statistics")
 df <- df[-nrow(df),-c(6:10)]
 df <- df[df[3] !=0,] # Remove models with no occurences
 
