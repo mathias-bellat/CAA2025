@@ -8,14 +8,15 @@
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![License: CC BY-SA
 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18882443.svg)](https://doi.org/10.5281/zenodo.18882443)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2061064.svg)](https://doi.org/10.5281/zenodo.2061064)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20700092.svg)](https://doi.org/10.5281/zenodo.20700092)
 
 This repository contains the data and code for our paper:
 
 > Bellat, Hatton and Orellana-Figueroa (2026). *Comparative review of
 > recent developments in archaeological predictive models and automatic
 > structure detection*. CAA2025 Proceedings
-> <https://doi.org/10.5281/zenodo.18882443>
+> <https://doi.org/10.5281/zenodo.2061064>
 
 ### How to cite
 
@@ -24,8 +25,8 @@ Please cite this compendium as:
 > Bellat, Hatton and Orellana-Figueroa, (2026). *Compendium of R code
 > and data for Comparative review of recent developments in
 > archaeological predictive models and automatic structure detection*.
-> Accessed 06 mars 2026. Online at
-> <https://doi.org/10.5281/zenodo.18882443>
+> Accessed 15 juin 2026. Online at
+> <https://doi.org/10.5281/zenodo.20700092>
 
 ## Contents
 

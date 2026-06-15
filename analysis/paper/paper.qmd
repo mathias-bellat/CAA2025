@@ -270,7 +270,7 @@ An interactive version of this manuscript, with code and internal links, is acce
 
 [**Conflict of interest statement:**]{.underline} The authors declare no conflict of interest.
 
-[**Data availability statement:**]{.underline} The data used in this study are openly available on the Zenodo repository at <https://doi.org/10.5281/zenodo.20610648> and the code is accessible at <https://mathias-bellat.github.io/CAA2025/> or archived at <https://mathias-bellat.github.io/CAA2025/>.
+[**Data availability statement:**]{.underline} The data used in this study are openly available on the Zenodo repository at <https://doi.org/10.5281/zenodo.20610648> and the code is accessible at <https://mathias-bellat.github.io/CAA2025/> or archived at <https://doi.org/10.5281/zenodo.20700092.>.
 
 [**Declaration of Generative AI and AI-assisted technologies in the writing process:**]{.underline} During the preparation of this work, the authors used ChatGPT 4.5 [@brown_language_2020] in order to generate part of the R code and improve spelling and diction in already-written text. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
 

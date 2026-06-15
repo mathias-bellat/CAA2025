@@ -1,9 +1,11 @@
 Package: CAA.proceedings
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Comparative review of recent developments in archaeological predictive models and automatic structure detection
+Version: 3.0.0
 Authors@R:
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Mathias", "Bellat", "mathias.archaeology@gmail.com", role = c("aut", "cre"))
+    person("Amy", "Hatton", "hatton@gea.mpg.de", role = c("aut", "cre"))
+    person("Jordy Didier", "Orellana-Figueroa",  "jordy.orellana@uni-tuebingen.de", role = c("aut"))
+Description: This package is design for the code, interractive paper and supplementary file to the paper.
 License: MIT + file LICENSE
 ByteCompile: true
 Encoding: UTF-8
